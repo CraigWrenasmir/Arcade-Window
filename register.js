@@ -9,10 +9,13 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const hasWindow = !!$("#window");
 
-  let state=null, events=[], birds=[], motion=0, lum=0.5;
+  let state=null, events=[], birds=[], photos=[], motion=0, lum=0.5;
   let box = {list:[], i:0, title:""};
 
   function describe(e, long){
+    if(e.photo){
+      return long ? `${fmtT(e.time)}<br>photographed by ${esc(e.by||"Craig")}<br>${esc(e.caption||"")}` : esc(e.caption||"photo");
+    }
     const what = e.kind==="flyer" ? "flew" + (e.direction ? " " + e.direction : " past") : "sat there for " + e.duration + " seconds";
     const who = e.confidence==="likely" ? "probably the same bird as before, visit " + e.visit : "first time we have seen this one";
     return long ? `${fmtT(e.time)}<br>${what}<br>${sp(e.species)}, ${e.size}, ${e.tone}<br>${who}<br>sky was ${e.sky||"unrecorded"}`
@@ -27,6 +30,7 @@
   function showBox(){
     const e = box.list[box.i];
     $("#boximg").src = "data/" + e.image + bust();
+    $("#boximg").classList.toggle("photo", !!e.photo);
     $("#boxcap").innerHTML = `<b>${esc(e.bird)}</b>${e.visit>1?" · visit "+e.visit:""}<br>${describe(e,true)}`;
     $("#boxcount").textContent = `${box.title ? box.title + " · " : ""}${box.i+1} of ${box.list.length}`;
     $("#boxprev").style.visibility = box.i < box.list.length-1 ? "visible" : "hidden";
@@ -43,7 +47,20 @@
     if(ev.key==="ArrowRight"){ if(box.i > 0){ box.i--; showBox(); } }
   });
 
-  function visitsOf(b){ return events.filter(e => e.bird_id===b.id); }
+  function visitsOf(b){
+    const v = events.filter(e => e.bird_id===b.id);
+    const ph = photos.filter(p => (p.birds||[]).includes(b.name)).map(p => ({...p, image: p.file, photo: true, bird: b.name}));
+    return v.concat(ph).sort((a,c) => new Date(c.time) - new Date(a.time));
+  }
+  function renderPhotos(){
+    const sec = $("#photos"); if(!sec) return;
+    if(!photos.length){ sec.style.display = "none"; return; }
+    sec.style.display = "";
+    $("#photocount").textContent = `${photos.length}`;
+    const items = photos.map(p => ({...p, image: p.file, photo: true, bird: (p.birds||[]).join(", ") || "unnamed"}));
+    $("#photogrid").innerHTML = items.map((p,i) => `<div class="ph" data-i="${i}"><img src="data/${p.file}${bust()}" alt="" loading="lazy"><div class="cap"><b>${esc(p.caption||"")}</b><br>${fmtT(p.time)}${p.birds&&p.birds.length?" · "+esc(p.birds.join(", ")):""}</div></div>`).join("");
+    $("#photogrid").querySelectorAll(".ph").forEach(el => el.addEventListener("click", () => openBox(items, parseInt(el.dataset.i,10), "Craig's photos")));
+  }
 
   // ---------- render ----------
   function render(){
@@ -61,7 +78,7 @@
     $("#catcount").textContent = sorted.length ? `${sorted.length} named` : "";
     $("#gallery").innerHTML = sorted.map(b => {
       const v = visitsOf(b); const main = v[0];
-      return `<div class="gb" data-bird="${b.id}">${main?`<img src="data/${main.image}${bust()}" alt="">`:""}<b>${esc(b.name)}</b>${b.visits} visit${b.visits===1?"":"s"} · ${b.kind}<br>${sp(b.species||"")}<br><span class="when">first ${fmtT(b.first_seen)}</span>${v.length>1?`<div class="more">${v.slice(1,7).map((e,k)=>`<img src="data/${e.image}${bust()}" alt="" data-bird="${b.id}" data-k="${k+1}">`).join("")}</div>`:""}</div>`;
+      return `<div class="gb" data-bird="${b.id}">${main?`<img src="data/${main.image}${bust()}" alt="" class="${main.photo?"isphoto":""}">`:""}<b>${esc(b.name)}</b>${b.visits} visit${b.visits===1?"":"s"} · ${b.kind}<br>${sp(b.species||"")}<br><span class="when">first ${fmtT(b.first_seen)}</span>${v.length>1?`<div class="more">${v.slice(1,7).map((e,k)=>`<img src="data/${e.image}${bust()}" alt="" class="${e.photo?"isphoto":""}" data-bird="${b.id}" data-k="${k+1}">`).join("")}</div>`:""}</div>`;
     }).join("");
     $("#gallery").querySelectorAll(".gb").forEach(card => {
       card.addEventListener("click", ev => {
@@ -96,8 +113,8 @@
   }
   async function loadBirds(){
     try{
-      const [led, cat] = await Promise.all([j("ledger.json"), j("birds.json")]);
-      events = led.events || []; birds = cat.birds || []; render();
+      const [led, cat, ph] = await Promise.all([j("ledger.json"), j("birds.json"), j("photos.json").catch(()=>({photos:[]}))]);
+      events = led.events || []; birds = cat.birds || []; photos = ph.photos || []; render(); renderPhotos();
     }catch(e){}
   }
 
