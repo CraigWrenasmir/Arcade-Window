@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T12:35:13+11:00",
+"time": "2026-11-02T12:40:09+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 46,
+"frames": 810,
 "sky": {
-"hex": "#8696c4",
-"lum": 0.592,
+"hex": "#8494c5",
+"lum": 0.585,
 "word": "clear"
 },
 "wall": {
-"hex": "#ab9da1",
-"lum": 0.636
+"hex": "#ab9ca1",
+"lum": 0.633
 },
 "dome": {
-"hex": "#7a6f85",
-"lum": 0.461
+"hex": "#7a7085",
+"lum": 0.462
 },
 "brick": {
-"hex": "#7e6b78",
-"lum": 0.451
+"hex": "#85727d",
+"lum": 0.476
 },
-"overall_lum": 0.545,
+"overall_lum": 0.549,
 "motion": 0.0,
-"birds_today": 28,
-"birds_total": 28,
+"birds_today": 31,
+"birds_total": 31,
 "named_birds": 9,
 "last_bird": {
-"id": "20261102-123208",
-"time": "2026-11-02T12:32:08+11:00",
+"id": "20261102-123906",
+"time": "2026-11-02T12:39:06+11:00",
 "bird": "Drnaso",
 "bird_id": "b0003",
-"visit": 14,
+"visit": 15,
 "confidence": "likely",
 "kind": "flyer",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "mid",
-"duration": 0.7,
-"direction": "up",
+"duration": 1.1,
+"direction": "west",
 "box": [
-510,
-2,
-24,
-28
+662,
+244,
+20,
+20
 ],
-"cell": "3:0",
-"image": "birds/20261102-123208.jpg",
+"cell": "4:1",
+"image": "birds/20261102-123906.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 10
+"shadow_strips_today": 11
 }
