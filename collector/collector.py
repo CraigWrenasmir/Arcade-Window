@@ -66,33 +66,6 @@ LEFTWALL = [(70, 330), (440, 180), (440, 520), (70, 600)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
-# Colour correction, applied to every frame before anything is measured or published.
-# A 3x3 matrix on RGB plus an offset, fitted from reference patches (see calibrate.py).
-# Identity until a calibration exists. Stored in data/../collector/colour.json if present.
-COLOUR_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "colour.json")
-
-
-def load_colour():
-    try:
-        with open(COLOUR_PATH) as f:
-            d = json.load(f)
-        M = np.array(d["matrix"], dtype=np.float32).reshape(3, 3)
-        off = np.array(d.get("offset", [0, 0, 0]), dtype=np.float32)
-        return M, off
-    except Exception:
-        return None, None
-
-
-COLOUR_M, COLOUR_OFF = load_colour()
-
-
-def correct_colour(bgr):
-    if COLOUR_M is None:
-        return bgr
-    rgb = bgr[:, :, ::-1].astype(np.float32)
-    out = rgb @ COLOUR_M.T + COLOUR_OFF
-    return np.clip(out, 0, 255).astype(np.uint8)[:, :, ::-1]
-
 
 def poly_mask(poly, shape=(H, W)):
     m = np.zeros(shape, dtype=np.uint8)
@@ -532,7 +505,6 @@ class Collector:
             next_t = t + interval
             if frame.shape[1] != W:
                 frame = cv2.resize(frame, (W, H))
-            frame = correct_colour(frame)
             self.frames += 1
             self.roll_day_if_needed()
             f32 = frame.astype(np.float32)
