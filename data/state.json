@@ -1,50 +1,50 @@
 {
-"time": "2026-11-02T11:48:12+11:00",
-"started": "2026-11-02T11:47:55+11:00",
+"time": "2026-11-02T11:50:07+11:00",
+"started": "2026-11-02T11:49:49+11:00",
 "frames": 46,
 "sky": {
-"hex": "#a48cd5",
-"lum": 0.611,
+"hex": "#7380b1",
+"lum": 0.511,
 "word": "clear"
 },
 "wall": {
-"hex": "#ddbfda",
-"lum": 0.798
+"hex": "#b1a7a6",
+"lum": 0.669
 },
 "dome": {
-"hex": "#614169",
-"lum": 0.312
+"hex": "#4c4153",
+"lum": 0.278
 },
 "brick": {
-"hex": "#694365",
-"lum": 0.324
+"hex": "#57434c",
+"lum": 0.293
 },
-"overall_lum": 0.556,
+"overall_lum": 0.475,
 "motion": 0.0,
-"birds_today": 3,
-"birds_total": 3,
+"birds_today": 4,
+"birds_total": 4,
 "named_birds": 3,
 "last_bird": {
-"id": "20261102-114322",
-"time": "2026-11-02T11:43:22+11:00",
+"id": "20261102-114855",
+"time": "2026-11-02T11:48:55+11:00",
 "bird": "Drnaso",
 "bird_id": "b0003",
-"visit": 1,
-"confidence": "new",
+"visit": 2,
+"confidence": "likely",
 "kind": "flyer",
-"species": "sparrow or wren (guess)",
+"species": "sparrow or wren",
 "size": "small",
 "tone": "mid",
 "duration": 1.9,
-"direction": "east",
+"direction": "down",
 "box": [
-428,
-338,
-22,
-30
+852,
+32,
+24,
+24
 ],
-"cell": "2:2",
-"image": "birds/20261102-114322.jpg",
+"cell": "5:0",
+"image": "birds/20261102-114855.jpg",
 "sky": "clear"
 },
 "shadow_strips_today": 3
