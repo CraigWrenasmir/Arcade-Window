@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T14:00:28+11:00",
+"time": "2026-11-02T14:05:32+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 2361,
+"frames": 3149,
 "sky": {
-"hex": "#c7cdc0",
-"lum": 0.793,
+"hex": "#cad1c0",
+"lum": 0.807,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#8e7b84",
-"lum": 0.511
+"hex": "#8a7781",
+"lum": 0.495
 },
 "dome": {
-"hex": "#7a6c7e",
-"lum": 0.451
+"hex": "#786a7c",
+"lum": 0.441
 },
 "brick": {
-"hex": "#aea1a4",
-"lum": 0.649
+"hex": "#ae9ea3",
+"lum": 0.643
 },
-"overall_lum": 0.604,
+"overall_lum": 0.601,
 "motion": 0.0,
-"birds_today": 37,
-"birds_total": 37,
+"birds_today": 38,
+"birds_total": 38,
 "named_birds": 9,
 "last_bird": {
-"id": "20261102-132934",
-"time": "2026-11-02T13:29:34+11:00",
-"bird": "Notley",
-"bird_id": "b0004",
-"visit": 5,
+"id": "20261102-140108",
+"time": "2026-11-02T14:01:08+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 4,
 "confidence": "likely",
 "kind": "flyer",
-"species": "pigeon",
-"size": "medium",
+"species": "swallow or swift",
+"size": "tiny",
 "tone": "mid",
-"duration": 0.7,
-"direction": "up",
+"duration": 0.3,
+"direction": "west",
 "box": [
-748,
-258,
-30,
-52
+674,
+96,
+16,
+18
 ],
-"cell": "4:1",
-"image": "birds/20261102-132934.jpg",
-"sky": "clear"
+"cell": "4:0",
+"image": "birds/20261102-140108.jpg",
+"sky": "overcast bright"
 },
-"shadow_strips_today": 26
+"shadow_strips_today": 27
 }
