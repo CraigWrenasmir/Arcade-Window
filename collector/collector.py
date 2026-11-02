@@ -55,6 +55,7 @@ LEDGER_KEEP = 400
 MIN_BLOB = 8        # px at 640 wide
 MAX_BLOB = 90
 GLOBAL_CHANGE_SKIP = 0.06  # fraction of frame changed -> lighting shift, not a bird
+WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything is written
 
 # Regions in 1280x720 coordinates, set for the frame-8 angle (2 Nov 2026).
 WINDOW_HEAD = [(0, 0), (840, 0), (60, 330), (60, 720), (0, 720)]
@@ -256,12 +257,14 @@ class Collector:
         gray = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (9, 9), 0)
         small = cv2.resize(gray, (48, 12), interpolation=cv2.INTER_AREA).astype(np.float32)
-        lo, hi = np.percentile(small, 5), np.percentile(small, 95)
-        norm = np.clip((small - lo) / max(1.0, hi - lo), 0, 1)
+        lit = max(1.0, float(np.percentile(small, 90)))   # the sunlit stone sets the reference
+        ratio = small / lit                                 # 1.0 = full sun, lower = shade
+        # 0.92 and above is lit (blank); 0.45 and below is deep shadow (densest character)
+        shade = np.clip((0.92 - ratio) / (0.92 - 0.45), 0, 1)
         rows = []
         for r in range(12):
-            rows.append("".join(ASCII_RAMP[int((1.0 - v) * (len(ASCII_RAMP) - 1))] for v in norm[r]))
-        contrast = float(hi - lo) / 255.0
+            rows.append("".join(ASCII_RAMP[int(v * (len(ASCII_RAMP) - 1))] for v in shade[r]))
+        contrast = float(shade.mean())
         return rows, round(contrast, 3)
 
     # ---------- birds ----------
@@ -504,6 +507,9 @@ class Collector:
             else:
                 self.longexp_n += 1
                 self.longexp += (f32 - self.longexp) / float(self.longexp_n)
+            if self.frames <= WARMUP_FRAMES:
+                self.longexp = None  # discard the settling frames from the average
+                continue
             self.detect(frame, t)
             if t - self.last["state"] > 5:
                 self.do_state(frame); self.last["state"] = t
