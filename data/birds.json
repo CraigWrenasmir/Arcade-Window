@@ -19,19 +19,21 @@
 {
 "id": "b0002",
 "name": "Combray",
-"visits": 5,
+"visits": 10,
 "first_seen": "2026-11-02T11:38:58+11:00",
-"last_seen": "2026-11-02T14:38:31+11:00",
+"last_seen": "2026-11-02T14:45:23+11:00",
 "species": "swallow or swift (guess)",
 "size": "tiny",
 "tone": "pale",
 "kind": "flyer",
 "cell": "4:1",
 "images": [
-"birds/20261102-141917.jpg",
-"birds/20261102-142017.jpg",
-"birds/20261102-142129.jpg",
-"birds/20261102-143831.jpg"
+"birds/20261102-143831.jpg",
+"birds/20261102-144230.jpg",
+"birds/20261102-144240.jpg",
+"birds/20261102-144250.jpg",
+"birds/20261102-144519.jpg",
+"birds/20261102-144523.jpg"
 ]
 },
 {
@@ -57,21 +59,21 @@
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 6,
+"visits": 7,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-02T14:39:42+11:00",
+"last_seen": "2026-11-02T14:43:10+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
 "kind": "flyer",
 "cell": "5:1",
 "images": [
-"birds/20261102-115421.jpg",
 "birds/20261102-115624.jpg",
 "birds/20261102-122056.jpg",
 "birds/20261102-130618.jpg",
 "birds/20261102-132934.jpg",
-"birds/20261102-143942.jpg"
+"birds/20261102-143942.jpg",
+"birds/20261102-144310.jpg"
 ]
 },
 {
@@ -156,21 +158,21 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 6,
+"visits": 9,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-02T14:38:42+11:00",
+"last_seen": "2026-11-02T14:45:28+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
 "kind": "flyer",
 "cell": "7:0",
 "images": [
-"birds/20261102-140734.jpg",
-"birds/20261102-142527.jpg",
-"birds/20261102-143012.jpg",
 "birds/20261102-143340.jpg",
 "birds/20261102-143509.jpg",
-"birds/20261102-143842.jpg"
+"birds/20261102-143842.jpg",
+"birds/20261102-144219.jpg",
+"birds/20261102-144235.jpg",
+"birds/20261102-144528.jpg"
 ]
 },
 {
