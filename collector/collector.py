@@ -242,6 +242,7 @@ class Collector:
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
         self.cap.set(cv2.CAP_PROP_FPS, 10)
         self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=True)
+        self.bg.setShadowThreshold(0.7)
         self.tracker = Tracker()
         self.longexp = None
         self.longexp_n = 0
@@ -365,6 +366,9 @@ class Collector:
         kind = "flyer" if moved else "percher"
         if kind == "flyer" and ev["frames"] < 2:
             return
+        if kind == "flyer" and dur > 15:
+            print(f"[skip] {iso(t)} drifted for {dur:.0f} s, not a bird", flush=True)
+            return
         # scale blob box to full frame
         sx, sy = W / 640.0, H / 360.0
         X, Y, Wd, Hd = int(x * sx), int(y * sy), int(w * sx), int(h * sy)
@@ -379,6 +383,17 @@ class Collector:
             contrast = abs(float(blob.mean()) - float(ring.mean()))
             if contrast < 6 and inner < 8:
                 print(f"[skip] {iso(t)} flat blob (contrast {contrast:.1f}, texture {inner:.1f})", flush=True)
+                return
+        # a shadow is the same surface, darker: same hue and saturation as the ring around it
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV).astype(np.float32)
+        hin = hsv[max(0, Y):Y + Hd, max(0, X):X + Wd]
+        hring = hsv[max(0, Y - pad):Y + Hd + pad, max(0, X - pad):X + Wd + pad]
+        if hin.size and hring.size:
+            dh = abs(float(hin[:, :, 0].mean()) - float(hring[:, :, 0].mean()))
+            ds = abs(float(hin[:, :, 1].mean()) - float(hring[:, :, 1].mean()))
+            darker = float(hin[:, :, 2].mean()) < float(hring[:, :, 2].mean()) - 8
+            if darker and dh < 8 and ds < 18:
+                print(f"[skip] {iso(t)} shadow (hue diff {dh:.1f}, sat diff {ds:.1f})", flush=True)
                 return
         tone = "dark" if lum < 0.35 else ("pale" if lum > 0.7 else "mid")
         sig = {"size": size_word(area), "tone": tone, "kind": kind,
@@ -440,6 +455,7 @@ class Collector:
         if changed > GLOBAL_CHANGE_SKIP and settled:
             # the camera moved or the light jumped: start the background again and wait it out
             self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=True)
+            self.bg.setShadowThreshold(0.7)
             self.suppress_until = t + 60
             print(f"[view] {iso()} global change {changed:.2f}, relearning", flush=True)
         if changed > GLOBAL_CHANGE_SKIP or not settled or t < self.suppress_until:
