@@ -1,6 +1,30 @@
 {
 "events": [
 {
+"id": "20261103-105256",
+"time": "2026-11-03T10:52:56+11:00",
+"bird": "McPhee",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 1567.0,
+"direction": "",
+"box": [
+759,
+287,
+5,
+5
+],
+"cell": "4:2",
+"image": "birds/20261103-105256.jpg",
+"sky": "clear",
+"by": "Craig"
+},
+{
 "id": "20261102-160808",
 "time": "2026-11-02T16:08:08+11:00",
 "bird": "Sontag",

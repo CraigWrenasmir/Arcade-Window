@@ -1,26 +1,26 @@
 {
-"time": "2026-11-03T10:50:17+11:00",
+"time": "2026-11-03T10:52:56+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 2548,
+"frames": 2988,
 "sky": {
-"hex": "#83a9d6",
-"lum": 0.641,
+"hex": "#99bae2",
+"lum": 0.712,
 "word": "clear"
 },
 "wall": {
-"hex": "#b39e87",
-"lum": 0.635
+"hex": "#a39180",
+"lum": 0.585
 },
 "dome": {
-"hex": "#595650",
-"lum": 0.34
+"hex": "#575857",
+"lum": 0.346
 },
 "brick": {
-"hex": "#685b4d",
-"lum": 0.368
+"hex": "#5e564d",
+"lum": 0.345
 },
-"overall_lum": 0.539,
-"motion": 0.0205,
+"overall_lum": 0.535,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,

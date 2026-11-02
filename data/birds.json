@@ -202,6 +202,21 @@
 "images": [
 "birds/20261102-154929.jpg"
 ]
+},
+{
+"id": "b0013",
+"name": "McPhee",
+"visits": 1,
+"first_seen": "2026-11-03T10:52:56+11:00",
+"last_seen": "2026-11-03T10:52:56+11:00",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"kind": "percher",
+"cell": "4:2",
+"images": [
+"birds/20261103-105256.jpg"
+]
 }
 ],
 "unused": [
@@ -328,7 +343,6 @@
 "Wilde",
 "Ryu",
 "Sartre",
-"Lerner",
-"McPhee"
+"Lerner"
 ]
 }
