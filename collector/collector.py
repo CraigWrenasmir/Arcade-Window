@@ -517,7 +517,7 @@ class Collector:
         bird.setdefault("images", []).append(f"birds/{eid}.jpg")
         bird["images"] = bird["images"][-6:]
         # crop with margin, draw box, save small
-        m = int(max(Wd, Hd) * 1.2) + 24
+        m = max(80, int(max(Wd, Hd) * 1.2) + 24)   # tiny birds still get a crop with some roof around them
         cx, cy = X + Wd // 2, Y + Hd // 2
         x0, y0 = max(0, cx - m), max(0, cy - m)
         x1, y1 = min(W, cx + m), min(H, cy + m)
