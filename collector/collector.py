@@ -371,6 +371,15 @@ class Collector:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         blob = gray[max(0, Y):Y + Hd, max(0, X):X + Wd]
         lum = float(blob.mean()) / 255.0 if blob.size else 0.5
+        # a bird stands out from what is around it; a patch of sky that brightened does not
+        pad = 12
+        ring = gray[max(0, Y - pad):Y + Hd + pad, max(0, X - pad):X + Wd + pad].astype(np.float32)
+        if blob.size and ring.size:
+            inner = float(blob.astype(np.float32).std())
+            contrast = abs(float(blob.mean()) - float(ring.mean()))
+            if contrast < 6 and inner < 8:
+                print(f"[skip] {iso(t)} flat blob (contrast {contrast:.1f}, texture {inner:.1f})", flush=True)
+                return
         tone = "dark" if lum < 0.35 else ("pale" if lum > 0.7 else "mid")
         sig = {"size": size_word(area), "tone": tone, "kind": kind,
                "cell": self.perch_cell(x + w / 2, y + h / 2), "species": species_guess(area, lum, moved)}
