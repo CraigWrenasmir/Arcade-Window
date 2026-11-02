@@ -1,51 +1,51 @@
 {
-"time": "2026-11-03T10:07:37+11:00",
+"time": "2026-11-03T10:12:34+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 3888,
+"frames": 4654,
 "sky": {
-"hex": "#7e7e7c",
-"lum": 0.494,
+"hex": "#676562",
+"lum": 0.399,
 "word": "overcast"
 },
 "wall": {
-"hex": "#525150",
-"lum": 0.32
-},
-"dome": {
-"hex": "#2a2626",
-"lum": 0.156
-},
-"brick": {
-"hex": "#483c37",
+"hex": "#423f3e",
 "lum": 0.251
 },
-"overall_lum": 0.333,
-"motion": 0.0046,
-"birds_today": 8,
-"birds_total": 84,
-"named_birds": 17,
+"dome": {
+"hex": "#221e1e",
+"lum": 0.125
+},
+"brick": {
+"hex": "#362c26",
+"lum": 0.183
+},
+"overall_lum": 0.262,
+"motion": 0.0021,
+"birds_today": 14,
+"birds_total": 90,
+"named_birds": 20,
 "last_bird": {
-"id": "20261103-100637",
-"time": "2026-11-03T10:06:37+11:00",
-"bird": "Ackerley",
-"bird_id": "b0016",
-"visit": 2,
-"confidence": "likely",
+"id": "20261103-101149",
+"time": "2026-11-03T10:11:49+11:00",
+"bird": "Lerner",
+"bird_id": "b0020",
+"visit": 1,
+"confidence": "new",
 "kind": "flyer",
-"species": "noisy miner or starling",
-"size": "small",
+"species": "crow or raven",
+"size": "large",
 "tone": "dark",
-"duration": 0.7,
-"direction": "west",
+"duration": 12.5,
+"direction": "down",
 "box": [
-1148,
-544,
-38,
-20
+954,
+546,
+158,
+140
 ],
-"cell": "7:3",
-"image": "birds/20261103-100637.jpg",
+"cell": "6:4",
+"image": "birds/20261103-101149.jpg",
 "sky": "overcast"
 },
-"shadow_strips_today": 5
+"shadow_strips_today": 6
 }
