@@ -59,21 +59,21 @@
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 7,
+"visits": 8,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-02T14:43:10+11:00",
+"last_seen": "2026-11-02T14:59:59+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
 "kind": "flyer",
 "cell": "5:1",
 "images": [
-"birds/20261102-115624.jpg",
 "birds/20261102-122056.jpg",
 "birds/20261102-130618.jpg",
 "birds/20261102-132934.jpg",
 "birds/20261102-143942.jpg",
-"birds/20261102-144310.jpg"
+"birds/20261102-144310.jpg",
+"birds/20261102-145959.jpg"
 ]
 },
 {
@@ -158,21 +158,21 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 13,
+"visits": 14,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-02T14:54:04+11:00",
+"last_seen": "2026-11-02T14:58:39+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
 "kind": "flyer",
 "cell": "7:0",
 "images": [
-"birds/20261102-144235.jpg",
 "birds/20261102-144528.jpg",
 "birds/20261102-144609.jpg",
 "birds/20261102-144836.jpg",
 "birds/20261102-145039.jpg",
-"birds/20261102-145404.jpg"
+"birds/20261102-145404.jpg",
+"birds/20261102-145839.jpg"
 ]
 },
 {

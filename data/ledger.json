@@ -1,6 +1,52 @@
 {
 "events": [
 {
+"id": "20261102-145959",
+"time": "2026-11-02T14:59:59+11:00",
+"bird": "Notley",
+"bird_id": "b0004",
+"visit": 8,
+"confidence": "likely",
+"kind": "flyer",
+"species": "pigeon",
+"size": "medium",
+"tone": "mid",
+"duration": 1.6,
+"direction": "west",
+"box": [
+1128,
+0,
+42,
+40
+],
+"cell": "7:0",
+"image": "birds/20261102-145959.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-145839",
+"time": "2026-11-02T14:58:39+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 14,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.4,
+"direction": "east",
+"box": [
+1078,
+38,
+26,
+22
+],
+"cell": "6:0",
+"image": "birds/20261102-145839.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-145404",
 "time": "2026-11-02T14:54:04+11:00",
 "bird": "Sontag",
