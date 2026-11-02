@@ -48,6 +48,7 @@ DEVICE = int(os.environ.get("ARCADE_CAM", "0"))
 SOURCE = os.environ.get("ARCADE_SOURCE", "gopro")      # "gopro" over USB, or "cam" for the built-in FaceTime camera
 GOPRO_FOV = os.environ.get("ARCADE_FOV", "4")           # 0 wide, 2 narrow, 3 superview, 4 linear
 GOPRO_RES = os.environ.get("ARCADE_RES", "12")          # 4 480p, 7 720p, 12 1080p
+FLIP = os.environ.get("ARCADE_FLIP", "1") == "1"        # the GoPro hangs upside down on the glass; its stream ignores orientation
 PROCESS_FPS = 3.0
 PUSH_EVERY = int(os.environ.get("ARCADE_PUSH", "300"))
 PALETTE_EVERY = 30
@@ -694,6 +695,8 @@ class Collector:
             if t < next_t:
                 continue
             next_t = t + interval
+            if FLIP and SOURCE == "gopro":
+                frame = cv2.rotate(frame, cv2.ROTATE_180)
             if frame.shape[1] != W:
                 frame = cv2.resize(frame, (W, H))
             frame = correct_colour(frame)
