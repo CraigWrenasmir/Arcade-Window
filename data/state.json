@@ -1,51 +1,51 @@
 {
-"time": "2026-11-03T09:57:34+11:00",
+"time": "2026-11-03T10:02:34+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 2328,
+"frames": 3104,
 "sky": {
-"hex": "#87837e",
-"lum": 0.519,
+"hex": "#6e6d6b",
+"lum": 0.431,
 "word": "overcast"
 },
 "wall": {
-"hex": "#575350",
-"lum": 0.331
+"hex": "#464444",
+"lum": 0.273
 },
 "dome": {
-"hex": "#2c2420",
-"lum": 0.152
+"hex": "#242121",
+"lum": 0.136
 },
 "brick": {
-"hex": "#4c3d36",
-"lum": 0.255
+"hex": "#3a302b",
+"lum": 0.198
 },
-"overall_lum": 0.345,
-"motion": 0.0001,
-"birds_today": 0,
-"birds_total": 76,
-"named_birds": 12,
+"overall_lum": 0.283,
+"motion": 0.0123,
+"birds_today": 1,
+"birds_total": 77,
+"named_birds": 13,
 "last_bird": {
-"id": "20261102-160808",
-"time": "2026-11-02T16:08:08+11:00",
-"bird": "Sontag",
-"bird_id": "b0010",
-"visit": 19,
-"confidence": "likely",
+"id": "20261103-095801",
+"time": "2026-11-03T09:58:01+11:00",
+"bird": "Bellow",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
 "kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "pale",
-"duration": 0.4,
-"direction": "east",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "dark",
+"duration": 0.3,
+"direction": "west",
 "box": [
-466,
-112,
-26,
-32
+772,
+522,
+16,
+18
 ],
-"cell": "2:0",
-"image": "birds/20261102-160808.jpg",
-"sky": "overcast bright"
+"cell": "4:3",
+"image": "birds/20261103-095801.jpg",
+"sky": "overcast"
 },
-"shadow_strips_today": 3
+"shadow_strips_today": 4
 }

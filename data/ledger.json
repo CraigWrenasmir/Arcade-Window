@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261103-095801",
+"time": "2026-11-03T09:58:01+11:00",
+"bird": "Bellow",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "dark",
+"duration": 0.3,
+"direction": "west",
+"box": [
+772,
+522,
+16,
+18
+],
+"cell": "4:3",
+"image": "birds/20261103-095801.jpg",
+"sky": "overcast"
+},
+{
 "id": "20261102-160808",
 "time": "2026-11-02T16:08:08+11:00",
 "bird": "Sontag",
