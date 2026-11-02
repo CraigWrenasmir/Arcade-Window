@@ -62,10 +62,10 @@
   .skyword{font-size:20px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
   .skyword i{display:inline-block;width:22px;height:22px;border:1px solid var(--line);transition:background 4s ease}
   /* jangle */
-  .jangle{flex:1;position:relative;min-height:300px;border:1px solid var(--line);background:var(--bg);overflow:hidden}
+  .jangle{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);background:var(--bg);overflow:hidden}
   .jangle canvas{position:absolute;inset:0;width:100%;height:100%}
-  .jangle .lx{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.7)}
-  .jangle .tag{position:absolute;left:8px;bottom:6px;color:var(--dim);font-size:11px}
+  .jangle .lx{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;transition:opacity 2s}
+  .jangle .tag{position:absolute;left:8px;bottom:6px;color:#fff;font-size:11px;background:rgba(61,48,64,.55);padding:1px 6px}
   footer{padding:14px 18px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);line-height:1.7}
   footer b{color:var(--ink);font-weight:500}
   .toggle{cursor:pointer;color:var(--dim);text-decoration:underline dotted}
@@ -108,12 +108,13 @@
   </section>
 
   <section id="janglesec">
-    <h2>Jangle <small><span class="toggle" id="lxtoggle">show long exposure</span></small></h2>
+    <h2>Jangle <small><span class="toggle" id="lxtoggle">show long exposure</span> · <span class="toggle" id="edgetoggle">hide geometry</span></small></h2>
     <div class="jangle">
-      <img class="lx" id="lx" alt="" style="display:none">
+      <img class="lx" id="lx" alt="the view from the window, a few minutes ago">
       <canvas id="jangle"></canvas>
-      <div class="tag" id="jangletag">the geometry of the view, disturbed by its light</div>
+      <div class="tag" id="jangletag">the view a few minutes ago, with its geometry drawn over it</div>
     </div>
+    <div class="muted" id="viewtime" style="margin-top:8px"></div>
   </section>
 </main>
 
@@ -209,33 +210,42 @@
   function draw(now){
     const w = cv.clientWidth, h = cv.clientHeight;
     if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
-    ctx.fillStyle = "rgba(236,227,214,0.35)"; ctx.fillRect(0,0,w,h);
+    ctx.clearRect(0,0,w,h);
+    if(!showEdges) { requestAnimationFrame(draw); return; }
     const t = (now - t0)/1000;
     const shake = 0.6 + motion*60;              // bird or cloud -> more shake
-    const a = (0.35 + lum*0.55).toFixed(2);     // brighter day -> darker, more certain lines
-    ctx.fillStyle = `rgba(61,48,64,${a})`;
+    const a = (0.45 + lum*0.45).toFixed(2);     // brighter day -> more certain lines
+    ctx.fillStyle = `rgba(255,255,255,${a})`;
+    ctx.shadowColor = "rgba(61,48,64,.9)"; ctx.shadowBlur = 2;
     const n = edgePts.length, step = n > 6000 ? Math.ceil(n/6000) : 1;
     for(let i=0;i<n;i+=step){
       const p = edgePts[i];
       const jx = Math.sin(t*1.7 + p[1]*40 + i*0.01) * shake;
       const jy = Math.cos(t*1.3 + p[0]*30) * shake * 0.6;
-      ctx.fillRect(p[0]*w + jx, p[1]*h + jy, 1.5, 1.5);
+      ctx.fillRect(p[0]*w + jx, p[1]*h + jy, 2, 2);
     }
     requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
 
+  let showLong = false, showEdges = true;
+  function loadView(){
+    $("#lx").src = "data/" + (showLong ? "longexposure.jpg" : "latest.jpg") + bust();
+    $("#jangletag").textContent = showLong ? "every frame since the start, averaged into one image" : "the view a few minutes ago, with its geometry drawn over it";
+  }
   $("#lxtoggle").addEventListener("click", () => {
-    const lx = $("#lx"); const on = lx.style.display === "none";
-    lx.style.display = on ? "block" : "none"; if(on) lx.src = "data/longexposure.jpg"+bust();
-    $("#lxtoggle").textContent = on ? "hide long exposure" : "show long exposure";
-    $("#jangletag").textContent = on ? "every frame since the start, averaged into one image" : "the geometry of the view, disturbed by its light";
+    showLong = !showLong; loadView();
+    $("#lxtoggle").textContent = showLong ? "show the view" : "show long exposure";
+  });
+  $("#edgetoggle").addEventListener("click", () => {
+    showEdges = !showEdges;
+    $("#edgetoggle").textContent = showEdges ? "hide geometry" : "show geometry";
   });
 
-  async function refresh(){ await loadState(); await Promise.all([loadBirds(), loadShadow(), loadPalettes()]); }
-  refresh(); loadEdges();
+  async function refresh(){ await loadState(); await Promise.all([loadBirds(), loadShadow(), loadPalettes()]); loadView(); loadEdges();
+    if(state) $("#viewtime").textContent = "View and geometry as of " + fmtT(state.time) + ", refreshed as the iMac pushes."; }
+  refresh();
   setInterval(refresh, 60000);
-  setInterval(loadEdges, 15*60000);
 })();
 </script>
 </body>
