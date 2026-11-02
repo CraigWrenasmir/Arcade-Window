@@ -1,0 +1,29 @@
+{
+"time": "2026-11-02T11:25:12+11:00",
+"started": "2026-11-02T11:24:46+11:00",
+"frames": 66,
+"sky": {
+"hex": "#aa90d9",
+"lum": 0.629,
+"word": "clear"
+},
+"wall": {
+"hex": "#dec4dd",
+"lum": 0.813
+},
+"dome": {
+"hex": "#56375d",
+"lum": 0.271
+},
+"brick": {
+"hex": "#633e5e",
+"lum": 0.302
+},
+"overall_lum": 0.547,
+"motion": 0.0,
+"birds_today": 0,
+"birds_total": 0,
+"named_birds": 0,
+"last_bird": null,
+"shadow_strips_today": 1
+}

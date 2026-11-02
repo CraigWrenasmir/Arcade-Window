@@ -466,6 +466,9 @@ class Collector:
             r = subprocess.run(["git", "status", "--porcelain", "data"], cwd=ROOT, capture_output=True, text=True, timeout=30)
             if not r.stdout.strip():
                 return
+            # Fold onto whatever is on GitHub: the iMac's data is the truth, history is not.
+            subprocess.run(["git", "fetch", "-q", "origin", "main"], cwd=ROOT, check=True, timeout=120)
+            subprocess.run(["git", "reset", "-q", "--soft", "origin/main"], cwd=ROOT, check=True, timeout=60)
             subprocess.run(["git", "add", "data"], cwd=ROOT, check=True, timeout=60)
             subprocess.run(["git", "commit", "-q", "-m", f"window {now().strftime('%Y-%m-%d %H:%M')}"], cwd=ROOT, check=True, timeout=60)
             subprocess.run(["git", "push", "-q"], cwd=ROOT, check=True, timeout=120)
