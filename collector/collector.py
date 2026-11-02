@@ -274,13 +274,10 @@ class Collector:
     def identify(self, sig):
         """Naive re-identification: same perch cell, size bucket and tone within 21 days."""
         cutoff = now() - timedelta(days=21)
+        just_now = now() - timedelta(minutes=3)
         best = None
         for b in self.birds["birds"]:
             if b["size"] != sig["size"] or b["tone"] != sig["tone"]:
-                continue
-            if b["kind"] != sig["kind"]:
-                continue
-            if sig["kind"] == "percher" and b["cell"] != sig["cell"]:
                 continue
             try:
                 last = datetime.fromisoformat(b["last_seen"])
@@ -288,6 +285,13 @@ class Collector:
                 continue
             if last < cutoff:
                 continue
+            # a bird leaving (or arriving at) a perch it was just seen on is the same bird
+            same_spot_just_now = b["cell"] == sig["cell"] and last >= just_now
+            if not same_spot_just_now:
+                if b["kind"] != sig["kind"]:
+                    continue
+                if sig["kind"] == "percher" and b["cell"] != sig["cell"]:
+                    continue
             if best is None or last > datetime.fromisoformat(best["last_seen"]):
                 best = b
         return best
