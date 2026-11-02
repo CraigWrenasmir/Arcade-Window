@@ -1,29 +1,51 @@
 {
-"time": "2026-11-02T11:25:12+11:00",
-"started": "2026-11-02T11:24:46+11:00",
-"frames": 66,
+"time": "2026-11-02T11:27:29+11:00",
+"started": "2026-11-02T11:25:50+11:00",
+"frames": 256,
 "sky": {
-"hex": "#aa90d9",
+"hex": "#a990d9",
 "lum": 0.629,
 "word": "clear"
 },
 "wall": {
-"hex": "#dec4dd",
-"lum": 0.813
+"hex": "#dec3dc",
+"lum": 0.811
 },
 "dome": {
-"hex": "#56375d",
-"lum": 0.271
+"hex": "#55385e",
+"lum": 0.272
 },
 "brick": {
-"hex": "#633e5e",
-"lum": 0.302
+"hex": "#623e5f",
+"lum": 0.301
 },
-"overall_lum": 0.547,
+"overall_lum": 0.546,
 "motion": 0.0,
-"birds_today": 0,
-"birds_total": 0,
-"named_birds": 0,
-"last_bird": null,
-"shadow_strips_today": 1
+"birds_today": 1,
+"birds_total": 1,
+"named_birds": 1,
+"last_bird": {
+"id": "20261102-112719",
+"time": "2026-11-02T11:27:19+11:00",
+"bird": "Brodsky",
+"bird_id": "b0001",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or wren (guess)",
+"size": "small",
+"tone": "mid",
+"duration": 9.1,
+"direction": "",
+"box": [
+720,
+110,
+18,
+18
+],
+"cell": "4:0",
+"image": "birds/20261102-112719.jpg",
+"sky": "clear"
+},
+"shadow_strips_today": 2
 }

@@ -2,4 +2,3 @@ venv/
 __pycache__/
 *.tmp
 .DS_Store
-imac_deploy_key.pub
