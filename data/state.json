@@ -1,50 +1,56 @@
 {
-"time": "2026-11-03T10:17:34+11:00",
+"time": "2026-11-03T10:18:56+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 5430,
+"frames": 46,
 "sky": {
-"hex": "#666462",
-"lum": 0.394,
-"word": "overcast"
+"hex": "#ccd1d8",
+"lum": 0.819,
+"word": "overcast bright"
 },
 "wall": {
-"hex": "#413e3e",
-"lum": 0.249
+"hex": "#4f4741",
+"lum": 0.286
 },
 "dome": {
-"hex": "#1c1918",
-"lum": 0.102
+"hex": "#353433",
+"lum": 0.206
 },
 "brick": {
-"hex": "#342a26",
-"lum": 0.177
+"hex": "#584f45",
+"lum": 0.319
 },
-"overall_lum": 0.254,
-"motion": 0.0007,
-"birds_today": 19,
-"birds_total": 95,
+"overall_lum": 0.45,
+"motion": 0.0,
+"camera": {
+"model": "HERO13 Black",
+"battery": 98,
+"hot": false,
+"busy": true
+},
+"birds_today": 24,
+"birds_total": 100,
 "named_birds": 21,
 "last_bird": {
-"id": "20261103-101721",
-"time": "2026-11-03T10:17:21+11:00",
-"bird": "Lerner",
-"bird_id": "b0020",
-"visit": 2,
+"id": "20261103-101825",
+"time": "2026-11-03T10:18:25+11:00",
+"bird": "Frost",
+"bird_id": "b0014",
+"visit": 7,
 "confidence": "likely",
 "kind": "flyer",
-"species": "crow or raven",
-"size": "large",
+"species": "magpie or currawong",
+"size": "medium",
 "tone": "dark",
-"duration": 3.7,
-"direction": "west",
+"duration": 7.1,
+"direction": "east",
 "box": [
-1102,
-520,
-108,
-136
+1056,
+514,
+68,
+46
 ],
-"cell": "7:4",
-"image": "birds/20261103-101721.jpg",
+"cell": "6:3",
+"image": "birds/20261103-101825.jpg",
 "sky": "overcast"
 },
 "shadow_strips_today": 7

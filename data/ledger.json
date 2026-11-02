@@ -1,6 +1,121 @@
 {
 "events": [
 {
+"id": "20261103-101825",
+"time": "2026-11-03T10:18:25+11:00",
+"bird": "Frost",
+"bird_id": "b0014",
+"visit": 7,
+"confidence": "likely",
+"kind": "flyer",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"duration": 7.1,
+"direction": "east",
+"box": [
+1056,
+514,
+68,
+46
+],
+"cell": "6:3",
+"image": "birds/20261103-101825.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101815",
+"time": "2026-11-03T10:18:15+11:00",
+"bird": "Ackerley",
+"bird_id": "b0016",
+"visit": 4,
+"confidence": "likely",
+"kind": "flyer",
+"species": "noisy miner or starling",
+"size": "small",
+"tone": "dark",
+"duration": 0.3,
+"direction": "east",
+"box": [
+1080,
+576,
+46,
+34
+],
+"cell": "6:4",
+"image": "birds/20261103-101815.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101812",
+"time": "2026-11-03T10:18:12+11:00",
+"bird": "Ackerley",
+"bird_id": "b0016",
+"visit": 3,
+"confidence": "likely",
+"kind": "flyer",
+"species": "noisy miner or starling",
+"size": "small",
+"tone": "dark",
+"duration": 0.7,
+"direction": "down",
+"box": [
+1116,
+618,
+18,
+22
+],
+"cell": "7:4",
+"image": "birds/20261103-101812.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101807",
+"time": "2026-11-03T10:18:07+11:00",
+"bird": "Sartre",
+"bird_id": "b0019",
+"visit": 3,
+"confidence": "likely",
+"kind": "percher",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"duration": 15.9,
+"direction": "",
+"box": [
+1128,
+586,
+88,
+90
+],
+"cell": "7:4",
+"image": "birds/20261103-101807.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101748",
+"time": "2026-11-03T10:17:48+11:00",
+"bird": "Frost",
+"bird_id": "b0014",
+"visit": 6,
+"confidence": "likely",
+"kind": "flyer",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"duration": 11.0,
+"direction": "down",
+"box": [
+1090,
+562,
+74,
+74
+],
+"cell": "7:4",
+"image": "birds/20261103-101748.jpg",
+"sky": "overcast"
+},
+{
 "id": "20261103-101721",
 "time": "2026-11-03T10:17:21+11:00",
 "bird": "Lerner",
