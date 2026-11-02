@@ -1,25 +1,25 @@
 {
-"time": "2026-11-02T15:50:35+11:00",
+"time": "2026-11-02T15:55:36+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 19416,
+"frames": 20193,
 "sky": {
 "hex": "#cbd3c1",
 "lum": 0.812,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#574752",
-"lum": 0.304
+"hex": "#5f4d58",
+"lum": 0.331
 },
 "dome": {
-"hex": "#514353",
-"lum": 0.288
+"hex": "#5d4e5d",
+"lum": 0.332
 },
 "brick": {
-"hex": "#725d66",
-"lum": 0.395
+"hex": "#897379",
+"lum": 0.483
 },
-"overall_lum": 0.463,
+"overall_lum": 0.499,
 "motion": 0.0,
 "birds_today": 71,
 "birds_total": 71,
@@ -47,5 +47,5 @@
 "image": "birds/20261102-155012.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 48
+"shadow_strips_today": 49
 }
