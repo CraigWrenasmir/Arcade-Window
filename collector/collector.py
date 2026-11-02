@@ -248,9 +248,16 @@ class GoProSource:
             print("[gopro] no USB network link; is the camera on?", flush=True)
             return False
         self.api("/gopro/camera/control/wired_usb?p=1")
+        # a stream left running by a killed process makes the camera answer 500 to start; exit clears it
         self.api("/gopro/webcam/stop")
-        r = self.api(f"/gopro/webcam/start?res={GOPRO_RES}&fov={GOPRO_FOV}&port=8554&protocol=TS")
-        print(f"[gopro] {self.ip} start -> {r.strip()[:60]}", flush=True)
+        self.api("/gopro/webcam/exit")
+        time.sleep(2)
+        for attempt in range(2):
+            r = self.api(f"/gopro/webcam/start?res={GOPRO_RES}&fov={GOPRO_FOV}&port=8554&protocol=TS")
+            print(f"[gopro] {self.ip} start -> {r.strip().replace(chr(10), ' ').replace(chr(9), '')[:60]}", flush=True)
+            if not r.startswith("ERR"):
+                break
+            time.sleep(5)
         self.cap = cv2.VideoCapture("udp://0.0.0.0:8554?overrun_nonfatal=1&fifo_size=50000000&timeout=5000000", cv2.CAP_FFMPEG)
         self.last_frame = time.time()
         return self.cap.isOpened()
@@ -283,6 +290,7 @@ class GoProSource:
 
     def release(self):
         self.api("/gopro/webcam/stop")
+        self.api("/gopro/webcam/exit")
         if self.cap is not None:
             self.cap.release()
 
