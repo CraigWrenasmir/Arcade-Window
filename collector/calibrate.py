@@ -22,10 +22,12 @@ for p in patches:
     A.append(cam[cy0:cy1, cx0:cx1].reshape(-1, 3).mean(0))
     B.append(ref[ry0:ry1, rx0:rx1].reshape(-1, 3).mean(0))
 A = np.array(A); B = np.array(B)
-X = np.hstack([A, np.ones((len(A), 1))])          # [R G B 1]
-coef, *_ = np.linalg.lstsq(X, B, rcond=None)      # 4x3
-M = coef[:3].T; off = coef[3]
-pred = X @ coef
+# Through the origin (black stays black) with ridge regularisation towards identity,
+# so a handful of patches cannot produce a wild matrix.
+lam = 2000.0
+M = np.linalg.solve(A.T @ A + lam * np.eye(3), A.T @ B + lam * np.eye(3)).T
+off = np.zeros(3)
+pred = A @ M.T
 for a, b, q in zip(A, B, pred):
     print("cam", a.round(), "ref", b.round(), "fit", q.round())
 out = {"matrix": M.round(4).tolist(), "offset": off.round(2).tolist(), "patches": len(patches)}
