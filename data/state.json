@@ -1,25 +1,25 @@
 {
-"time": "2026-11-03T10:52:56+11:00",
+"time": "2026-11-03T10:53:30+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 2988,
+"frames": 46,
 "sky": {
-"hex": "#99bae2",
-"lum": 0.712,
+"hex": "#93b5de",
+"lum": 0.69,
 "word": "clear"
 },
 "wall": {
-"hex": "#a39180",
-"lum": 0.585
+"hex": "#b19d88",
+"lum": 0.632
 },
 "dome": {
-"hex": "#575857",
-"lum": 0.346
+"hex": "#615f5c",
+"lum": 0.376
 },
 "brick": {
-"hex": "#5e564d",
-"lum": 0.345
+"hex": "#655a4e",
+"lum": 0.363
 },
-"overall_lum": 0.535,
+"overall_lum": 0.55,
 "motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
@@ -27,31 +27,32 @@
 "hot": false,
 "busy": true
 },
-"birds_today": 0,
-"birds_total": 76,
-"named_birds": 12,
+"birds_today": 1,
+"birds_total": 77,
+"named_birds": 13,
 "last_bird": {
-"id": "20261102-160808",
-"time": "2026-11-02T16:08:08+11:00",
-"bird": "Sontag",
-"bird_id": "b0010",
-"visit": 19,
-"confidence": "likely",
-"kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "pale",
-"duration": 0.4,
-"direction": "east",
+"id": "20261103-105256",
+"time": "2026-11-03T10:52:56+11:00",
+"bird": "McPhee",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 1567.0,
+"direction": "",
 "box": [
-466,
-112,
-26,
-32
+759,
+287,
+5,
+5
 ],
-"cell": "2:0",
-"image": "birds/20261102-160808.jpg",
-"sky": "overcast bright"
+"cell": "4:2",
+"image": "birds/20261103-105256.jpg",
+"sky": "clear",
+"by": "Craig"
 },
 "shadow_strips_today": 11
 }
