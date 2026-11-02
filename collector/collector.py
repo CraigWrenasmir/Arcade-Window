@@ -160,18 +160,18 @@ def species_guess(area, lum, moved):
     dark = lum < 0.35
     pale = lum > 0.7
     if s == "tiny" and moved:
-        return "swallow or swift (guess)"
+        return "swallow or swift"
     if s == "tiny":
-        return "sparrow or finch (guess)"
+        return "sparrow or finch"
     if s == "small":
-        return "noisy miner or starling (guess)" if dark else "sparrow or wren (guess)"
+        return "noisy miner or starling" if dark else "sparrow or wren"
     if s == "medium":
         if pale:
-            return "pigeon or dove (guess)"
-        return "magpie or currawong (guess)" if dark else "pigeon (guess)"
+            return "pigeon or dove"
+        return "magpie or currawong" if dark else "pigeon"
     if pale:
-        return "cockatoo or gull (guess)"
-    return "crow or raven (guess)"
+        return "cockatoo or gull"
+    return "crow or raven"
 
 
 class Tracker:
@@ -340,6 +340,8 @@ class Collector:
         bird["visits"] += 1
         bird["last_seen"] = iso(t)
         eid = t.strftime("%Y%m%d-%H%M%S")
+        bird.setdefault("images", []).append(f"birds/{eid}.jpg")
+        bird["images"] = bird["images"][-6:]
         # crop with margin, draw box, save small
         m = int(max(Wd, Hd) * 1.2) + 24
         cx, cy = X + Wd // 2, Y + Hd // 2
@@ -364,6 +366,8 @@ class Collector:
         self.ledger["events"].insert(0, event)
         self.ledger["events"] = self.ledger["events"][:LEDGER_KEEP]
         keep = {e["image"].split("/")[-1] for e in self.ledger["events"]}
+        for b in self.birds["birds"]:
+            keep.update(i.split("/")[-1] for i in b.get("images", []))
         for f in os.listdir(BIRDS_DIR):
             if f.endswith(".jpg") and f not in keep:
                 os.remove(os.path.join(BIRDS_DIR, f))
@@ -478,7 +482,7 @@ class Collector:
                 return
             # Fold onto whatever is on GitHub: the iMac's data is the truth, history is not.
             subprocess.run(["git", "fetch", "-q", "origin", "main"], cwd=ROOT, check=True, timeout=120)
-            subprocess.run(["git", "reset", "-q", "--soft", "origin/main"], cwd=ROOT, check=True, timeout=60)
+            subprocess.run(["git", "reset", "-q", "--mixed", "origin/main"], cwd=ROOT, check=True, timeout=60)
             subprocess.run(["git", "add", "data"], cwd=ROOT, check=True, timeout=60)
             subprocess.run(["git", "commit", "-q", "-m", f"window {now().strftime('%Y-%m-%d %H:%M')}"], cwd=ROOT, check=True, timeout=60)
             subprocess.run(["git", "push", "-q"], cwd=ROOT, check=True, timeout=120)
