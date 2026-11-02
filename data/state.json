@@ -1,50 +1,50 @@
 {
-"time": "2026-11-02T12:03:40+11:00",
-"started": "2026-11-02T12:03:22+11:00",
+"time": "2026-11-02T12:04:32+11:00",
+"started": "2026-11-02T12:04:14+11:00",
 "frames": 46,
 "sky": {
-"hex": "#8191c4",
-"lum": 0.575,
+"hex": "#8192c4",
+"lum": 0.576,
 "word": "clear"
 },
 "wall": {
-"hex": "#afa3a3",
+"hex": "#afa3a1",
 "lum": 0.654
 },
 "dome": {
-"hex": "#75697c",
-"lum": 0.437
+"hex": "#766a79",
+"lum": 0.438
 },
 "brick": {
-"hex": "#604c58",
+"hex": "#614d56",
 "lum": 0.33
 },
-"overall_lum": 0.519,
+"overall_lum": 0.52,
 "motion": 0.0,
-"birds_today": 11,
-"birds_total": 11,
-"named_birds": 7,
+"birds_today": 10,
+"birds_total": 10,
+"named_birds": 6,
 "last_bird": {
-"id": "20261102-120030",
-"time": "2026-11-02T12:00:30+11:00",
-"bird": "Dorian",
-"bird_id": "b0007",
+"id": "20261102-115847",
+"time": "2026-11-02T11:58:47+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
 "visit": 1,
 "confidence": "new",
 "kind": "flyer",
-"species": "magpie or currawong",
-"size": "medium",
-"tone": "dark",
-"duration": 3.9,
-"direction": "down",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 0.4,
+"direction": "east",
 "box": [
-198,
-278,
-52,
-136
+588,
+154,
+18,
+16
 ],
-"cell": "1:2",
-"image": "birds/20261102-120030.jpg",
+"cell": "3:1",
+"image": "birds/20261102-115847.jpg",
 "sky": "clear"
 },
 "shadow_strips_today": 5
