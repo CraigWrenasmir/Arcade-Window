@@ -20,7 +20,9 @@ Raw frames never leave the machine. Nothing is kept except the derivatives.
 import json
 import os
 import random
+import re
 import subprocess
+import urllib.request
 import sys
 import time
 from collections import deque
@@ -43,6 +45,9 @@ for d in (DATA, BIRDS_DIR, SHADOW_DIR):
 
 W, H = 1280, 720
 DEVICE = int(os.environ.get("ARCADE_CAM", "0"))
+SOURCE = os.environ.get("ARCADE_SOURCE", "gopro")      # "gopro" over USB, or "cam" for the built-in FaceTime camera
+GOPRO_FOV = os.environ.get("ARCADE_FOV", "4")           # 0 wide, 2 narrow, 3 superview, 4 linear
+GOPRO_RES = os.environ.get("ARCADE_RES", "12")          # 4 480p, 7 720p, 12 1080p
 PROCESS_FPS = 3.0
 PUSH_EVERY = int(os.environ.get("ARCADE_PUSH", "300"))
 PALETTE_EVERY = 30
@@ -88,7 +93,7 @@ COLOUR_M, COLOUR_OFF = load_colour()
 
 
 def correct_colour(bgr):
-    if COLOUR_M is None:
+    if COLOUR_M is None or SOURCE != "cam":
         return bgr
     rgb = bgr[:, :, ::-1].astype(np.float32)
     out = rgb @ COLOUR_M.T + COLOUR_OFF
@@ -202,6 +207,101 @@ def species_guess(area, lum, moved):
     return "crow or raven"
 
 
+class GoProSource:
+    """A HERO9 or later over USB-C. The camera is a small network device on the cable; its web API starts
+    a 1080p MPEG-TS stream over UDP to this machine, which OpenCV reads. Restarts the stream when it stalls."""
+    STALL = 12.0
+
+    def __init__(self):
+        self.ip = None
+        self.cap = None
+        self.last_frame = 0.0
+        self.last_health = 0.0
+        self.health = {}
+        self.open()
+
+    @staticmethod
+    def find_ip():
+        try:
+            out = subprocess.run(["ip", "-4", "-o", "addr"], capture_output=True, text=True, timeout=5).stdout
+        except Exception:
+            return None
+        m = re.search(r"inet (172\.2\d\.1\d\d)\.\d+/24", out)
+        return m.group(1) + ".51" if m else None
+
+    def api(self, path, timeout=8):
+        try:
+            with urllib.request.urlopen(f"http://{self.ip}:8080{path}", timeout=timeout) as r:
+                return r.read().decode()
+        except Exception as e:
+            return "ERR " + str(e)
+
+    def open(self):
+        if self.cap is not None:
+            try: self.cap.release()
+            except Exception: pass
+            self.cap = None
+        self.ip = self.find_ip()
+        if not self.ip:
+            print("[gopro] no USB network link; is the camera on?", flush=True)
+            return False
+        self.api("/gopro/camera/control/wired_usb?p=1")
+        self.api("/gopro/webcam/stop")
+        r = self.api(f"/gopro/webcam/start?res={GOPRO_RES}&fov={GOPRO_FOV}&port=8554&protocol=TS")
+        print(f"[gopro] {self.ip} start -> {r.strip()[:60]}", flush=True)
+        self.cap = cv2.VideoCapture("udp://0.0.0.0:8554?overrun_nonfatal=1&fifo_size=50000000&timeout=5000000", cv2.CAP_FFMPEG)
+        self.last_frame = time.time()
+        return self.cap.isOpened()
+
+    def read(self):
+        if self.cap is None or not self.cap.isOpened():
+            time.sleep(5)
+            self.open()
+            return False, None
+        ok, frame = self.cap.read()
+        t = time.time()
+        if ok and frame is not None:
+            self.last_frame = t
+            if t - self.last_health > 60:
+                self.last_health = t
+                self.poll_health()
+            return True, frame
+        if t - self.last_frame > self.STALL:
+            print("[gopro] stream stalled, restarting", flush=True)
+            self.open()
+        return False, None
+
+    def poll_health(self):
+        try:
+            st = json.loads(self.api("/gopro/camera/state", timeout=4)).get("status", {})
+            self.health = {"model": "HERO13 Black", "battery": st.get("70"), "hot": bool(st.get("6")),
+                           "busy": bool(st.get("8"))}
+        except Exception:
+            pass
+
+    def release(self):
+        self.api("/gopro/webcam/stop")
+        if self.cap is not None:
+            self.cap.release()
+
+
+class CamSource:
+    """The iMac's own FaceTime HD camera through V4L2."""
+    def __init__(self):
+        self.cap = cv2.VideoCapture(DEVICE, cv2.CAP_V4L2)
+        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, W)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
+        self.cap.set(cv2.CAP_PROP_FPS, 10)
+        self.health = {"model": "FaceTime HD"}
+
+    def read(self):
+        return self.cap.read()
+
+    def release(self):
+        self.cap.release()
+
+
 class Tracker:
     """Groups moving blobs into events. One event = one bird visit."""
 
@@ -236,11 +336,7 @@ class Tracker:
 
 class Collector:
     def __init__(self):
-        self.cap = cv2.VideoCapture(DEVICE, cv2.CAP_V4L2)
-        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, W)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
-        self.cap.set(cv2.CAP_PROP_FPS, 10)
+        self.cap = GoProSource() if SOURCE == "gopro" else CamSource()
         self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=True)
         self.bg.setShadowThreshold(0.7)
         self.tracker = Tracker()
@@ -530,8 +626,8 @@ class Collector:
         return img
 
     def do_latest(self, frame):
-        out = cv2.resize(self.masked(frame), (960, 540), interpolation=cv2.INTER_AREA)
-        cv2.imwrite(os.path.join(DATA, "latest.jpg"), out, [cv2.IMWRITE_JPEG_QUALITY, 70])
+        out = cv2.resize(self.masked(frame), (1280, 720), interpolation=cv2.INTER_AREA)
+        cv2.imwrite(os.path.join(DATA, "latest.jpg"), out, [cv2.IMWRITE_JPEG_QUALITY, 74])
 
     def do_edges(self, frame):
         gray = cv2.cvtColor(self.masked(frame), cv2.COLOR_BGR2GRAY)
@@ -556,6 +652,7 @@ class Collector:
             "dome": {"hex": hexrgb(dome["rgb"]), "lum": dome["lum"]},
             "brick": {"hex": hexrgb(brick["rgb"]), "lum": brick["lum"]},
             "overall_lum": allv["lum"], "motion": self.motion_level,
+            "camera": getattr(self.cap, "health", {}),
             "birds_today": len(events_today), "birds_total": len(self.ledger["events"]),
             "named_birds": len(self.birds["birds"]),
             "last_bird": self.ledger["events"][0] if self.ledger["events"] else None,
@@ -580,12 +677,14 @@ class Collector:
 
     # ---------- main loop ----------
     def run(self):
-        print(f"[start] {iso()} device {DEVICE}", flush=True)
+        print(f"[start] {iso()} source {SOURCE}", flush=True)
         interval = 1.0 / PROCESS_FPS
         next_t = time.time()
         while True:
             ok, frame = self.cap.read()
             if not ok:
+                if SOURCE == "gopro":
+                    continue        # the source restarts its own stream
                 print("[cam] read failed, reopening", flush=True)
                 time.sleep(2)
                 self.cap.release()
