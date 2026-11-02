@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-141204",
+"time": "2026-11-02T14:12:04+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 21,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 0.4,
+"direction": "west",
+"box": [
+490,
+162,
+18,
+18
+],
+"cell": "3:1",
+"image": "birds/20261102-141204.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-140734",
 "time": "2026-11-02T14:07:34+11:00",
 "bird": "Sontag",
