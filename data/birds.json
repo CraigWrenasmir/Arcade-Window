@@ -3,14 +3,17 @@
 {
 "id": "b0001",
 "name": "Brodsky",
-"visits": 1,
+"visits": 2,
 "first_seen": "2026-11-02T11:27:19+11:00",
-"last_seen": "2026-11-02T11:27:19+11:00",
+"last_seen": "2026-11-02T11:56:00+11:00",
 "species": "sparrow or wren (guess)",
 "size": "small",
 "tone": "mid",
 "kind": "percher",
-"cell": "4:0"
+"cell": "4:0",
+"images": [
+"birds/20261102-115600.jpg"
+]
 },
 {
 "id": "b0002",
@@ -43,16 +46,47 @@
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 1,
+"visits": 2,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-02T11:54:21+11:00",
+"last_seen": "2026-11-02T11:56:24+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
 "kind": "flyer",
 "cell": "5:0",
 "images": [
-"birds/20261102-115421.jpg"
+"birds/20261102-115421.jpg",
+"birds/20261102-115624.jpg"
+]
+},
+{
+"id": "b0005",
+"name": "Larkin",
+"visits": 1,
+"first_seen": "2026-11-02T11:55:50+11:00",
+"last_seen": "2026-11-02T11:55:50+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"kind": "percher",
+"cell": "4:1",
+"images": [
+"birds/20261102-115550.jpg"
+]
+},
+{
+"id": "b0006",
+"name": "Siddhartha",
+"visits": 1,
+"first_seen": "2026-11-02T11:58:47+11:00",
+"last_seen": "2026-11-02T11:58:47+11:00",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"kind": "flyer",
+"cell": "3:1",
+"images": [
+"birds/20261102-115847.jpg"
 ]
 }
 ],
@@ -187,8 +221,6 @@
 "Ryu",
 "Dostoevsky",
 "Ackerley",
-"Dorian",
-"Siddhartha",
-"Larkin"
+"Dorian"
 ]
 }

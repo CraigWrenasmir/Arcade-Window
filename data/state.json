@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T11:55:07+11:00",
+"time": "2026-11-02T12:00:06+11:00",
 "started": "2026-11-02T11:49:49+11:00",
-"frames": 821,
+"frames": 1589,
 "sky": {
-"hex": "#7380b1",
-"lum": 0.511,
+"hex": "#7e90c7",
+"lum": 0.571,
 "word": "clear"
 },
 "wall": {
-"hex": "#b1a7a6",
-"lum": 0.668
+"hex": "#a79ca3",
+"lum": 0.63
 },
 "dome": {
-"hex": "#4d4254",
-"lum": 0.283
+"hex": "#736775",
+"lum": 0.425
 },
 "brick": {
-"hex": "#59454e",
-"lum": 0.3
+"hex": "#51414d",
+"lum": 0.282
 },
-"overall_lum": 0.477,
-"motion": 0.0,
-"birds_today": 6,
-"birds_total": 6,
-"named_birds": 4,
+"overall_lum": 0.508,
+"motion": 0.2199,
+"birds_today": 10,
+"birds_total": 10,
+"named_birds": 6,
 "last_bird": {
-"id": "20261102-115421",
-"time": "2026-11-02T11:54:21+11:00",
-"bird": "Notley",
-"bird_id": "b0004",
+"id": "20261102-115847",
+"time": "2026-11-02T11:58:47+11:00",
+"bird": "Siddhartha",
+"bird_id": "b0006",
 "visit": 1,
 "confidence": "new",
 "kind": "flyer",
-"species": "pigeon",
-"size": "medium",
+"species": "swallow or swift",
+"size": "tiny",
 "tone": "mid",
-"duration": 0.7,
-"direction": "west",
+"duration": 0.4,
+"direction": "east",
 "box": [
-882,
-82,
-38,
-42
+588,
+154,
+18,
+16
 ],
-"cell": "5:0",
-"image": "birds/20261102-115421.jpg",
+"cell": "3:1",
+"image": "birds/20261102-115847.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 4
+"shadow_strips_today": 5
 }
