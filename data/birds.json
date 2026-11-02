@@ -19,9 +19,9 @@
 {
 "id": "b0002",
 "name": "Combray",
-"visits": 3,
+"visits": 4,
 "first_seen": "2026-11-02T11:38:58+11:00",
-"last_seen": "2026-11-02T14:20:17+11:00",
+"last_seen": "2026-11-02T14:21:29+11:00",
 "species": "swallow or swift (guess)",
 "size": "tiny",
 "tone": "pale",
@@ -29,7 +29,8 @@
 "cell": "4:1",
 "images": [
 "birds/20261102-141917.jpg",
-"birds/20261102-142017.jpg"
+"birds/20261102-142017.jpg",
+"birds/20261102-142129.jpg"
 ]
 },
 {
@@ -153,16 +154,17 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 1,
+"visits": 2,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-02T14:07:34+11:00",
+"last_seen": "2026-11-02T14:25:27+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
 "kind": "flyer",
 "cell": "7:0",
 "images": [
-"birds/20261102-140734.jpg"
+"birds/20261102-140734.jpg",
+"birds/20261102-142527.jpg"
 ]
 },
 {

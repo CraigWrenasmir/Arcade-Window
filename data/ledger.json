@@ -1,6 +1,52 @@
 {
 "events": [
 {
+"id": "20261102-142527",
+"time": "2026-11-02T14:25:27+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 2,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.4,
+"direction": "west",
+"box": [
+724,
+80,
+34,
+40
+],
+"cell": "4:0",
+"image": "birds/20261102-142527.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-142129",
+"time": "2026-11-02T14:21:29+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 4,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.8,
+"direction": "west",
+"box": [
+1216,
+160,
+14,
+16
+],
+"cell": "7:1",
+"image": "birds/20261102-142129.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-142017",
 "time": "2026-11-02T14:20:17+11:00",
 "bird": "Combray",
