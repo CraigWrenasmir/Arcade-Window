@@ -31,29 +31,29 @@
 {
 "id": "b0003",
 "name": "Drnaso",
-"visits": 19,
+"visits": 20,
 "first_seen": "2026-11-02T11:43:22+11:00",
-"last_seen": "2026-11-02T13:13:58+11:00",
+"last_seen": "2026-11-02T13:26:46+11:00",
 "species": "sparrow or wren (guess)",
 "size": "small",
 "tone": "mid",
 "kind": "flyer",
 "cell": "2:2",
 "images": [
-"birds/20261102-123208.jpg",
 "birds/20261102-123906.jpg",
 "birds/20261102-125536.jpg",
 "birds/20261102-125939.jpg",
 "birds/20261102-131000.jpg",
-"birds/20261102-131358.jpg"
+"birds/20261102-131358.jpg",
+"birds/20261102-132646.jpg"
 ]
 },
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 4,
+"visits": 5,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-02T13:06:18+11:00",
+"last_seen": "2026-11-02T13:29:34+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
@@ -63,7 +63,8 @@
 "birds/20261102-115421.jpg",
 "birds/20261102-115624.jpg",
 "birds/20261102-122056.jpg",
-"birds/20261102-130618.jpg"
+"birds/20261102-130618.jpg",
+"birds/20261102-132934.jpg"
 ]
 },
 {
@@ -142,6 +143,21 @@
 "cell": "5:1",
 "images": [
 "birds/20261102-122142.jpg"
+]
+},
+{
+"id": "b0010",
+"name": "Ballard",
+"visits": 1,
+"first_seen": "2026-11-02T13:29:28+11:00",
+"last_seen": "2026-11-02T13:29:28+11:00",
+"species": "crow or raven",
+"size": "large",
+"tone": "mid",
+"kind": "flyer",
+"cell": "2:3",
+"images": [
+"birds/20261102-132928.jpg"
 ]
 }
 ],
@@ -272,7 +288,6 @@
 "Wallace",
 "Tao",
 "Lispector",
-"Eugenides",
-"Ballard"
+"Eugenides"
 ]
 }
