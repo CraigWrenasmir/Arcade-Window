@@ -1,52 +1,6 @@
 {
 "events": [
 {
-"id": "20261102-163150",
-"time": "2026-11-02T16:31:50+11:00",
-"bird": "Combray",
-"bird_id": "b0002",
-"visit": 12,
-"confidence": "likely",
-"kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "pale",
-"duration": 0.4,
-"direction": "west",
-"box": [
-958,
-0,
-16,
-8
-],
-"cell": "6:0",
-"image": "birds/20261102-163150.jpg",
-"sky": "overcast bright"
-},
-{
-"id": "20261102-162704",
-"time": "2026-11-02T16:27:04+11:00",
-"bird": "Totoro",
-"bird_id": "b0013",
-"visit": 1,
-"confidence": "new",
-"kind": "percher",
-"species": "sparrow or finch",
-"size": "tiny",
-"tone": "pale",
-"duration": 4.2,
-"direction": "",
-"box": [
-534,
-288,
-18,
-16
-],
-"cell": "3:2",
-"image": "birds/20261102-162704.jpg",
-"sky": "overcast bright"
-},
-{
 "id": "20261102-160808",
 "time": "2026-11-02T16:08:08+11:00",
 "bird": "Sontag",
