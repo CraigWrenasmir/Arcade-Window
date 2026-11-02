@@ -18,7 +18,7 @@ AUTHORS = [
     "Horacio", "Nicholson", "Oliver", "Picasso", "Moebius", "Mahler", "Rilke",
 ]
 CHARACTERS = [
-    "Combray", "Leif", "Katita", "Esmé", "Siddhartha", "Dorian", "Blinky",
+    "Combray", "Leif", "Katita", "Esmé", "Tyrone", "Dorian", "Blinky",
     "Astro", "Rock", "Goku", "Kaneda", "Tetsuo", "Shuna", "Ryu", "Chun-Li",
     "Totoro", "Meursault", "Molloy", "Zeno", "Bartleby", "Raskolnikov",
     "Humbert", "Josef K", "Gregor", "Ravelstein", "Herzog", "Rabbit", "Odradek",
