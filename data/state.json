@@ -1,7 +1,7 @@
 {
-"time": "2026-11-02T16:00:36+11:00",
+"time": "2026-11-02T16:05:37+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 20965,
+"frames": 21742,
 "sky": {
 "hex": "#cbd3c1",
 "lum": 0.812,
@@ -9,43 +9,43 @@
 },
 "wall": {
 "hex": "#5a4954",
-"lum": 0.314
+"lum": 0.313
 },
 "dome": {
-"hex": "#534454",
-"lum": 0.294
+"hex": "#554757",
+"lum": 0.303
 },
 "brick": {
-"hex": "#7a646c",
-"lum": 0.425
+"hex": "#7b666e",
+"lum": 0.43
 },
-"overall_lum": 0.474,
+"overall_lum": 0.476,
 "motion": 0.0,
-"birds_today": 71,
-"birds_total": 71,
+"birds_today": 72,
+"birds_total": 72,
 "named_birds": 12,
 "last_bird": {
-"id": "20261102-155012",
-"time": "2026-11-02T15:50:12+11:00",
-"bird": "Sontag",
-"bird_id": "b0010",
-"visit": 17,
+"id": "20261102-160112",
+"time": "2026-11-02T16:01:12+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 11,
 "confidence": "likely",
 "kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
+"species": "swallow or swift",
+"size": "tiny",
 "tone": "pale",
-"duration": 0.7,
-"direction": "west",
+"duration": 0.4,
+"direction": "east",
 "box": [
-1192,
-124,
+1158,
+60,
 16,
-20
+18
 ],
 "cell": "7:0",
-"image": "birds/20261102-155012.jpg",
+"image": "birds/20261102-160112.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 50
+"shadow_strips_today": 51
 }

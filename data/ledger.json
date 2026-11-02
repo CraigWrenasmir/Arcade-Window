@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-160112",
+"time": "2026-11-02T16:01:12+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 11,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.4,
+"direction": "east",
+"box": [
+1158,
+60,
+16,
+18
+],
+"cell": "7:0",
+"image": "birds/20261102-160112.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-155012",
 "time": "2026-11-02T15:50:12+11:00",
 "bird": "Sontag",

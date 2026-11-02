@@ -19,21 +19,21 @@
 {
 "id": "b0002",
 "name": "Combray",
-"visits": 10,
+"visits": 11,
 "first_seen": "2026-11-02T11:38:58+11:00",
-"last_seen": "2026-11-02T14:45:23+11:00",
+"last_seen": "2026-11-02T16:01:12+11:00",
 "species": "swallow or swift (guess)",
 "size": "tiny",
 "tone": "pale",
 "kind": "flyer",
 "cell": "4:1",
 "images": [
-"birds/20261102-143831.jpg",
 "birds/20261102-144230.jpg",
 "birds/20261102-144240.jpg",
 "birds/20261102-144250.jpg",
 "birds/20261102-144519.jpg",
-"birds/20261102-144523.jpg"
+"birds/20261102-144523.jpg",
+"birds/20261102-160112.jpg"
 ]
 },
 {
