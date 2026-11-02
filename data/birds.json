@@ -58,21 +58,21 @@
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 9,
+"visits": 10,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-02T15:02:06+11:00",
+"last_seen": "2026-11-03T10:14:54+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
 "kind": "flyer",
 "cell": "5:1",
 "images": [
-"birds/20261102-130618.jpg",
 "birds/20261102-132934.jpg",
 "birds/20261102-143942.jpg",
 "birds/20261102-144310.jpg",
 "birds/20261102-145959.jpg",
-"birds/20261102-150206.jpg"
+"birds/20261102-150206.jpg",
+"birds/20261103-101454.jpg"
 ]
 },
 {
@@ -222,9 +222,9 @@
 {
 "id": "b0014",
 "name": "Frost",
-"visits": 4,
+"visits": 5,
 "first_seen": "2026-11-03T10:05:39+11:00",
-"last_seen": "2026-11-03T10:11:09+11:00",
+"last_seen": "2026-11-03T10:14:38+11:00",
 "species": "magpie or currawong",
 "size": "medium",
 "tone": "dark",
@@ -234,15 +234,16 @@
 "birds/20261103-100539.jpg",
 "birds/20261103-100545.jpg",
 "birds/20261103-100633.jpg",
-"birds/20261103-101109.jpg"
+"birds/20261103-101109.jpg",
+"birds/20261103-101438.jpg"
 ]
 },
 {
 "id": "b0015",
 "name": "Cortázar",
-"visits": 2,
+"visits": 3,
 "first_seen": "2026-11-03T10:06:13+11:00",
-"last_seen": "2026-11-03T10:09:30+11:00",
+"last_seen": "2026-11-03T10:14:18+11:00",
 "species": "crow or raven",
 "size": "large",
 "tone": "dark",
@@ -250,7 +251,8 @@
 "cell": "6:3",
 "images": [
 "birds/20261103-100613.jpg",
-"birds/20261103-100930.jpg"
+"birds/20261103-100930.jpg",
+"birds/20261103-101418.jpg"
 ]
 },
 {
@@ -318,16 +320,32 @@
 {
 "id": "b0020",
 "name": "Lerner",
-"visits": 1,
+"visits": 2,
 "first_seen": "2026-11-03T10:11:49+11:00",
-"last_seen": "2026-11-03T10:11:49+11:00",
+"last_seen": "2026-11-03T10:17:21+11:00",
 "species": "crow or raven",
 "size": "large",
 "tone": "dark",
 "kind": "flyer",
 "cell": "6:4",
 "images": [
-"birds/20261103-101149.jpg"
+"birds/20261103-101149.jpg",
+"birds/20261103-101721.jpg"
+]
+},
+{
+"id": "b0021",
+"name": "McPhee",
+"visits": 1,
+"first_seen": "2026-11-03T10:12:43+11:00",
+"last_seen": "2026-11-03T10:12:43+11:00",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"kind": "percher",
+"cell": "7:3",
+"images": [
+"birds/20261103-101243.jpg"
 ]
 }
 ],
@@ -447,7 +465,6 @@
 "Macfarlane",
 "Zweig",
 "Kaneda",
-"Herzog",
-"McPhee"
+"Herzog"
 ]
 }

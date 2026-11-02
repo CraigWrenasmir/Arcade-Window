@@ -1,6 +1,121 @@
 {
 "events": [
 {
+"id": "20261103-101721",
+"time": "2026-11-03T10:17:21+11:00",
+"bird": "Lerner",
+"bird_id": "b0020",
+"visit": 2,
+"confidence": "likely",
+"kind": "flyer",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"duration": 3.7,
+"direction": "west",
+"box": [
+1102,
+520,
+108,
+136
+],
+"cell": "7:4",
+"image": "birds/20261103-101721.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101454",
+"time": "2026-11-03T10:14:54+11:00",
+"bird": "Notley",
+"bird_id": "b0004",
+"visit": 10,
+"confidence": "likely",
+"kind": "flyer",
+"species": "pigeon",
+"size": "medium",
+"tone": "mid",
+"duration": 11.5,
+"direction": "east",
+"box": [
+1224,
+602,
+56,
+84
+],
+"cell": "7:4",
+"image": "birds/20261103-101454.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101438",
+"time": "2026-11-03T10:14:38+11:00",
+"bird": "Frost",
+"bird_id": "b0014",
+"visit": 5,
+"confidence": "likely",
+"kind": "flyer",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"duration": 9.9,
+"direction": "west",
+"box": [
+1000,
+676,
+74,
+44
+],
+"cell": "6:4",
+"image": "birds/20261103-101438.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101418",
+"time": "2026-11-03T10:14:18+11:00",
+"bird": "Cortázar",
+"bird_id": "b0015",
+"visit": 3,
+"confidence": "likely",
+"kind": "percher",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"duration": 69.2,
+"direction": "",
+"box": [
+1042,
+470,
+128,
+158
+],
+"cell": "6:3",
+"image": "birds/20261103-101418.jpg",
+"sky": "overcast"
+},
+{
+"id": "20261103-101243",
+"time": "2026-11-03T10:12:43+11:00",
+"bird": "McPhee",
+"bird_id": "b0021",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"duration": 15.8,
+"direction": "",
+"box": [
+1150,
+522,
+116,
+104
+],
+"cell": "7:3",
+"image": "birds/20261103-101243.jpg",
+"sky": "overcast"
+},
+{
 "id": "20261103-101149",
 "time": "2026-11-03T10:11:49+11:00",
 "bird": "Lerner",

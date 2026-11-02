@@ -1,51 +1,51 @@
 {
-"time": "2026-11-03T10:12:34+11:00",
+"time": "2026-11-03T10:17:34+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 4654,
+"frames": 5430,
 "sky": {
-"hex": "#676562",
-"lum": 0.399,
+"hex": "#666462",
+"lum": 0.394,
 "word": "overcast"
 },
 "wall": {
-"hex": "#423f3e",
-"lum": 0.251
+"hex": "#413e3e",
+"lum": 0.249
 },
 "dome": {
-"hex": "#221e1e",
-"lum": 0.125
+"hex": "#1c1918",
+"lum": 0.102
 },
 "brick": {
-"hex": "#362c26",
-"lum": 0.183
+"hex": "#342a26",
+"lum": 0.177
 },
-"overall_lum": 0.262,
-"motion": 0.0021,
-"birds_today": 14,
-"birds_total": 90,
-"named_birds": 20,
+"overall_lum": 0.254,
+"motion": 0.0007,
+"birds_today": 19,
+"birds_total": 95,
+"named_birds": 21,
 "last_bird": {
-"id": "20261103-101149",
-"time": "2026-11-03T10:11:49+11:00",
+"id": "20261103-101721",
+"time": "2026-11-03T10:17:21+11:00",
 "bird": "Lerner",
 "bird_id": "b0020",
-"visit": 1,
-"confidence": "new",
+"visit": 2,
+"confidence": "likely",
 "kind": "flyer",
 "species": "crow or raven",
 "size": "large",
 "tone": "dark",
-"duration": 12.5,
-"direction": "down",
+"duration": 3.7,
+"direction": "west",
 "box": [
-954,
-546,
-158,
-140
+1102,
+520,
+108,
+136
 ],
-"cell": "6:4",
-"image": "birds/20261103-101149.jpg",
+"cell": "7:4",
+"image": "birds/20261103-101721.jpg",
 "sky": "overcast"
 },
-"shadow_strips_today": 6
+"shadow_strips_today": 7
 }
