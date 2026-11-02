@@ -13,8 +13,8 @@
   let box = {list:[], i:0, title:""};
 
   function describe(e, long){
-    const what = e.kind==="flyer" ? "passed through" + (e.direction ? " heading " + e.direction : "") : "perched for " + e.duration + " s";
-    const who = e.confidence==="likely" ? "likely the same bird, visit " + e.visit : "first time on the register";
+    const what = e.kind==="flyer" ? "flew" + (e.direction ? " " + e.direction : " past") : "sat there for " + e.duration + " seconds";
+    const who = e.confidence==="likely" ? "probably the same bird as before, visit " + e.visit : "first time we have seen this one";
     return long ? `${fmtT(e.time)}<br>${what}<br>${sp(e.species)}, ${e.size}, ${e.tone}<br>${who}<br>sky was ${e.sky||"unrecorded"}`
                 : `${what}, ${e.size}, ${e.tone}. ${sp(e.species)}`;
   }
@@ -51,7 +51,7 @@
     if(events.length){
       const e = events[0];
       $("#birdimg").src = "data/"+e.image+bust();
-      $("#birdname").textContent = e.bird + (e.confidence==="likely" ? ", again" : "");
+      $("#birdname").textContent = e.bird;
       $("#birdmeta").innerHTML = describe(e, true);
       $("#birdimg").onclick = () => openBox(events, 0, "all entries");
       $("#latestwrap").classList.remove("empty");
@@ -67,7 +67,7 @@
       card.addEventListener("click", ev => {
         const b = birds.find(x => x.id===card.dataset.bird); const v = visitsOf(b);
         const k = ev.target.dataset.k ? parseInt(ev.target.dataset.k,10) : 0;
-        openBox(v, Math.min(k, v.length-1), b.name + ", every visit");
+        openBox(v, Math.min(k, v.length-1), "every visit by " + b.name);
       });
     });
     // ledger grouped by day
@@ -89,10 +89,10 @@
       const dot = $("#dot"); if(dot) dot.classList.toggle("stale", age > 900);
       document.documentElement.style.setProperty("--sky", state.sky.hex);
       $("#livetxt").innerHTML = age > 900 ? `last heard <b>${fmtT(state.time)}</b>` : `sky <b>${state.sky.word}</b> · birds today <b>${state.birds_today}</b> · named so far <b>${state.named_birds}</b>`;
-      const up = $("#uptime"); if(up) up.textContent = ` Watching since ${fmtT(state.started)}.`;
+      const up = $("#uptime"); if(up) up.textContent = ` The iMac has been watching since ${fmtT(state.started)}.`;
       motion = state.motion; lum = state.overall_lum;
-      if(hasWindow) $("#viewtime").textContent = "As of " + fmtT(state.time) + ". " + (state.sky.word ? "Sky " + state.sky.word + ", " : "") + "light " + Math.round(state.overall_lum*100) + "%.";
-    }catch(e){ $("#livetxt").textContent = "no data yet"; }
+      if(hasWindow) $("#viewtime").textContent = "Taken " + fmtT(state.time) + ". " + (state.sky.word ? "Sky " + state.sky.word + ", " : "") + "light " + Math.round(state.overall_lum*100) + "%.";
+    }catch(e){ $("#livetxt").textContent = "nothing from the iMac yet"; }
   }
   async function loadBirds(){
     try{
@@ -116,7 +116,7 @@
   }
   function loadView(){
     $("#lx").src = "data/" + (showLong ? "longexposure.jpg" : "latest.jpg") + bust();
-    $("#viewtag").textContent = showLong ? "every frame since the start, averaged into one image" : "the view a few minutes ago";
+    $("#viewtag").textContent = showLong ? "every frame since the start, blended into one picture" : "the view a few minutes ago";
   }
   if(hasWindow){
     const cv = $("#geom"), ctx = cv.getContext("2d"); const t0 = performance.now();
@@ -135,7 +135,7 @@
     }
     requestAnimationFrame(draw);
     $("#lxtoggle").addEventListener("click", () => { showLong = !showLong; loadView(); $("#lxtoggle").textContent = showLong ? "show the view" : "show long exposure"; });
-    $("#edgetoggle").addEventListener("click", () => { showEdges = !showEdges; $("#edgetoggle").textContent = showEdges ? "hide geometry" : "show geometry"; });
+    $("#edgetoggle").addEventListener("click", () => { showEdges = !showEdges; $("#edgetoggle").textContent = showEdges ? "hide the lines" : "show the lines"; });
     $("#lx").addEventListener("click", () => { $("#bigview").src = $("#lx").src; $("#viewbox").classList.add("open"); });
     $("#viewbox").addEventListener("click", () => $("#viewbox").classList.remove("open"));
   }

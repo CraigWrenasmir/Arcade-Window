@@ -4,29 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arcade Window</title>
-<meta name="description" content="An old iMac watching one window in a Newcastle arcade. A register of every bird that crosses it, and the view itself.">
+<meta name="description" content="An old iMac at an office window in a Newcastle arcade keeps a register of every bird that goes past.">
 <link rel="stylesheet" href="register.css">
 </head>
 <body>
 <header>
   <h1>Arcade Window</h1>
   <span class="sub">one window, one old computer, Newcastle NSW · <a href="birds.html">birds only</a></span>
-  <span class="live"><span class="dot" id="dot"></span><span id="livetxt">waiting for the window…</span></span>
+  <span class="live"><span class="dot" id="dot"></span><span id="livetxt">waiting for the iMac…</span></span>
 </header>
 
 <main>
   <section>
-    <h2>Bird Register <small>most recent</small></h2>
+    <h2>Bird Register <small>the latest</small></h2>
     <div class="latest empty" id="latestwrap">
       <img id="birdimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
       <div>
         <div class="name" id="birdname">No birds yet</div>
-        <div class="meta" id="birdmeta">The register opens when something crosses the window.</div>
+        <div class="meta" id="birdmeta">Nothing has crossed the window yet.</div>
       </div>
     </div>
 
     <h2>Catalogue <small id="catcount"></small></h2>
-    <div class="muted" style="margin-bottom:10px">Every bird the window has named, most recently seen first. Click a card to page through that bird's visits. Small frames are earlier visits.</div>
+    <div class="muted" style="margin-bottom:10px">Every bird seen out the window is named after a character in a book on Craig's shelf. Click a card to page through that bird's visits. Small frames are earlier visits.</div>
     <div class="gallery" id="gallery"></div>
 
     <h2>Ledger <small id="ledgercount"></small></h2>
@@ -34,7 +34,7 @@
   </section>
 
   <aside id="window">
-    <h2>The Window <small><span class="toggle" id="lxtoggle">show long exposure</span> · <span class="toggle" id="edgetoggle">hide geometry</span></small></h2>
+    <h2>The Window <small><span class="toggle" id="lxtoggle">show long exposure</span> · <span class="toggle" id="edgetoggle">hide the lines</span></small></h2>
     <div class="window">
       <img id="lx" alt="the view from the window, a few minutes ago">
       <canvas id="geom"></canvas>
@@ -42,9 +42,9 @@
     </div>
     <div class="muted" id="viewtime" style="margin-top:8px"></div>
     <div class="about">
-      <b>What this is.</b> A 2012 iMac running Linux sits at a first-floor window in a Newcastle arcade, pointed at a glass dome, two brick walls, two satellite dishes and a wedge of sky.
-      It watches a few frames a second. When something small moves against that fixed scene it keeps a boxed crop and a timestamp, and that is the register. The view itself is published every few minutes. Nothing else is stored, and raw frames never leave the office.
-      <br><br>Bird names are drawn from the authors and characters on the library shelves in the same room. Species are impressions from size and tone, nothing more. A bird is "likely" the same as an earlier one when it uses the same perch at the same size and tone within three weeks, which is as close to recognition as this camera gets.<span id="uptime"></span>
+      <b>What this is.</b> An old iMac sits at the window of Craig's office in a Newcastle arcade. It looks out at a glass roof, two brick walls, two satellite dishes and a patch of sky.
+      A few times a second it checks whether anything has moved. When a bird does, it saves a small picture with a box around it, and the time. That is the register. A photo of the view goes up every few minutes. Nothing else is kept.
+      <br><br>Every bird is named after a character in a book on Craig's shelf. The species is a rough guess from size and colour. If a bird of the same size and colour lands on the same spot within three weeks, the register assumes it is the same bird. It is often wrong.<span id="uptime"></span>
     </div>
   </aside>
 </main>
