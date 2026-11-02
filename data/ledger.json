@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-131609",
+"time": "2026-11-02T13:16:09+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 3,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 0.4,
+"direction": "west",
+"box": [
+448,
+178,
+18,
+16
+],
+"cell": "2:1",
+"image": "birds/20261102-131609.jpg",
+"sky": "clear"
+},
+{
 "id": "20261102-131358",
 "time": "2026-11-02T13:13:58+11:00",
 "bird": "Drnaso",
