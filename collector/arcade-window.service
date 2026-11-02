@@ -1,0 +1,13 @@
+[Unit]
+Description=Arcade Window collector
+After=graphical-session.target
+
+[Service]
+WorkingDirectory=%h/Arcade-Window
+ExecStart=%h/Arcade-Window/venv/bin/python %h/Arcade-Window/collector/collector.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

@@ -260,7 +260,7 @@ class Collector:
         norm = np.clip((small - lo) / max(1.0, hi - lo), 0, 1)
         rows = []
         for r in range(12):
-            rows.append("".join(ASCII_RAMP[int(v * (len(ASCII_RAMP) - 1))] for v in norm[r]))
+            rows.append("".join(ASCII_RAMP[int((1.0 - v) * (len(ASCII_RAMP) - 1))] for v in norm[r]))
         contrast = float(hi - lo) / 255.0
         return rows, round(contrast, 3)
 
