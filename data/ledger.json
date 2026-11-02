@@ -1,6 +1,75 @@
 {
 "events": [
 {
+"id": "20261102-121823",
+"time": "2026-11-02T12:18:23+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 9,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 2.7,
+"direction": "down",
+"box": [
+1178,
+0,
+30,
+18
+],
+"cell": "7:0",
+"image": "birds/20261102-121823.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-121651",
+"time": "2026-11-02T12:16:51+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 8,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 0.3,
+"direction": "up",
+"box": [
+818,
+144,
+18,
+22
+],
+"cell": "5:1",
+"image": "birds/20261102-121651.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-121454",
+"time": "2026-11-02T12:14:54+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 7,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 0.4,
+"direction": "up",
+"box": [
+1080,
+124,
+18,
+18
+],
+"cell": "6:0",
+"image": "birds/20261102-121454.jpg",
+"sky": "clear"
+},
+{
 "id": "20261102-121234",
 "time": "2026-11-02T12:12:34+11:00",
 "bird": "Tyrone",

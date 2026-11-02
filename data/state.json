@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T12:14:30+11:00",
+"time": "2026-11-02T12:19:32+11:00",
 "started": "2026-11-02T12:04:14+11:00",
-"frames": 1593,
+"frames": 2372,
 "sky": {
-"hex": "#8091c5",
-"lum": 0.574,
+"hex": "#8191c5",
+"lum": 0.575,
 "word": "clear"
 },
 "wall": {
-"hex": "#aea1a1",
-"lum": 0.648
+"hex": "#aea0a1",
+"lum": 0.646
 },
 "dome": {
-"hex": "#786c7e",
-"lum": 0.448
+"hex": "#7a6d7f",
+"lum": 0.454
 },
 "brick": {
-"hex": "#624f5b",
-"lum": 0.341
+"hex": "#67545f",
+"lum": 0.358
 },
-"overall_lum": 0.521,
+"overall_lum": 0.525,
 "motion": 0.0,
-"birds_today": 18,
-"birds_total": 18,
+"birds_today": 21,
+"birds_total": 21,
 "named_birds": 8,
 "last_bird": {
-"id": "20261102-121234",
-"time": "2026-11-02T12:12:34+11:00",
-"bird": "Tyrone",
-"bird_id": "b0006",
-"visit": 2,
+"id": "20261102-121823",
+"time": "2026-11-02T12:18:23+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 9,
 "confidence": "likely",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
+"species": "sparrow or wren",
+"size": "small",
 "tone": "mid",
-"duration": 1.1,
-"direction": "west",
+"duration": 2.7,
+"direction": "down",
 "box": [
-740,
-204,
-14,
-16
+1178,
+0,
+30,
+18
 ],
-"cell": "4:1",
-"image": "birds/20261102-121234.jpg",
+"cell": "7:0",
+"image": "birds/20261102-121823.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 7
+"shadow_strips_today": 8
 }
