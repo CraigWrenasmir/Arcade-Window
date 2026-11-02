@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-113858",
+"time": "2026-11-02T11:38:58+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 1,
+"confidence": "new",
+"kind": "flyer",
+"species": "swallow or swift (guess)",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.7,
+"direction": "east",
+"box": [
+734,
+114,
+16,
+16
+],
+"cell": "4:0",
+"image": "birds/20261102-113858.jpg",
+"sky": "clear"
+},
+{
 "id": "20261102-112719",
 "time": "2026-11-02T11:27:19+11:00",
 "bird": "Brodsky",

@@ -1,50 +1,50 @@
 {
-"time": "2026-11-02T11:38:24+11:00",
-"started": "2026-11-02T11:38:07+11:00",
+"time": "2026-11-02T11:40:26+11:00",
+"started": "2026-11-02T11:40:08+11:00",
 "frames": 46,
 "sky": {
-"hex": "#a98fd9",
-"lum": 0.628,
-"word": "clear"
+"hex": "#f9f8fb",
+"lum": 0.976,
+"word": "overcast bright"
 },
 "wall": {
-"hex": "#dec1db",
-"lum": 0.803
+"hex": "#fefefd",
+"lum": 0.997
 },
 "dome": {
-"hex": "#593a60",
-"lum": 0.283
+"hex": "#faf6fa",
+"lum": 0.973
 },
 "brick": {
-"hex": "#664060",
-"lum": 0.312
+"hex": "#fdf7fa",
+"lum": 0.978
 },
-"overall_lum": 0.548,
+"overall_lum": 0.987,
 "motion": 0.0,
-"birds_today": 1,
-"birds_total": 1,
-"named_birds": 1,
+"birds_today": 2,
+"birds_total": 2,
+"named_birds": 2,
 "last_bird": {
-"id": "20261102-112719",
-"time": "2026-11-02T11:27:19+11:00",
-"bird": "Brodsky",
-"bird_id": "b0001",
+"id": "20261102-113858",
+"time": "2026-11-02T11:38:58+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
 "visit": 1,
 "confidence": "new",
-"kind": "percher",
-"species": "sparrow or wren (guess)",
-"size": "small",
-"tone": "mid",
-"duration": 9.1,
-"direction": "",
+"kind": "flyer",
+"species": "swallow or swift (guess)",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.7,
+"direction": "east",
 "box": [
-720,
-110,
-18,
-18
+734,
+114,
+16,
+16
 ],
 "cell": "4:0",
-"image": "birds/20261102-112719.jpg",
+"image": "birds/20261102-113858.jpg",
 "sky": "clear"
 },
 "shadow_strips_today": 3
