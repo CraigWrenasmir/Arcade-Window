@@ -9,7 +9,7 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const hasWindow = !!$("#window");
 
-  let state=null, events=[], birds=[], photos=[], motion=0, lum=0.5;
+  let state=null, events=[], birds=[], photos=[], motion=0, lum=0.5, closed=false;
   let box = {list:[], i:0, title:""};
 
   function describe(e, long){
@@ -98,12 +98,20 @@
     try{
       state = await j("state.json");
       const age = (Date.now() - new Date(state.time).getTime())/1000;
-      const dot = $("#dot"); if(dot) dot.classList.toggle("stale", age > 900);
+      closed = age > 900;   // the iMac pushes every five minutes; a quarter of an hour of silence means it is off
+      const dot = $("#dot"); if(dot) dot.classList.toggle("stale", closed);
       document.documentElement.style.setProperty("--sky", state.sky.hex);
-      $("#livetxt").innerHTML = age > 900 ? `last heard <b>${fmtT(state.time)}</b>` : `sky <b>${state.sky.word}</b> · birds today <b>${state.birds_today}</b> · named so far <b>${state.named_birds}</b>`;
-      const up = $("#uptime"); if(up) up.textContent = ` The iMac has been watching since ${fmtT(state.started)}.`;
+      $("#livetxt").innerHTML = closed ? `switched off <b>${fmtT(state.time)}</b>` : `sky <b>${state.sky.word}</b> · birds today <b>${state.birds_today}</b> · named so far <b>${state.named_birds}</b>`;
+      const up = $("#uptime"); if(up) up.textContent = closed ? ` The iMac watched from ${fmtT(state.started)} until ${fmtT(state.time)}.` : ` The iMac has been watching since ${fmtT(state.started)}.`;
+      const cl = $("#closed");
+      if(cl){
+        cl.hidden = !closed;
+        if(closed) cl.innerHTML = `<span class="word">Closed</span>The iMac was switched off at about <b>${fmtT(state.time)}</b>. Nothing new will appear here until Craig is next in the office, which may not be tomorrow. The last view of the window and every bird up to then are below.`;
+      }
       motion = state.motion; lum = state.overall_lum;
-      if(hasWindow) $("#viewtime").textContent = "Taken " + fmtT(state.time) + ". " + (state.sky.word ? "Sky " + state.sky.word + ", " : "") + "light " + Math.round(state.overall_lum*100) + "%.";
+      if(hasWindow){
+        $("#viewtime").textContent = "Taken " + fmtT(state.time) + ". " + (state.sky.word ? "Sky " + state.sky.word + ", " : "") + "light " + Math.round(state.overall_lum*100) + "%.";
+      }
     }catch(e){ $("#livetxt").textContent = "nothing from the iMac yet"; }
   }
   async function loadBirds(){
@@ -128,7 +136,7 @@
   }
   function loadView(){
     $("#lx").src = "data/" + (showLong ? "longexposure.jpg" : "latest.jpg") + bust();
-    $("#viewtag").textContent = showLong ? "every frame since the start, blended into one picture" : "the view a few minutes ago";
+    $("#viewtag").textContent = showLong ? "every frame since the start, blended into one picture" : (closed ? "the last view before the iMac was switched off" : "the view a few minutes ago");
   }
   if(hasWindow){
     const cv = $("#geom"), ctx = cv.getContext("2d"); const t0 = performance.now();
