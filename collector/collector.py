@@ -219,7 +219,9 @@ class Collector:
         self.longexp_n = 0
         self.started = now()
         self.frames = 0
-        self.last = {k: 0 for k in ("palette", "shadow", "longexp", "latest", "edges", "push", "state")}
+        t0 = time.time()
+        # periodic outputs wait their full interval after a start; only state, latest and push are prompt
+        self.last = {"palette": t0, "shadow": t0, "longexp": t0, "latest": 0, "edges": 0, "push": 0, "state": 0}
         self.ledger = jload(os.path.join(DATA, "ledger.json"), {"events": []})
         self.birds = jload(os.path.join(DATA, "birds.json"), {"birds": [], "unused": list(POOL)})
         if not self.birds.get("unused"):
@@ -377,8 +379,9 @@ class Collector:
         valid = cv2.resize(MASK_VALID, (640, 360), interpolation=cv2.INTER_NEAREST)
         fg = cv2.bitwise_and(fg, valid)
         changed = float(np.count_nonzero(fg)) / float(np.count_nonzero(valid))
-        self.motion_level = round(changed, 4)
-        if changed > GLOBAL_CHANGE_SKIP or self.frames < 60:
+        settled = self.frames >= WARMUP_FRAMES + 60   # background model has had ~20 s to learn
+        self.motion_level = round(changed, 4) if settled else 0.0
+        if changed > GLOBAL_CHANGE_SKIP or not settled:
             self.tracker.update([], t, small, frame)
             return
         fg = cv2.morphologyEx(fg, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
