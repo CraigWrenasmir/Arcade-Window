@@ -19,14 +19,18 @@
 {
 "id": "b0002",
 "name": "Combray",
-"visits": 1,
+"visits": 3,
 "first_seen": "2026-11-02T11:38:58+11:00",
-"last_seen": "2026-11-02T11:38:58+11:00",
+"last_seen": "2026-11-02T14:20:17+11:00",
 "species": "swallow or swift (guess)",
 "size": "tiny",
 "tone": "pale",
 "kind": "flyer",
-"cell": "4:1"
+"cell": "4:1",
+"images": [
+"birds/20261102-141917.jpg",
+"birds/20261102-142017.jpg"
+]
 },
 {
 "id": "b0003",
@@ -160,6 +164,21 @@
 "images": [
 "birds/20261102-140734.jpg"
 ]
+},
+{
+"id": "b0011",
+"name": "Benjamin",
+"visits": 1,
+"first_seen": "2026-11-02T14:16:40+11:00",
+"last_seen": "2026-11-02T14:16:40+11:00",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "pale",
+"kind": "percher",
+"cell": "4:1",
+"images": [
+"birds/20261102-141640.jpg"
+]
 }
 ],
 "unused": [
@@ -288,7 +307,6 @@
 "Kavan",
 "Lezama",
 "Totoro",
-"Bernhard",
-"Benjamin"
+"Bernhard"
 ]
 }

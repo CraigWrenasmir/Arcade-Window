@@ -1,6 +1,75 @@
 {
 "events": [
 {
+"id": "20261102-142017",
+"time": "2026-11-02T14:20:17+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 3,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.3,
+"direction": "down",
+"box": [
+710,
+20,
+16,
+16
+],
+"cell": "4:0",
+"image": "birds/20261102-142017.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-141917",
+"time": "2026-11-02T14:19:17+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 2,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.3,
+"direction": "up",
+"box": [
+958,
+70,
+20,
+14
+],
+"cell": "6:0",
+"image": "birds/20261102-141917.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-141640",
+"time": "2026-11-02T14:16:40+11:00",
+"bird": "Benjamin",
+"bird_id": "b0011",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "pale",
+"duration": 7.0,
+"direction": "",
+"box": [
+774,
+224,
+14,
+16
+],
+"cell": "4:1",
+"image": "birds/20261102-141640.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-141204",
 "time": "2026-11-02T14:12:04+11:00",
 "bird": "Drnaso",

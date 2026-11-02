@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T14:15:33+11:00",
+"time": "2026-11-02T14:20:33+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 4699,
+"frames": 5473,
 "sky": {
 "hex": "#cbd3c1",
 "lum": 0.812,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#816e7a",
-"lum": 0.462
+"hex": "#84717c",
+"lum": 0.472
 },
 "dome": {
-"hex": "#786a7b",
-"lum": 0.441
+"hex": "#7b6c7d",
+"lum": 0.451
 },
 "brick": {
-"hex": "#aa969c",
-"lum": 0.615
+"hex": "#ad9aa0",
+"lum": 0.63
 },
-"overall_lum": 0.589,
-"motion": 0.0001,
-"birds_today": 40,
-"birds_total": 40,
-"named_birds": 10,
+"overall_lum": 0.597,
+"motion": 0.0,
+"birds_today": 43,
+"birds_total": 43,
+"named_birds": 11,
 "last_bird": {
-"id": "20261102-141204",
-"time": "2026-11-02T14:12:04+11:00",
-"bird": "Drnaso",
-"bird_id": "b0003",
-"visit": 21,
+"id": "20261102-142017",
+"time": "2026-11-02T14:20:17+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 3,
 "confidence": "likely",
 "kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "mid",
-"duration": 0.4,
-"direction": "west",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.3,
+"direction": "down",
 "box": [
-490,
-162,
-18,
-18
+710,
+20,
+16,
+16
 ],
-"cell": "3:1",
-"image": "birds/20261102-141204.jpg",
+"cell": "4:0",
+"image": "birds/20261102-142017.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 29
+"shadow_strips_today": 30
 }
