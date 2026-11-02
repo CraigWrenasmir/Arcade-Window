@@ -218,6 +218,69 @@
 "images": [
 "birds/20261103-095801.jpg"
 ]
+},
+{
+"id": "b0014",
+"name": "Frost",
+"visits": 3,
+"first_seen": "2026-11-03T10:05:39+11:00",
+"last_seen": "2026-11-03T10:06:33+11:00",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"kind": "flyer",
+"cell": "7:3",
+"images": [
+"birds/20261103-100539.jpg",
+"birds/20261103-100545.jpg",
+"birds/20261103-100633.jpg"
+]
+},
+{
+"id": "b0015",
+"name": "Cortázar",
+"visits": 1,
+"first_seen": "2026-11-03T10:06:13+11:00",
+"last_seen": "2026-11-03T10:06:13+11:00",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"kind": "percher",
+"cell": "6:3",
+"images": [
+"birds/20261103-100613.jpg"
+]
+},
+{
+"id": "b0016",
+"name": "Ackerley",
+"visits": 2,
+"first_seen": "2026-11-03T10:06:19+11:00",
+"last_seen": "2026-11-03T10:06:37+11:00",
+"species": "noisy miner or starling",
+"size": "small",
+"tone": "dark",
+"kind": "flyer",
+"cell": "6:4",
+"images": [
+"birds/20261103-100619.jpg",
+"birds/20261103-100637.jpg"
+]
+},
+{
+"id": "b0017",
+"name": "Wilde",
+"visits": 1,
+"first_seen": "2026-11-03T10:06:29+11:00",
+"last_seen": "2026-11-03T10:06:29+11:00",
+"species": "crow or raven",
+"size": "large",
+"tone": "dark",
+"kind": "percher",
+"cell": "6:4",
+"images": [
+"birds/20261103-100629.jpg"
+]
 }
 ],
 "unused": [
@@ -340,10 +403,6 @@
 "McPhee",
 "Lerner",
 "Sartre",
-"Ryu",
-"Wilde",
-"Ackerley",
-"Cortázar",
-"Frost"
+"Ryu"
 ]
 }

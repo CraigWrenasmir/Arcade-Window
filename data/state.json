@@ -1,51 +1,51 @@
 {
-"time": "2026-11-03T10:02:34+11:00",
+"time": "2026-11-03T10:07:37+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 3104,
+"frames": 3888,
 "sky": {
-"hex": "#6e6d6b",
-"lum": 0.431,
+"hex": "#7e7e7c",
+"lum": 0.494,
 "word": "overcast"
 },
 "wall": {
-"hex": "#464444",
-"lum": 0.273
+"hex": "#525150",
+"lum": 0.32
 },
 "dome": {
-"hex": "#242121",
-"lum": 0.136
+"hex": "#2a2626",
+"lum": 0.156
 },
 "brick": {
-"hex": "#3a302b",
-"lum": 0.198
+"hex": "#483c37",
+"lum": 0.251
 },
-"overall_lum": 0.283,
-"motion": 0.0123,
-"birds_today": 1,
-"birds_total": 77,
-"named_birds": 13,
+"overall_lum": 0.333,
+"motion": 0.0046,
+"birds_today": 8,
+"birds_total": 84,
+"named_birds": 17,
 "last_bird": {
-"id": "20261103-095801",
-"time": "2026-11-03T09:58:01+11:00",
-"bird": "Bellow",
-"bird_id": "b0013",
-"visit": 1,
-"confidence": "new",
+"id": "20261103-100637",
+"time": "2026-11-03T10:06:37+11:00",
+"bird": "Ackerley",
+"bird_id": "b0016",
+"visit": 2,
+"confidence": "likely",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
+"species": "noisy miner or starling",
+"size": "small",
 "tone": "dark",
-"duration": 0.3,
+"duration": 0.7,
 "direction": "west",
 "box": [
-772,
-522,
-16,
-18
+1148,
+544,
+38,
+20
 ],
-"cell": "4:3",
-"image": "birds/20261103-095801.jpg",
+"cell": "7:3",
+"image": "birds/20261103-100637.jpg",
 "sky": "overcast"
 },
-"shadow_strips_today": 4
+"shadow_strips_today": 5
 }
