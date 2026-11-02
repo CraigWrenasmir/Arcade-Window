@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T16:30:37+11:00",
+"time": "2026-11-02T16:35:34+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 25618,
+"frames": 26382,
 "sky": {
-"hex": "#c2c2be",
-"lum": 0.762,
+"hex": "#c0c2bf",
+"lum": 0.76,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#312229",
-"lum": 0.155
+"hex": "#32232c",
+"lum": 0.162
 },
 "dome": {
-"hex": "#2b202a",
-"lum": 0.145
+"hex": "#2a1e2a",
+"lum": 0.138
 },
 "brick": {
-"hex": "#3c2a30",
-"lum": 0.19
+"hex": "#3e2d35",
+"lum": 0.203
 },
-"overall_lum": 0.328,
-"motion": 0.0001,
-"birds_today": 77,
-"birds_total": 77,
+"overall_lum": 0.334,
+"motion": 0.0002,
+"birds_today": 78,
+"birds_total": 78,
 "named_birds": 13,
 "last_bird": {
-"id": "20261102-162704",
-"time": "2026-11-02T16:27:04+11:00",
-"bird": "Totoro",
-"bird_id": "b0013",
-"visit": 1,
-"confidence": "new",
-"kind": "percher",
-"species": "sparrow or finch",
+"id": "20261102-163150",
+"time": "2026-11-02T16:31:50+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 12,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
 "size": "tiny",
 "tone": "pale",
-"duration": 4.2,
-"direction": "",
+"duration": 0.4,
+"direction": "west",
 "box": [
-534,
-288,
-18,
-16
+958,
+0,
+16,
+8
 ],
-"cell": "3:2",
-"image": "birds/20261102-162704.jpg",
+"cell": "6:0",
+"image": "birds/20261102-163150.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 56
+"shadow_strips_today": 57
 }

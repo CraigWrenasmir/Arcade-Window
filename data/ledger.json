@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-163150",
+"time": "2026-11-02T16:31:50+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 12,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.4,
+"direction": "west",
+"box": [
+958,
+0,
+16,
+8
+],
+"cell": "6:0",
+"image": "birds/20261102-163150.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-162704",
 "time": "2026-11-02T16:27:04+11:00",
 "bird": "Totoro",
