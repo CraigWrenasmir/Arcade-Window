@@ -441,6 +441,19 @@ class Collector:
         jdump(os.path.join(DATA, "birds.json"), self.birds)
         print(f"[bird] {event['time']} {bird['name']} ({confidence}, visit {bird['visits']}) {kind} {sig['species']}", flush=True)
 
+    def looks_like_shadow(self, small, x, y, w, h, pad=8):
+        """Same hue and saturation as the ring around it, only darker: a shadow, not a bird."""
+        hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV).astype(np.float32)
+        H, W = hsv.shape[:2]
+        inner = hsv[max(0, y):min(H, y + h), max(0, x):min(W, x + w)]
+        ring = hsv[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
+        if not inner.size or not ring.size:
+            return False
+        dh = abs(float(inner[:, :, 0].mean()) - float(ring[:, :, 0].mean()))
+        ds = abs(float(inner[:, :, 1].mean()) - float(ring[:, :, 1].mean()))
+        darker = float(inner[:, :, 2].mean()) < float(ring[:, :, 2].mean()) - 6
+        return darker and dh < 12 and ds < 25
+
     def detect(self, frame, t):
         small = cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA)
         gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
@@ -472,7 +485,9 @@ class Collector:
             if w > MAX_BLOB or h > MAX_BLOB:
                 continue
             ar = w / float(h)
-            if ar > 3 or ar < 0.33:      # birds are compact; vents, poles and reflections are not
+            if ar > 3 or ar < 0.45:      # birds are compact; vents, poles and tall shadows are not
+                continue
+            if self.looks_like_shadow(small, x, y, w, h):
                 continue
             blobs.append((x, y, w, h, int(cv2.contourArea(c))))
         ev = self.tracker.update(blobs, t, small, frame)
