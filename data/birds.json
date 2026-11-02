@@ -88,6 +88,21 @@
 "images": [
 "birds/20261102-115847.jpg"
 ]
+},
+{
+"id": "b0007",
+"name": "Dorian",
+"visits": 1,
+"first_seen": "2026-11-02T12:00:30+11:00",
+"last_seen": "2026-11-02T12:00:30+11:00",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"kind": "flyer",
+"cell": "1:2",
+"images": [
+"birds/20261102-120030.jpg"
+]
 }
 ],
 "unused": [
@@ -220,7 +235,6 @@
 "Coupland",
 "Ryu",
 "Dostoevsky",
-"Ackerley",
-"Dorian"
+"Ackerley"
 ]
 }

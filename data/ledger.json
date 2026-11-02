@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-120030",
+"time": "2026-11-02T12:00:30+11:00",
+"bird": "Dorian",
+"bird_id": "b0007",
+"visit": 1,
+"confidence": "new",
+"kind": "flyer",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"duration": 3.9,
+"direction": "down",
+"box": [
+198,
+278,
+52,
+136
+],
+"cell": "1:2",
+"image": "birds/20261102-120030.jpg",
+"sky": "clear"
+},
+{
 "id": "20261102-115847",
 "time": "2026-11-02T11:58:47+11:00",
 "bird": "Siddhartha",

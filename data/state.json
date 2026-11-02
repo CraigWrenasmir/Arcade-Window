@@ -1,50 +1,50 @@
 {
-"time": "2026-11-02T12:00:06+11:00",
-"started": "2026-11-02T11:49:49+11:00",
-"frames": 1589,
+"time": "2026-11-02T12:01:18+11:00",
+"started": "2026-11-02T12:01:01+11:00",
+"frames": 46,
 "sky": {
-"hex": "#7e90c7",
-"lum": 0.571,
+"hex": "#8090c6",
+"lum": 0.573,
 "word": "clear"
 },
 "wall": {
-"hex": "#a79ca3",
-"lum": 0.63
+"hex": "#aea2a7",
+"lum": 0.653
 },
 "dome": {
-"hex": "#736775",
-"lum": 0.425
+"hex": "#756571",
+"lum": 0.423
 },
 "brick": {
-"hex": "#51414d",
-"lum": 0.282
+"hex": "#614c56",
+"lum": 0.329
 },
-"overall_lum": 0.508,
-"motion": 0.2199,
-"birds_today": 10,
-"birds_total": 10,
-"named_birds": 6,
+"overall_lum": 0.526,
+"motion": 0.0,
+"birds_today": 11,
+"birds_total": 11,
+"named_birds": 7,
 "last_bird": {
-"id": "20261102-115847",
-"time": "2026-11-02T11:58:47+11:00",
-"bird": "Siddhartha",
-"bird_id": "b0006",
+"id": "20261102-120030",
+"time": "2026-11-02T12:00:30+11:00",
+"bird": "Dorian",
+"bird_id": "b0007",
 "visit": 1,
 "confidence": "new",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "mid",
-"duration": 0.4,
-"direction": "east",
+"species": "magpie or currawong",
+"size": "medium",
+"tone": "dark",
+"duration": 3.9,
+"direction": "down",
 "box": [
-588,
-154,
-18,
-16
+198,
+278,
+52,
+136
 ],
-"cell": "3:1",
-"image": "birds/20261102-115847.jpg",
+"cell": "1:2",
+"image": "birds/20261102-120030.jpg",
 "sky": "clear"
 },
 "shadow_strips_today": 5
