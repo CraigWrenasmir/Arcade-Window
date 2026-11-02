@@ -1,6 +1,52 @@
 {
 "events": [
 {
+"id": "20261102-145404",
+"time": "2026-11-02T14:54:04+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 13,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 1.2,
+"direction": "west",
+"box": [
+642,
+104,
+22,
+28
+],
+"cell": "4:0",
+"image": "birds/20261102-145404.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-145039",
+"time": "2026-11-02T14:50:39+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 12,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.4,
+"direction": "west",
+"box": [
+950,
+168,
+20,
+16
+],
+"cell": "6:1",
+"image": "birds/20261102-145039.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-144836",
 "time": "2026-11-02T14:48:36+11:00",
 "bird": "Sontag",
