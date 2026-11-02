@@ -245,7 +245,7 @@ class Collector:
         self.tracker = Tracker()
         self.longexp = None
         self.longexp_n = 0
-        self.started = now()
+        self.started = self.watching_since()
         self.frames = 0
         t0 = time.time()
         # periodic outputs wait their full interval after a start; only state, latest and push are prompt
@@ -262,6 +262,19 @@ class Collector:
         self.today = now().date()
         self.shadow = self.load_shadow_day()
         self.stats = {}
+
+    def watching_since(self):
+        """The date the watch began, kept in data/since.json so restarts do not reset it."""
+        p = os.path.join(DATA, "since.json")
+        d = jload(p, None)
+        if d and d.get("since"):
+            try:
+                return datetime.fromisoformat(d["since"])
+            except Exception:
+                pass
+        t = now()
+        jdump(p, {"since": iso(t)})
+        return t
 
     # ---------- shadow clock ----------
     def load_shadow_day(self):
