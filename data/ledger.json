@@ -1,6 +1,121 @@
 {
 "events": [
 {
+"id": "20261102-121234",
+"time": "2026-11-02T12:12:34+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 2,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.1,
+"direction": "west",
+"box": [
+740,
+204,
+14,
+16
+],
+"cell": "4:1",
+"image": "birds/20261102-121234.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-121213",
+"time": "2026-11-02T12:12:13+11:00",
+"bird": "Brodsky",
+"bird_id": "b0001",
+"visit": 3,
+"confidence": "likely",
+"kind": "percher",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 5.8,
+"direction": "",
+"box": [
+736,
+206,
+20,
+18
+],
+"cell": "4:1",
+"image": "birds/20261102-121213.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-121201",
+"time": "2026-11-02T12:12:01+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 6,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 1.8,
+"direction": "east",
+"box": [
+624,
+286,
+20,
+24
+],
+"cell": "3:2",
+"image": "birds/20261102-121201.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-121141",
+"time": "2026-11-02T12:11:41+11:00",
+"bird": "Esmé",
+"bird_id": "b0008",
+"visit": 2,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.1,
+"direction": "east",
+"box": [
+480,
+344,
+16,
+18
+],
+"cell": "3:2",
+"image": "birds/20261102-121141.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-121136",
+"time": "2026-11-02T12:11:36+11:00",
+"bird": "Esmé",
+"bird_id": "b0008",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 4.9,
+"direction": "",
+"box": [
+480,
+344,
+16,
+18
+],
+"cell": "3:2",
+"image": "birds/20261102-121136.jpg",
+"sky": "clear"
+},
+{
 "id": "20261102-120856",
 "time": "2026-11-02T12:08:56+11:00",
 "bird": "Drnaso",
