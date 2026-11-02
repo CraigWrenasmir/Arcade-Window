@@ -204,6 +204,21 @@
 "images": [
 "birds/20261102-154929.jpg"
 ]
+},
+{
+"id": "b0013",
+"name": "Totoro",
+"visits": 1,
+"first_seen": "2026-11-02T16:27:04+11:00",
+"last_seen": "2026-11-02T16:27:04+11:00",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "pale",
+"kind": "percher",
+"cell": "3:2",
+"images": [
+"birds/20261102-162704.jpg"
+]
 }
 ],
 "unused": [
@@ -330,7 +345,6 @@
 "Chun-Li",
 "Dorian",
 "Kavan",
-"Lezama",
-"Totoro"
+"Lezama"
 ]
 }

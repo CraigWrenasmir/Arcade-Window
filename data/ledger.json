@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-162704",
+"time": "2026-11-02T16:27:04+11:00",
+"bird": "Totoro",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "pale",
+"duration": 4.2,
+"direction": "",
+"box": [
+534,
+288,
+18,
+16
+],
+"cell": "3:2",
+"image": "birds/20261102-162704.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-160808",
 "time": "2026-11-02T16:08:08+11:00",
 "bird": "Sontag",

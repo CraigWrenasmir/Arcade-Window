@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T16:25:34+11:00",
+"time": "2026-11-02T16:30:37+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 24835,
+"frames": 25618,
 "sky": {
-"hex": "#c3c4be",
-"lum": 0.767,
+"hex": "#c2c2be",
+"lum": 0.762,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#2d1f27",
-"lum": 0.142
+"hex": "#312229",
+"lum": 0.155
 },
 "dome": {
-"hex": "#241a24",
-"lum": 0.121
+"hex": "#2b202a",
+"lum": 0.145
 },
 "brick": {
-"hex": "#312127",
-"lum": 0.153
+"hex": "#3c2a30",
+"lum": 0.19
 },
-"overall_lum": 0.313,
-"motion": 0.0007,
-"birds_today": 76,
-"birds_total": 76,
-"named_birds": 12,
+"overall_lum": 0.328,
+"motion": 0.0001,
+"birds_today": 77,
+"birds_total": 77,
+"named_birds": 13,
 "last_bird": {
-"id": "20261102-160808",
-"time": "2026-11-02T16:08:08+11:00",
-"bird": "Sontag",
-"bird_id": "b0010",
-"visit": 19,
-"confidence": "likely",
-"kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
+"id": "20261102-162704",
+"time": "2026-11-02T16:27:04+11:00",
+"bird": "Totoro",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
 "tone": "pale",
-"duration": 0.4,
-"direction": "east",
+"duration": 4.2,
+"direction": "",
 "box": [
-466,
-112,
-26,
-32
+534,
+288,
+18,
+16
 ],
-"cell": "2:0",
-"image": "birds/20261102-160808.jpg",
+"cell": "3:2",
+"image": "birds/20261102-162704.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 55
+"shadow_strips_today": 56
 }
