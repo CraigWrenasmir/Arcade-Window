@@ -1,6 +1,98 @@
 {
 "events": [
 {
+"id": "20261102-160808",
+"time": "2026-11-02T16:08:08+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 19,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.4,
+"direction": "east",
+"box": [
+466,
+112,
+26,
+32
+],
+"cell": "2:0",
+"image": "birds/20261102-160808.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-160750",
+"time": "2026-11-02T16:07:50+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 23,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 0.7,
+"direction": "west",
+"box": [
+466,
+238,
+18,
+28
+],
+"cell": "2:1",
+"image": "birds/20261102-160750.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-160628",
+"time": "2026-11-02T16:06:28+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 22,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 0.3,
+"direction": "up",
+"box": [
+416,
+198,
+18,
+18
+],
+"cell": "2:1",
+"image": "birds/20261102-160628.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-160626",
+"time": "2026-11-02T16:06:26+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 18,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.3,
+"direction": "west",
+"box": [
+776,
+8,
+24,
+38
+],
+"cell": "4:0",
+"image": "birds/20261102-160626.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-160112",
 "time": "2026-11-02T16:01:12+11:00",
 "bird": "Combray",

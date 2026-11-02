@@ -39,21 +39,21 @@
 {
 "id": "b0003",
 "name": "Drnaso",
-"visits": 21,
+"visits": 23,
 "first_seen": "2026-11-02T11:43:22+11:00",
-"last_seen": "2026-11-02T14:12:04+11:00",
+"last_seen": "2026-11-02T16:07:50+11:00",
 "species": "sparrow or wren (guess)",
 "size": "small",
 "tone": "mid",
 "kind": "flyer",
 "cell": "2:2",
 "images": [
-"birds/20261102-125536.jpg",
-"birds/20261102-125939.jpg",
 "birds/20261102-131000.jpg",
 "birds/20261102-131358.jpg",
 "birds/20261102-132646.jpg",
-"birds/20261102-141204.jpg"
+"birds/20261102-141204.jpg",
+"birds/20261102-160628.jpg",
+"birds/20261102-160750.jpg"
 ]
 },
 {
@@ -158,21 +158,21 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 17,
+"visits": 19,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-02T15:50:12+11:00",
+"last_seen": "2026-11-02T16:08:08+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
 "kind": "flyer",
 "cell": "7:0",
 "images": [
-"birds/20261102-145039.jpg",
-"birds/20261102-145404.jpg",
 "birds/20261102-145839.jpg",
 "birds/20261102-154628.jpg",
 "birds/20261102-154649.jpg",
-"birds/20261102-155012.jpg"
+"birds/20261102-155012.jpg",
+"birds/20261102-160626.jpg",
+"birds/20261102-160808.jpg"
 ]
 },
 {
