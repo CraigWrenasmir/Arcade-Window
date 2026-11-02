@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arcade Window</title>
+<meta name="description" content="An old iMac watching one window in a Newcastle arcade. Birds, shadows, palettes, geometry.">
+<style>
+  :root{
+    --bg:#0b0a09; --panel:#121009; --ink:#e8dcc0; --dim:#8c8270; --amber:#ffb000; --amber2:#c97f00;
+    --line:#2a2520; --sky:#777;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 "IBM Plex Mono","SF Mono",Menlo,Consolas,monospace}
+  a{color:var(--amber)}
+  header{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:14px 18px;border-bottom:1px solid var(--line)}
+  header h1{font-size:15px;letter-spacing:.18em;margin:0;text-transform:uppercase;color:var(--amber)}
+  header .sub{color:var(--dim)}
+  header .live{margin-left:auto;color:var(--dim)}
+  header .live b{color:var(--ink);font-weight:500}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--amber);margin-right:6px;box-shadow:0 0 8px var(--amber);vertical-align:middle}
+  .dot.stale{background:#555;box-shadow:none}
+  main{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(420px,auto);gap:1px;background:var(--line)}
+  @media (max-width:900px){main{grid-template-columns:1fr}}
+  section{background:var(--panel);padding:16px 18px;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+  section h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 10px;display:flex;justify-content:space-between;gap:10px}
+  section h2 small{color:var(--dim);letter-spacing:0;text-transform:none;font-weight:400}
+  .muted{color:var(--dim)}
+  /* birds */
+  .bird-top{display:grid;grid-template-columns:200px 1fr;gap:14px;margin-bottom:12px}
+  .bird-top img{width:200px;height:200px;object-fit:cover;border:1px solid var(--line);background:#000;image-rendering:pixelated}
+  .bird-top .name{font-size:22px;color:var(--ink)}
+  .bird-top .meta{color:var(--dim);margin-top:6px}
+  .bird-top .meta b{color:var(--ink);font-weight:500}
+  .ledger{flex:1;overflow:auto;border-top:1px dashed var(--line);padding-top:8px;font-size:12.5px}
+  .ledger table{border-collapse:collapse;width:100%}
+  .ledger td{padding:2px 8px 2px 0;vertical-align:top;white-space:nowrap}
+  .ledger td.s{white-space:normal;color:var(--dim)}
+  .ledger tr:hover{background:#1a1610}
+  .ledger tr.flyer td:first-child::before{content:"↗ ";color:var(--amber2)}
+  .ledger tr.percher td:first-child::before{content:"▪ ";color:var(--amber)}
+  .catalogue{margin-top:8px;color:var(--dim);font-size:12px;line-height:1.7}
+  .catalogue b{color:var(--ink);font-weight:500}
+  /* shadow */
+  .shadow{flex:1;overflow:auto;display:flex;flex-direction:column;gap:2px}
+  .strip{display:grid;grid-template-columns:52px 1fr 48px;gap:10px;align-items:start}
+  .strip .t{color:var(--dim)}
+  .strip pre{margin:0;font-size:9px;line-height:9px;letter-spacing:1px;color:var(--amber);text-shadow:0 0 6px rgba(255,176,0,.35);white-space:pre}
+  .strip .c{color:var(--dim);font-size:11px;text-align:right}
+  .strip.latest pre{color:#ffd37a}
+  /* palettes */
+  .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
+  .sw{height:86px;border:1px solid var(--line);display:flex;align-items:flex-end;padding:6px;font-size:11px;transition:background 4s ease}
+  .sw span{background:rgba(0,0,0,.55);padding:1px 5px;color:#fff}
+  .regions{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+  .rg{border:1px solid var(--line);padding:8px;font-size:11px;color:var(--dim)}
+  .rg i{display:block;height:34px;margin-bottom:6px;transition:background 4s ease}
+  .rg b{color:var(--ink);font-weight:500}
+  .history{flex:1;display:flex;align-items:stretch;gap:1px;min-height:60px;border:1px solid var(--line);padding:2px;overflow:hidden}
+  .history i{flex:1;display:block;transition:background 1s}
+  .skyword{font-size:20px;margin-bottom:8px}
+  /* jangle */
+  .jangle{flex:1;position:relative;min-height:300px;border:1px solid var(--line);background:#000;overflow:hidden}
+  .jangle canvas{position:absolute;inset:0;width:100%;height:100%}
+  .jangle .lx{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;filter:saturate(.6)}
+  .jangle .tag{position:absolute;left:8px;bottom:6px;color:var(--dim);font-size:11px}
+  footer{padding:14px 18px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);line-height:1.7}
+  footer b{color:var(--ink);font-weight:500}
+  .toggle{cursor:pointer;color:var(--dim);text-decoration:underline dotted}
+</style>
+</head>
+<body>
+<header>
+  <h1>Arcade Window</h1>
+  <span class="sub">one window, one old computer, Newcastle NSW</span>
+  <span class="live"><span class="dot" id="dot"></span><span id="livetxt">waiting for the window…</span></span>
+</header>
+
+<main>
+  <section id="birds">
+    <h2>Bird Register <small id="birdcount"></small></h2>
+    <div class="bird-top">
+      <img id="birdimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      <div>
+        <div class="name" id="birdname">No birds yet</div>
+        <div class="meta" id="birdmeta">The register opens when something crosses the window.</div>
+      </div>
+    </div>
+    <div class="ledger"><table id="ledger"></table></div>
+    <div class="catalogue" id="catalogue"></div>
+  </section>
+
+  <section id="shadowsec">
+    <h2>Shadow Clock <small id="shadowdate"></small></h2>
+    <div class="muted" style="margin-bottom:8px">The sunlit wall, redrawn every five minutes as a grid of characters. Dark is shadow. Each row is a moment; read the day downward.</div>
+    <div class="shadow" id="shadow"></div>
+  </section>
+
+  <section id="palettes">
+    <h2>Weather for the Dome <small id="paltime"></small></h2>
+    <div class="skyword" id="skyword">—</div>
+    <div class="swatches" id="swatches"></div>
+    <div class="regions" id="regions"></div>
+    <div class="muted" style="margin-bottom:6px">Palette history, ten minutes per bar, newest right.</div>
+    <div class="history" id="history"></div>
+  </section>
+
+  <section id="janglesec">
+    <h2>Jangle <small><span class="toggle" id="lxtoggle">show long exposure</span></small></h2>
+    <div class="jangle">
+      <img class="lx" id="lx" alt="" style="display:none">
+      <canvas id="jangle"></canvas>
+      <div class="tag" id="jangletag">the geometry of the view, disturbed by its light</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>What this is.</b> A 2012 iMac running Linux sits at a first-floor window in a Newcastle arcade, pointed at a glass dome, two brick walls, two satellite dishes and a wedge of sky.
+  It watches continuously and publishes only derivatives: a boxed crop when a bird appears, a character grid of the wall's shadows, the colours of the moment, and an edge drawing of the view.
+  Bird names are drawn from the authors and characters on the library shelves in the same room. Species are guesses. "Likely" means the same perch, size and tone as an earlier visitor, which is as close to recognition as this camera gets.
+  <br>Raw frames never leave the office. <span id="uptime"></span>
+</footer>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const bust = () => "?t=" + Math.floor(Date.now()/30000);
+  const j = async p => { const r = await fetch("data/"+p+bust(), {cache:"no-store"}); if(!r.ok) throw new Error(p); return r.json(); };
+  const fmtT = iso => { const d = new Date(iso); return d.toLocaleString("en-AU",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Australia/Sydney"}); };
+  const fmtHM = iso => new Date(iso).toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit",timeZone:"Australia/Sydney"});
+  let state=null, palettes=null, edgesImg=null, motion=0, lum=0.5;
+
+  async function loadState(){
+    try{
+      state = await j("state.json");
+      const age = (Date.now() - new Date(state.time).getTime())/1000;
+      $("#dot").classList.toggle("stale", age > 900);
+      $("#livetxt").innerHTML = age > 900 ? `last heard <b>${fmtT(state.time)}</b>` : `sky <b>${state.sky.word}</b> · light <b>${Math.round(state.overall_lum*100)}%</b> · motion <b>${(state.motion*100).toFixed(1)}%</b> · birds today <b>${state.birds_today}</b>`;
+      $("#skyword").textContent = state.sky.word;
+      $("#skyword").style.color = state.sky.hex;
+      $("#uptime").textContent = `Watching since ${fmtT(state.started)}. ${state.frames.toLocaleString()} frames looked at.`;
+      motion = state.motion; lum = state.overall_lum;
+    }catch(e){ $("#livetxt").textContent = "no data yet"; }
+  }
+
+  async function loadBirds(){
+    try{
+      const [led, cat] = await Promise.all([j("ledger.json"), j("birds.json")]);
+      const ev = led.events || [];
+      $("#birdcount").textContent = ev.length ? `${ev.length} entries` : "";
+      if(ev.length){
+        const e = ev[0];
+        $("#birdimg").src = "data/"+e.image+bust();
+        $("#birdname").textContent = e.bird + (e.confidence==="likely" ? ", again" : "");
+        $("#birdmeta").innerHTML = `<b>${fmtT(e.time)}</b><br>${e.kind==="flyer" ? "passed through"+(e.direction?" heading "+e.direction:"") : "perched for "+e.duration+" s"}<br>${e.species}<br>${e.confidence==="likely" ? "likely the same bird, visit "+e.visit : "first time on the register"}<br>sky was ${e.sky||"unrecorded"}`;
+      }
+      $("#ledger").innerHTML = ev.slice(0,60).map(e =>
+        `<tr class="${e.kind}"><td>${fmtT(e.time)}</td><td><b>${e.bird}</b>${e.visit>1?" ×"+e.visit:""}</td><td class="s">${e.kind==="flyer"?"flew "+(e.direction||""):"perched "+e.duration+"s"}, ${e.size}, ${e.tone}. ${e.species}</td></tr>`
+      ).join("");
+      const birds = (cat.birds||[]).slice().sort((a,b)=>b.visits-a.visits).slice(0,24);
+      $("#catalogue").innerHTML = birds.length ? "Catalogue: " + birds.map(b=>`<b>${b.name}</b> ${b.visits}`).join(" · ") : "";
+    }catch(e){}
+  }
+
+  async function loadShadow(){
+    try{
+      const d = await j("shadow/today.json");
+      $("#shadowdate").textContent = d.date + " · " + d.strips.length + " strips";
+      const strips = d.strips.slice(-40);
+      $("#shadow").innerHTML = strips.map((s,i) =>
+        `<div class="strip${i===strips.length-1?" latest":""}"><span class="t">${s.time}</span><pre>${s.rows.join("\n")}</pre><span class="c">${Math.round(s.contrast*100)}%</span></div>`
+      ).join("");
+      $("#shadow").scrollTop = $("#shadow").scrollHeight;
+    }catch(e){ $("#shadow").innerHTML = '<span class="muted">no strips yet today</span>'; }
+  }
+
+  async function loadPalettes(){
+    try{
+      palettes = await j("palettes.json");
+      const c = palettes.current; if(!c) return;
+      $("#paltime").textContent = fmtHM(c.time);
+      $("#swatches").innerHTML = (c.swatches||[]).map(s=>`<div class="sw" style="background:${s.hex}"><span>${s.hex} ${Math.round(s.share*100)}%</span></div>`).join("");
+      const names = {sky:"sky", wall:"sunlit wall", dome:"dome", leftwall:"brick"};
+      $("#regions").innerHTML = Object.entries(c.regions).map(([k,v])=>`<div class="rg"><i style="background:${v.hex}"></i><b>${names[k]||k}</b><br>${v.hex} · ${Math.round(v.lum*100)}%</div>`).join("");
+      const h = (palettes.history||[]).slice(-144);
+      $("#history").innerHTML = h.map(x=>`<i title="${fmtT(x.time)}" style="background:linear-gradient(${x.sky} 0 40%, ${x.wall} 40% 70%, ${x.dome} 70%)"></i>`).join("");
+    }catch(e){}
+  }
+
+  // Jangle: the edge drawing, jittered by light and motion.
+  const cv = $("#jangle"), ctx = cv.getContext("2d");
+  let edgePts = [];
+  function loadEdges(){
+    const im = new Image();
+    im.onload = () => {
+      const o = document.createElement("canvas"); o.width = im.width; o.height = im.height;
+      const c = o.getContext("2d"); c.drawImage(im,0,0);
+      const d = c.getImageData(0,0,o.width,o.height).data; const pts=[];
+      for(let y=0;y<o.height;y+=2) for(let x=0;x<o.width;x+=2){ if(d[(y*o.width+x)*4] > 128) pts.push([x/o.width, y/o.height]); }
+      edgePts = pts; edgesImg = im;
+    };
+    im.src = "data/edges.png"+bust();
+  }
+  let t0 = performance.now();
+  function draw(now){
+    const w = cv.clientWidth, h = cv.clientHeight;
+    if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+    ctx.fillStyle = "rgba(0,0,0,0.35)"; ctx.fillRect(0,0,w,h);
+    const t = (now - t0)/1000;
+    const shake = 0.6 + motion*60;              // bird or cloud -> more shake
+    const warm = Math.round(120 + lum*135);     // brighter day -> brighter lines
+    ctx.fillStyle = `rgb(${warm},${Math.round(warm*0.69)},0)`;
+    const n = edgePts.length, step = n > 6000 ? Math.ceil(n/6000) : 1;
+    for(let i=0;i<n;i+=step){
+      const p = edgePts[i];
+      const jx = Math.sin(t*1.7 + p[1]*40 + i*0.01) * shake;
+      const jy = Math.cos(t*1.3 + p[0]*30) * shake * 0.6;
+      ctx.fillRect(p[0]*w + jx, p[1]*h + jy, 1.5, 1.5);
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+
+  $("#lxtoggle").addEventListener("click", () => {
+    const lx = $("#lx"); const on = lx.style.display === "none";
+    lx.style.display = on ? "block" : "none"; if(on) lx.src = "data/longexposure.jpg"+bust();
+    $("#lxtoggle").textContent = on ? "hide long exposure" : "show long exposure";
+    $("#jangletag").textContent = on ? "every frame since the start, averaged into one image" : "the geometry of the view, disturbed by its light";
+  });
+
+  async function refresh(){ await loadState(); await Promise.all([loadBirds(), loadShadow(), loadPalettes()]); }
+  refresh(); loadEdges();
+  setInterval(refresh, 60000);
+  setInterval(loadEdges, 15*60000);
+})();
+</script>
+</body>
+</html>
