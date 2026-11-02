@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T14:05:32+11:00",
+"time": "2026-11-02T14:10:31+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 3149,
+"frames": 3920,
 "sky": {
-"hex": "#cad1c0",
-"lum": 0.807,
+"hex": "#cbd2c1",
+"lum": 0.812,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#8a7781",
-"lum": 0.495
+"hex": "#7d6b76",
+"lum": 0.447
 },
 "dome": {
-"hex": "#786a7c",
-"lum": 0.441
+"hex": "#6f6173",
+"lum": 0.407
 },
 "brick": {
-"hex": "#ae9ea3",
-"lum": 0.643
+"hex": "#a79299",
+"lum": 0.602
 },
-"overall_lum": 0.601,
+"overall_lum": 0.575,
 "motion": 0.0,
-"birds_today": 38,
-"birds_total": 38,
-"named_birds": 9,
+"birds_today": 39,
+"birds_total": 39,
+"named_birds": 10,
 "last_bird": {
-"id": "20261102-140108",
-"time": "2026-11-02T14:01:08+11:00",
-"bird": "Tyrone",
-"bird_id": "b0006",
-"visit": 4,
-"confidence": "likely",
+"id": "20261102-140734",
+"time": "2026-11-02T14:07:34+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 1,
+"confidence": "new",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "mid",
-"duration": 0.3,
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 1.1,
 "direction": "west",
 "box": [
-674,
-96,
-16,
-18
+1172,
+0,
+34,
+36
 ],
-"cell": "4:0",
-"image": "birds/20261102-140108.jpg",
+"cell": "7:0",
+"image": "birds/20261102-140734.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 27
+"shadow_strips_today": 28
 }

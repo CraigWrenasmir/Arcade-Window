@@ -145,6 +145,21 @@
 "images": [
 "birds/20261102-122142.jpg"
 ]
+},
+{
+"id": "b0010",
+"name": "Sontag",
+"visits": 1,
+"first_seen": "2026-11-02T14:07:34+11:00",
+"last_seen": "2026-11-02T14:07:34+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"kind": "flyer",
+"cell": "7:0",
+"images": [
+"birds/20261102-140734.jpg"
+]
 }
 ],
 "unused": [
@@ -274,7 +289,6 @@
 "Lezama",
 "Totoro",
 "Bernhard",
-"Benjamin",
-"Sontag"
+"Benjamin"
 ]
 }

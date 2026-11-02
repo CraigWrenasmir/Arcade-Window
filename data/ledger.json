@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-140734",
+"time": "2026-11-02T14:07:34+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 1,
+"confidence": "new",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 1.1,
+"direction": "west",
+"box": [
+1172,
+0,
+34,
+36
+],
+"cell": "7:0",
+"image": "birds/20261102-140734.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-140108",
 "time": "2026-11-02T14:01:08+11:00",
 "bird": "Tyrone",
