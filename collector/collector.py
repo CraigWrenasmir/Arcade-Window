@@ -57,12 +57,13 @@ MAX_BLOB = 90
 GLOBAL_CHANGE_SKIP = 0.06  # fraction of frame changed -> lighting shift, not a bird
 WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything is written
 
-# Regions in 1280x720 coordinates, set for the frame-8 angle (2 Nov 2026).
-WINDOW_HEAD = [(0, 0), (840, 0), (60, 330), (60, 720), (0, 720)]
-SKY = [(640, 0), (1280, 0), (1280, 100), (735, 125), (640, 210)]
-WALL = [(450, 300), (1280, 120), (1280, 480), (470, 530)]
-DOME = [(70, 600), (1280, 530), (1280, 720), (70, 720)]
-LEFTWALL = [(70, 330), (440, 180), (440, 520), (70, 600)]
+# Regions in 1280x720 coordinates, set for the angle of 2 Nov 2026 afternoon
+# (reference frame: ~/Desktop/imac-camera-test-9.jpg on the MacBook).
+WINDOW_HEAD = [(0, 0), (490, 0), (55, 220), (55, 720), (0, 720)]
+SKY = [(480, 0), (1280, 0), (1280, 180), (880, 235), (745, 215), (650, 300), (560, 320), (560, 250)]
+WALL = [(460, 380), (1280, 200), (1280, 560), (460, 640)]
+DOME = [(60, 660), (1280, 600), (1280, 720), (60, 720)]
+LEFTWALL = [(60, 260), (420, 140), (440, 620), (60, 660)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
