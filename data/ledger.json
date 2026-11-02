@@ -1,6 +1,52 @@
 {
 "events": [
 {
+"id": "20261102-131000",
+"time": "2026-11-02T13:10:00+11:00",
+"bird": "Drnaso",
+"bird_id": "b0003",
+"visit": 18,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 0.8,
+"direction": "east",
+"box": [
+512,
+102,
+32,
+26
+],
+"cell": "3:0",
+"image": "birds/20261102-131000.jpg",
+"sky": "clear"
+},
+{
+"id": "20261102-130618",
+"time": "2026-11-02T13:06:18+11:00",
+"bird": "Notley",
+"bird_id": "b0004",
+"visit": 4,
+"confidence": "likely",
+"kind": "flyer",
+"species": "pigeon",
+"size": "medium",
+"tone": "mid",
+"duration": 1.1,
+"direction": "up",
+"box": [
+738,
+242,
+46,
+58
+],
+"cell": "4:1",
+"image": "birds/20261102-130618.jpg",
+"sky": "clear"
+},
+{
 "id": "20261102-125939",
 "time": "2026-11-02T12:59:39+11:00",
 "bird": "Drnaso",
