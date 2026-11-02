@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T10:20:09+11:00",
+"time": "2026-11-03T10:20:44+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 242,
+"frames": 46,
 "sky": {
-"hex": "#c8cdd5",
-"lum": 0.802,
+"hex": "#c7cdd6",
+"lum": 0.803,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#4e463f",
-"lum": 0.284
+"hex": "#514941",
+"lum": 0.295
 },
 "dome": {
-"hex": "#393836",
-"lum": 0.223
+"hex": "#3d3c3a",
+"lum": 0.238
 },
 "brick": {
-"hex": "#5c5348",
-"lum": 0.333
+"hex": "#62584d",
+"lum": 0.353
 },
-"overall_lum": 0.452,
-"motion": 0.003,
+"overall_lum": 0.464,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 98,
 "hot": false,
 "busy": true
 },
-"birds_today": 24,
-"birds_total": 100,
-"named_birds": 21,
+"birds_today": 0,
+"birds_total": 76,
+"named_birds": 12,
 "last_bird": {
-"id": "20261103-101825",
-"time": "2026-11-03T10:18:25+11:00",
-"bird": "Frost",
-"bird_id": "b0014",
-"visit": 7,
+"id": "20261102-160808",
+"time": "2026-11-02T16:08:08+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 19,
 "confidence": "likely",
 "kind": "flyer",
-"species": "magpie or currawong",
-"size": "medium",
-"tone": "dark",
-"duration": 7.1,
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.4,
 "direction": "east",
 "box": [
-1056,
-514,
-68,
-46
+466,
+112,
+26,
+32
 ],
-"cell": "6:3",
-"image": "birds/20261103-101825.jpg",
-"sky": "overcast"
+"cell": "2:0",
+"image": "birds/20261102-160808.jpg",
+"sky": "overcast bright"
 },
 "shadow_strips_today": 7
 }
