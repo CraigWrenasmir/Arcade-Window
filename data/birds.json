@@ -58,9 +58,9 @@
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 10,
+"visits": 9,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-03T10:14:54+11:00",
+"last_seen": "2026-11-02T15:02:06+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
@@ -71,8 +71,7 @@
 "birds/20261102-143942.jpg",
 "birds/20261102-144310.jpg",
 "birds/20261102-145959.jpg",
-"birds/20261102-150206.jpg",
-"birds/20261103-101454.jpg"
+"birds/20261102-150206.jpg"
 ]
 },
 {
@@ -203,154 +202,6 @@
 "images": [
 "birds/20261102-154929.jpg"
 ]
-},
-{
-"id": "b0013",
-"name": "Bellow",
-"visits": 1,
-"first_seen": "2026-11-03T09:58:01+11:00",
-"last_seen": "2026-11-03T09:58:01+11:00",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "dark",
-"kind": "flyer",
-"cell": "4:3",
-"images": [
-"birds/20261103-095801.jpg"
-]
-},
-{
-"id": "b0014",
-"name": "Frost",
-"visits": 7,
-"first_seen": "2026-11-03T10:05:39+11:00",
-"last_seen": "2026-11-03T10:18:25+11:00",
-"species": "magpie or currawong",
-"size": "medium",
-"tone": "dark",
-"kind": "flyer",
-"cell": "7:3",
-"images": [
-"birds/20261103-100545.jpg",
-"birds/20261103-100633.jpg",
-"birds/20261103-101109.jpg",
-"birds/20261103-101438.jpg",
-"birds/20261103-101748.jpg",
-"birds/20261103-101825.jpg"
-]
-},
-{
-"id": "b0015",
-"name": "Cortázar",
-"visits": 3,
-"first_seen": "2026-11-03T10:06:13+11:00",
-"last_seen": "2026-11-03T10:14:18+11:00",
-"species": "crow or raven",
-"size": "large",
-"tone": "dark",
-"kind": "percher",
-"cell": "6:3",
-"images": [
-"birds/20261103-100613.jpg",
-"birds/20261103-100930.jpg",
-"birds/20261103-101418.jpg"
-]
-},
-{
-"id": "b0016",
-"name": "Ackerley",
-"visits": 4,
-"first_seen": "2026-11-03T10:06:19+11:00",
-"last_seen": "2026-11-03T10:18:15+11:00",
-"species": "noisy miner or starling",
-"size": "small",
-"tone": "dark",
-"kind": "flyer",
-"cell": "6:4",
-"images": [
-"birds/20261103-100619.jpg",
-"birds/20261103-100637.jpg",
-"birds/20261103-101812.jpg",
-"birds/20261103-101815.jpg"
-]
-},
-{
-"id": "b0017",
-"name": "Wilde",
-"visits": 1,
-"first_seen": "2026-11-03T10:06:29+11:00",
-"last_seen": "2026-11-03T10:06:29+11:00",
-"species": "crow or raven",
-"size": "large",
-"tone": "dark",
-"kind": "percher",
-"cell": "6:4",
-"images": [
-"birds/20261103-100629.jpg"
-]
-},
-{
-"id": "b0018",
-"name": "Ryu",
-"visits": 1,
-"first_seen": "2026-11-03T10:10:02+11:00",
-"last_seen": "2026-11-03T10:10:02+11:00",
-"species": "noisy miner or starling",
-"size": "small",
-"tone": "dark",
-"kind": "percher",
-"cell": "7:4",
-"images": [
-"birds/20261103-101002.jpg"
-]
-},
-{
-"id": "b0019",
-"name": "Sartre",
-"visits": 3,
-"first_seen": "2026-11-03T10:10:38+11:00",
-"last_seen": "2026-11-03T10:18:07+11:00",
-"species": "crow or raven",
-"size": "large",
-"tone": "dark",
-"kind": "percher",
-"cell": "7:4",
-"images": [
-"birds/20261103-101038.jpg",
-"birds/20261103-101051.jpg",
-"birds/20261103-101807.jpg"
-]
-},
-{
-"id": "b0020",
-"name": "Lerner",
-"visits": 2,
-"first_seen": "2026-11-03T10:11:49+11:00",
-"last_seen": "2026-11-03T10:17:21+11:00",
-"species": "crow or raven",
-"size": "large",
-"tone": "dark",
-"kind": "flyer",
-"cell": "6:4",
-"images": [
-"birds/20261103-101149.jpg",
-"birds/20261103-101721.jpg"
-]
-},
-{
-"id": "b0021",
-"name": "McPhee",
-"visits": 1,
-"first_seen": "2026-11-03T10:12:43+11:00",
-"last_seen": "2026-11-03T10:12:43+11:00",
-"species": "crow or raven",
-"size": "large",
-"tone": "dark",
-"kind": "percher",
-"cell": "7:3",
-"images": [
-"birds/20261103-101243.jpg"
-]
 }
 ],
 "unused": [
@@ -469,6 +320,15 @@
 "Macfarlane",
 "Zweig",
 "Kaneda",
-"Herzog"
+"Herzog",
+"Bellow",
+"Frost",
+"Cortázar",
+"Ackerley",
+"Wilde",
+"Ryu",
+"Sartre",
+"Lerner",
+"McPhee"
 ]
 }
