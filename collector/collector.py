@@ -63,13 +63,13 @@ MAX_BLOB = 90
 GLOBAL_CHANGE_SKIP = 0.06  # fraction of frame changed -> lighting shift, not a bird
 WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything is written
 
-# Regions in 1280x720 coordinates, set for the angle of 2 Nov 2026 afternoon
-# (reference frame: ~/Desktop/imac-camera-test-9.jpg on the MacBook).
-WINDOW_HEAD = [(0, 0), (490, 0), (55, 220), (55, 720), (0, 720)]
-SKY = [(480, 0), (1280, 0), (1280, 180), (880, 235), (745, 215), (650, 300), (560, 320), (560, 250)]
-WALL = [(460, 380), (1280, 200), (1280, 560), (460, 640)]
-DOME = [(60, 660), (1280, 600), (1280, 720), (60, 720)]
-LEFTWALL = [(60, 260), (420, 140), (440, 620), (60, 660)]
+# Regions in 1280x720 coordinates, for the GoPro hanging upside down on the glass, fixed 3 Nov 2026
+# (the stream is turned 180 degrees before these apply)
+WINDOW_HEAD = [(0, 0), (165, 0), (0, 290)]
+SKY = [(310, 0), (1280, 0), (1280, 230), (893, 318), (772, 285), (662, 368), (640, 365)]
+WALL = [(500, 410), (1280, 290), (1280, 640), (500, 660)]
+DOME = [(0, 665), (720, 720), (0, 720)]
+LEFTWALL = [(0, 300), (487, 413), (487, 567), (0, 533)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
