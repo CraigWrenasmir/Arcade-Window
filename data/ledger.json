@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-150206",
+"time": "2026-11-02T15:02:06+11:00",
+"bird": "Notley",
+"bird_id": "b0004",
+"visit": 9,
+"confidence": "likely",
+"kind": "flyer",
+"species": "pigeon",
+"size": "medium",
+"tone": "mid",
+"duration": 0.4,
+"direction": "west",
+"box": [
+786,
+0,
+48,
+48
+],
+"cell": "5:0",
+"image": "birds/20261102-150206.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-145959",
 "time": "2026-11-02T14:59:59+11:00",
 "bird": "Notley",

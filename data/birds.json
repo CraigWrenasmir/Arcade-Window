@@ -59,21 +59,21 @@
 {
 "id": "b0004",
 "name": "Notley",
-"visits": 8,
+"visits": 9,
 "first_seen": "2026-11-02T11:54:21+11:00",
-"last_seen": "2026-11-02T14:59:59+11:00",
+"last_seen": "2026-11-02T15:02:06+11:00",
 "species": "pigeon",
 "size": "medium",
 "tone": "mid",
 "kind": "flyer",
 "cell": "5:1",
 "images": [
-"birds/20261102-122056.jpg",
 "birds/20261102-130618.jpg",
 "birds/20261102-132934.jpg",
 "birds/20261102-143942.jpg",
 "birds/20261102-144310.jpg",
-"birds/20261102-145959.jpg"
+"birds/20261102-145959.jpg",
+"birds/20261102-150206.jpg"
 ]
 },
 {
