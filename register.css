@@ -73,12 +73,5 @@ h2 small{color:var(--dim);letter-spacing:0;text-transform:none;font-weight:400}
 footer{padding:14px 18px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);line-height:1.7}
 footer b{color:var(--ink);font-weight:500}
 
-/* Craig's photos */
-.photogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.ph{background:var(--panel);border:1px solid var(--line);padding:8px;cursor:zoom-in}
-.ph:hover{border-color:var(--red)}
-.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--line)}
-.ph .cap{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.4}
-.ph .cap b{color:var(--ink);font-weight:500}
-.gb img.isphoto{image-rendering:auto;outline:2px solid var(--red);outline-offset:-2px}
+.ledger tr.photo td:nth-child(3)::before{content:"◉ ";color:var(--dim)}
 .box img.main.photo{image-rendering:auto}

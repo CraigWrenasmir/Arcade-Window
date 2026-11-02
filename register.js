@@ -14,7 +14,7 @@
 
   function describe(e, long){
     if(e.photo){
-      return long ? `${fmtT(e.time)}<br>photographed by ${esc(e.by||"Craig")}<br>${esc(e.caption||"")}` : esc(e.caption||"photo");
+      return long ? `${fmtT(e.time)}<br>${esc(e.caption||"")}<br>photographed by ${esc(e.by||"Craig")}` : `${esc(e.caption||"")}. Photographed by ${esc(e.by||"Craig")}`;
     }
     const what = e.kind==="flyer" ? "flew" + (e.direction ? " " + e.direction : " past") : "sat there for " + e.duration + " seconds";
     const who = e.confidence==="likely" ? "probably the same bird as before, visit " + e.visit : "first time we have seen this one";
@@ -52,25 +52,20 @@
     const ph = photos.filter(p => (p.birds||[]).includes(b.name)).map(p => ({...p, image: p.file, photo: true, bird: b.name}));
     return v.concat(ph).sort((a,c) => new Date(c.time) - new Date(a.time));
   }
-  function renderPhotos(){
-    const sec = $("#photos"); if(!sec) return;
-    if(!photos.length){ sec.style.display = "none"; return; }
-    sec.style.display = "";
-    $("#photocount").textContent = `${photos.length}`;
-    const items = photos.map(p => ({...p, image: p.file, photo: true, bird: (p.birds||[]).join(", ") || "unnamed"}));
-    $("#photogrid").innerHTML = items.map((p,i) => `<div class="ph" data-i="${i}"><img src="data/${p.file}${bust()}" alt="" loading="lazy"><div class="cap"><b>${esc(p.caption||"")}</b><br>${fmtT(p.time)}${p.birds&&p.birds.length?" · "+esc(p.birds.join(", ")):""}</div></div>`).join("");
-    $("#photogrid").querySelectorAll(".ph").forEach(el => el.addEventListener("click", () => openBox(items, parseInt(el.dataset.i,10), "Craig's photos")));
-  }
-
   // ---------- render ----------
+  function mixed(){
+    const ph = photos.map(p => ({...p, image: p.file, photo: true, bird: (p.birds||[]).join(", ") || (p.caption||"a photo"), kind: "photo"}));
+    return events.concat(ph).sort((a,c) => new Date(c.time) - new Date(a.time));
+  }
   function render(){
+    const all = mixed();
     // latest
-    if(events.length){
-      const e = events[0];
+    if(all.length){
+      const e = all[0];
       $("#birdimg").src = "data/"+e.image+bust();
       $("#birdname").textContent = e.bird;
       $("#birdmeta").innerHTML = describe(e, true);
-      $("#birdimg").onclick = () => openBox(events, 0, "all entries");
+      $("#birdimg").onclick = () => openBox(all, 0, "all entries");
       $("#latestwrap").classList.remove("empty");
     }
     // catalogue
@@ -78,7 +73,7 @@
     $("#catcount").textContent = sorted.length ? `${sorted.length} named` : "";
     $("#gallery").innerHTML = sorted.map(b => {
       const v = visitsOf(b); const main = v[0];
-      return `<div class="gb" data-bird="${b.id}">${main?`<img src="data/${main.image}${bust()}" alt="" class="${main.photo?"isphoto":""}">`:""}<b>${esc(b.name)}</b>${b.visits} visit${b.visits===1?"":"s"} · ${b.kind}<br>${sp(b.species||"")}<br><span class="when">first ${fmtT(b.first_seen)}</span>${v.length>1?`<div class="more">${v.slice(1,7).map((e,k)=>`<img src="data/${e.image}${bust()}" alt="" class="${e.photo?"isphoto":""}" data-bird="${b.id}" data-k="${k+1}">`).join("")}</div>`:""}</div>`;
+      return `<div class="gb" data-bird="${b.id}">${main?`<img src="data/${main.image}${bust()}" alt="" >`:""}<b>${esc(b.name)}</b>${b.visits} visit${b.visits===1?"":"s"} · ${b.kind}<br>${sp(b.species||"")}<br><span class="when">first ${fmtT(b.first_seen)}</span>${v.length>1?`<div class="more">${v.slice(1,7).map((e,k)=>`<img src="data/${e.image}${bust()}" alt="" data-bird="${b.id}" data-k="${k+1}">`).join("")}</div>`:""}</div>`;
     }).join("");
     $("#gallery").querySelectorAll(".gb").forEach(card => {
       card.addEventListener("click", ev => {
@@ -88,15 +83,15 @@
       });
     });
     // ledger grouped by day
-    $("#ledgercount").textContent = events.length ? `${events.length} entries` : "";
+    $("#ledgercount").textContent = all.length ? `${all.length} entries` : "";
     let html = "", day = "";
-    events.forEach((e, i) => {
+    all.forEach((e, i) => {
       const d = fmtD(e.time);
       if(d !== day){ day = d; html += `<tr class="day"><td colspan="4">${d}</td></tr>`; }
       html += `<tr class="${e.kind}" data-i="${i}"><td class="i"><img src="data/${e.image}${bust()}" alt="" loading="lazy"></td><td class="t">${new Date(e.time).toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit",timeZone:"Australia/Sydney"})}</td><td><b>${esc(e.bird)}</b>${e.visit>1?" ×"+e.visit:""}</td><td class="s">${describe(e,false)}</td></tr>`;
     });
     $("#ledger").innerHTML = html;
-    $("#ledger").querySelectorAll("tr[data-i]").forEach(tr => tr.addEventListener("click", () => openBox(events, parseInt(tr.dataset.i,10), "all entries")));
+    $("#ledger").querySelectorAll("tr[data-i]").forEach(tr => tr.addEventListener("click", () => openBox(all, parseInt(tr.dataset.i,10), "all entries")));
   }
 
   async function loadState(){
@@ -114,7 +109,7 @@
   async function loadBirds(){
     try{
       const [led, cat, ph] = await Promise.all([j("ledger.json"), j("birds.json"), j("photos.json").catch(()=>({photos:[]}))]);
-      events = led.events || []; birds = cat.birds || []; photos = ph.photos || []; render(); renderPhotos();
+      events = led.events || []; birds = cat.birds || []; photos = ph.photos || []; render();
     }catch(e){}
   }
 
