@@ -1,6 +1,98 @@
 {
 "events": [
 {
+"id": "20261102-155012",
+"time": "2026-11-02T15:50:12+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 17,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.7,
+"direction": "west",
+"box": [
+1192,
+124,
+16,
+20
+],
+"cell": "7:0",
+"image": "birds/20261102-155012.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-154929",
+"time": "2026-11-02T15:49:29+11:00",
+"bird": "Bernhard",
+"bird_id": "b0012",
+"visit": 1,
+"confidence": "new",
+"kind": "flyer",
+"species": "pigeon or dove",
+"size": "medium",
+"tone": "pale",
+"duration": 0.4,
+"direction": "up",
+"box": [
+1000,
+48,
+58,
+48
+],
+"cell": "6:0",
+"image": "birds/20261102-154929.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-154649",
+"time": "2026-11-02T15:46:49+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 16,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.8,
+"direction": "east",
+"box": [
+458,
+120,
+26,
+34
+],
+"cell": "2:0",
+"image": "birds/20261102-154649.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261102-154628",
+"time": "2026-11-02T15:46:28+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 15,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 1.5,
+"direction": "west",
+"box": [
+418,
+176,
+18,
+20
+],
+"cell": "2:1",
+"image": "birds/20261102-154628.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-150206",
 "time": "2026-11-02T15:02:06+11:00",
 "bird": "Notley",

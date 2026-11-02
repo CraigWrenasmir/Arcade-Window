@@ -1,51 +1,51 @@
 {
-"time": "2026-11-02T15:45:32+11:00",
+"time": "2026-11-02T15:50:35+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 18634,
+"frames": 19416,
 "sky": {
 "hex": "#cbd3c1",
 "lum": 0.812,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#53424d",
-"lum": 0.286
+"hex": "#574752",
+"lum": 0.304
 },
 "dome": {
-"hex": "#4c3e4e",
-"lum": 0.269
+"hex": "#514353",
+"lum": 0.288
 },
 "brick": {
-"hex": "#68555e",
-"lum": 0.362
+"hex": "#725d66",
+"lum": 0.395
 },
-"overall_lum": 0.446,
+"overall_lum": 0.463,
 "motion": 0.0,
-"birds_today": 67,
-"birds_total": 67,
-"named_birds": 11,
+"birds_today": 71,
+"birds_total": 71,
+"named_birds": 12,
 "last_bird": {
-"id": "20261102-150206",
-"time": "2026-11-02T15:02:06+11:00",
-"bird": "Notley",
-"bird_id": "b0004",
-"visit": 9,
+"id": "20261102-155012",
+"time": "2026-11-02T15:50:12+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 17,
 "confidence": "likely",
 "kind": "flyer",
-"species": "pigeon",
-"size": "medium",
-"tone": "mid",
-"duration": 0.4,
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 0.7,
 "direction": "west",
 "box": [
-786,
-0,
-48,
-48
+1192,
+124,
+16,
+20
 ],
-"cell": "5:0",
-"image": "birds/20261102-150206.jpg",
+"cell": "7:0",
+"image": "birds/20261102-155012.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 47
+"shadow_strips_today": 48
 }

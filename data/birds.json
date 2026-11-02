@@ -158,21 +158,21 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 14,
+"visits": 17,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-02T14:58:39+11:00",
+"last_seen": "2026-11-02T15:50:12+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
 "kind": "flyer",
 "cell": "7:0",
 "images": [
-"birds/20261102-144528.jpg",
-"birds/20261102-144609.jpg",
-"birds/20261102-144836.jpg",
 "birds/20261102-145039.jpg",
 "birds/20261102-145404.jpg",
-"birds/20261102-145839.jpg"
+"birds/20261102-145839.jpg",
+"birds/20261102-154628.jpg",
+"birds/20261102-154649.jpg",
+"birds/20261102-155012.jpg"
 ]
 },
 {
@@ -188,6 +188,21 @@
 "cell": "4:1",
 "images": [
 "birds/20261102-141640.jpg"
+]
+},
+{
+"id": "b0012",
+"name": "Bernhard",
+"visits": 1,
+"first_seen": "2026-11-02T15:49:29+11:00",
+"last_seen": "2026-11-02T15:49:29+11:00",
+"species": "pigeon or dove",
+"size": "medium",
+"tone": "pale",
+"kind": "flyer",
+"cell": "6:0",
+"images": [
+"birds/20261102-154929.jpg"
 ]
 }
 ],
@@ -316,7 +331,6 @@
 "Dorian",
 "Kavan",
 "Lezama",
-"Totoro",
-"Bernhard"
+"Totoro"
 ]
 }
