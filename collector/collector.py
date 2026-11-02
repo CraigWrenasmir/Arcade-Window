@@ -58,8 +58,9 @@ LATEST_EVERY = 60
 EDGES_EVERY = 300
 MAX_EVENTS_PER_HOUR = 40
 LEDGER_KEEP = 400
-MIN_BLOB = 8        # px at 640 wide
-MAX_BLOB = 90
+DET_W, DET_H = 1280, 720   # detection runs on the full working frame: the GoPro's wide view makes birds small
+MIN_BLOB = 6        # px at DET_W wide
+MAX_BLOB = 180
 GLOBAL_CHANGE_SKIP = 0.06  # fraction of frame changed -> lighting shift, not a bird
 WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything is written
 
@@ -411,7 +412,7 @@ class Collector:
 
     # ---------- birds ----------
     def perch_cell(self, cx, cy):
-        return f"{int(cx * 8 / 640)}:{int(cy * 5 / 360)}"
+        return f"{int(cx * 8 / DET_W)}:{int(cy * 5 / DET_H)}"
 
     def identify(self, sig):
         """Naive re-identification: same perch cell, size bucket and tone within 21 days."""
@@ -459,7 +460,7 @@ class Collector:
         dy = path[-1][1] - path[0][1]
         travel = float(np.hypot(dx, dy))
         dur = max(0.0, ev["end"] - ev["start"])
-        moved = travel > 40 or dur < 2.0
+        moved = travel > 60 or dur < 2.0   # px at DET_W wide
         kind = "flyer" if moved else "percher"
         if kind == "flyer" and ev["frames"] < 2:
             return
@@ -467,7 +468,9 @@ class Collector:
             print(f"[skip] {iso(t)} drifted for {dur:.0f} s, not a bird", flush=True)
             return
         # scale blob box to full frame
-        sx, sy = W / 640.0, H / 360.0
+        sx, sy = W / float(DET_W), H / float(DET_H)
+        # size words were set on the old camera at 640 wide; the GoPro sees wider, so a bird covers about half the area
+        area = area * (640.0 / DET_W) ** 2 * 2.0
         X, Y, Wd, Hd = int(x * sx), int(y * sy), int(w * sx), int(h * sy)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         blob = gray[max(0, Y):Y + Hd, max(0, X):X + Wd]
@@ -552,12 +555,12 @@ class Collector:
         return darker and dh < 12 and ds < 25
 
     def detect(self, frame, t):
-        small = cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA)
+        small = frame if frame.shape[1] == DET_W else cv2.resize(frame, (DET_W, DET_H), interpolation=cv2.INTER_AREA)
         gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (5, 5), 0)
         fg = self.bg.apply(small, learningRate=0.004)
         fg = cv2.threshold(fg, 200, 255, cv2.THRESH_BINARY)[1]   # shadows come back as 127: drop them
-        valid = cv2.resize(MASK_VALID, (640, 360), interpolation=cv2.INTER_NEAREST)
+        valid = cv2.resize(MASK_VALID, (DET_W, DET_H), interpolation=cv2.INTER_NEAREST)
         fg = cv2.bitwise_and(fg, valid)
         changed = float(np.count_nonzero(fg)) / float(np.count_nonzero(valid))
         settled = self.frames >= WARMUP_FRAMES + 60   # background model has had ~20 s to learn
@@ -584,7 +587,7 @@ class Collector:
             ar = w / float(h)
             if ar > 3 or ar < 0.45:      # birds are compact; vents, poles and tall shadows are not
                 continue
-            if self.looks_like_shadow(small, x, y, w, h):
+            if self.looks_like_shadow(small, x, y, w, h, pad=16):
                 continue
             blobs.append((x, y, w, h, int(cv2.contourArea(c))))
         ev = self.tracker.update(blobs, t, small, frame)
