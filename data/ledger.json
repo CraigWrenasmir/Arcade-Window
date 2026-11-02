@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261102-143012",
+"time": "2026-11-02T14:30:12+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 3,
+"confidence": "likely",
+"kind": "flyer",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"duration": 1.0,
+"direction": "up",
+"box": [
+446,
+10,
+36,
+34
+],
+"cell": "2:0",
+"image": "birds/20261102-143012.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261102-142527",
 "time": "2026-11-02T14:25:27+11:00",
 "bird": "Sontag",
