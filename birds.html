@@ -5,112 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bird Register · Arcade Window</title>
 <meta name="description" content="Every bird that has crossed one window in a Newcastle arcade, boxed, timed and named from the library shelves.">
-<style>
-  :root{ --bg:#ece3d6; --panel:#f8f3ea; --ink:#3d3040; --dim:#8c7f88; --red:#b8323e; --line:#d9cdbd; --sky:#aa90d9; }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 "IBM Plex Mono","SF Mono",Menlo,Consolas,monospace}
-  a{color:var(--red)}
-  header{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:14px 18px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,var(--panel) 0 55%,var(--sky));transition:background 6s ease}
-  header h1{font-size:15px;letter-spacing:.18em;margin:0;text-transform:uppercase;color:var(--red)}
-  header .sub{color:var(--dim)}
-  header .live{margin-left:auto;color:var(--dim)}
-  header .live b{color:var(--ink);font-weight:500}
-  main{max-width:1100px;margin:0 auto;padding:18px}
-  h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin:26px 0 10px;display:flex;justify-content:space-between;gap:10px}
-  h2 small{color:var(--dim);letter-spacing:0;text-transform:none;font-weight:400}
-  .muted{color:var(--dim)}
-  .latest{display:grid;grid-template-columns:320px 1fr;gap:18px;background:var(--panel);border:1px solid var(--line);padding:16px}
-  @media (max-width:700px){.latest{grid-template-columns:1fr}}
-  .latest img{width:320px;height:320px;object-fit:cover;border:1px solid var(--line);background:var(--bg);image-rendering:pixelated;display:block}
-  .latest .name{font-size:30px;line-height:1.1;margin:4px 0 10px}
-  .latest .meta{color:var(--dim);line-height:1.7}
-  .latest .meta b{color:var(--ink);font-weight:500}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-  .gb{background:var(--panel);border:1px solid var(--line);padding:8px;font-size:12px;color:var(--dim);line-height:1.4}
-  .gb img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--line);display:block;margin-bottom:6px;image-rendering:pixelated;background:var(--bg)}
-  .gb b{color:var(--ink);font-weight:500;display:block;font-size:15px}
-  .gb .more{display:flex;gap:3px;margin-top:5px}
-  .gb .more img{width:26px;height:26px;margin:0;aspect-ratio:auto}
-  .ledger{background:var(--panel);border:1px solid var(--line);padding:8px 12px;font-size:12.5px;max-height:70vh;overflow:auto}
-  .ledger table{border-collapse:collapse;width:100%}
-  .ledger td{padding:3px 10px 3px 0;vertical-align:top;white-space:nowrap}
-  .ledger td.s{white-space:normal;color:var(--dim)}
-  .ledger td.i img{width:40px;height:40px;object-fit:cover;border:1px solid var(--line);display:block;image-rendering:pixelated}
-  .ledger tr.flyer td:nth-child(2)::before{content:"↗ ";color:var(--dim)}
-  .ledger tr.percher td:nth-child(2)::before{content:"▪ ";color:var(--red)}
-  footer{padding:18px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);line-height:1.7;max-width:1100px;margin:20px auto 0}
-  footer b{color:var(--ink);font-weight:500}
-</style>
+<link rel="stylesheet" href="register.css">
 </head>
 <body>
 <header>
   <h1>Bird Register</h1>
   <span class="sub">one window in a Newcastle arcade · <a href="./">the whole window</a></span>
-  <span class="live" id="livetxt">waiting for the window…</span>
+  <span class="live"><span class="dot" id="dot"></span><span id="livetxt">waiting for the window…</span></span>
 </header>
-<main>
-  <div class="latest" id="latest">
-    <img id="birdimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <div>
-      <div class="muted">Most recent</div>
-      <div class="name" id="birdname">No birds yet</div>
-      <div class="meta" id="birdmeta">The register opens when something crosses the window.</div>
+
+<main class="single">
+  <section>
+    <div class="latest empty" id="latestwrap">
+      <img id="birdimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      <div>
+        <div class="muted">Most recent</div>
+        <div class="name" id="birdname">No birds yet</div>
+        <div class="meta" id="birdmeta">The register opens when something crosses the window.</div>
+      </div>
     </div>
-  </div>
 
-  <h2>Catalogue <small id="catcount"></small></h2>
-  <div class="muted" style="margin-bottom:10px">Every bird the window has named, most recently seen first. Small frames are earlier visits.</div>
-  <div class="gallery" id="gallery"></div>
+    <h2>Catalogue <small id="catcount"></small></h2>
+    <div class="muted" style="margin-bottom:10px">Every bird the window has named, most recently seen first. Click a card to page through that bird's visits. Small frames are earlier visits.</div>
+    <div class="gallery" id="gallery"></div>
 
-  <h2>Ledger <small id="ledgercount"></small></h2>
-  <div class="ledger"><table id="ledger"></table></div>
+    <h2>Ledger <small id="ledgercount"></small></h2>
+    <div class="ledger"><table id="ledger"></table></div>
+  </section>
 </main>
+
 <footer>
   <b>How this works.</b> A 2012 iMac at a first-floor window watches a glass dome, two brick walls, two satellite dishes and a wedge of sky, a few frames a second.
   When something small moves against that fixed scene, it keeps a boxed crop and a timestamp. Nothing else is stored.
   Names are drawn from the authors and characters on the library shelves in the same room. Species are impressions from size and tone, nothing more.
-  A bird is "likely" the same as an earlier one when it uses the same perch at the same size and tone within three weeks, which is as close to recognition as this camera gets.
-  <span id="uptime"></span>
+  A bird is "likely" the same as an earlier one when it uses the same perch at the same size and tone within three weeks, which is as close to recognition as this camera gets.<span id="uptime"></span>
 </footer>
-<script>
-(function(){
-  const $ = s => document.querySelector(s);
-  const bust = () => "?t=" + Math.floor(Date.now()/30000);
-  const j = async p => { const r = await fetch("data/"+p+bust(), {cache:"no-store"}); if(!r.ok) throw new Error(p); return r.json(); };
-  const fmtT = iso => new Date(iso).toLocaleString("en-AU",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Australia/Sydney"});
-  const sp = t => (t||"").replace(/\s*\(guess\)/g,"");
-  async function refresh(){
-    try{
-      const state = await j("state.json");
-      const age = (Date.now() - new Date(state.time).getTime())/1000;
-      document.documentElement.style.setProperty("--sky", state.sky.hex);
-      $("#livetxt").innerHTML = age > 900 ? `last heard <b>${fmtT(state.time)}</b>` : `sky <b>${state.sky.word}</b> · birds today <b>${state.birds_today}</b> · named so far <b>${state.named_birds}</b>`;
-      $("#uptime").textContent = ` Watching since ${fmtT(state.started)}.`;
-    }catch(e){ $("#livetxt").textContent = "no data yet"; }
-    try{
-      const [led, cat] = await Promise.all([j("ledger.json"), j("birds.json")]);
-      const ev = led.events || [];
-      if(ev.length){
-        const e = ev[0];
-        $("#birdimg").src = "data/"+e.image+bust();
-        $("#birdname").textContent = e.bird + (e.confidence==="likely" ? ", again" : "");
-        $("#birdmeta").innerHTML = `<b>${fmtT(e.time)}</b><br>${e.kind==="flyer" ? "passed through"+(e.direction?" heading "+e.direction:"") : "perched for "+e.duration+" s"}<br>${sp(e.species)}, ${e.size}, ${e.tone}<br>${e.confidence==="likely" ? "likely the same bird, visit "+e.visit : "first time on the register"}<br>sky was ${e.sky||"unrecorded"}`;
-      }
-      const birds = (cat.birds||[]).slice().sort((a,b)=>new Date(b.last_seen)-new Date(a.last_seen));
-      $("#catcount").textContent = birds.length ? `${birds.length} named` : "";
-      $("#gallery").innerHTML = birds.map(b=>{
-        const imgs = (b.images||[]).slice().reverse();
-        const main = imgs[0] || ev.find(x=>x.bird_id===b.id)?.image;
-        return `<div class="gb">${main?`<img src="data/${main}${bust()}" alt="">`:""}<b>${b.name}</b>${b.visits} visit${b.visits===1?"":"s"} · ${b.kind}<br>${sp(b.species||"")}<br>first ${fmtT(b.first_seen)}<br>last ${fmtT(b.last_seen)}${imgs.length>1?`<div class="more">${imgs.slice(1,6).map(i=>`<img src="data/${i}${bust()}" alt="">`).join("")}</div>`:""}</div>`;
-      }).join("");
-      $("#ledgercount").textContent = ev.length ? `${ev.length} entries` : "";
-      $("#ledger").innerHTML = ev.map(e =>
-        `<tr class="${e.kind}"><td class="i"><img src="data/${e.image}${bust()}" alt="" loading="lazy"></td><td>${fmtT(e.time)}</td><td><b>${e.bird}</b>${e.visit>1?" ×"+e.visit:""}</td><td class="s">${e.kind==="flyer"?"flew "+(e.direction||""):"perched "+e.duration+"s"}, ${e.size}, ${e.tone}. ${sp(e.species)}. Sky ${e.sky||"unrecorded"}.</td></tr>`
-      ).join("");
-    }catch(e){}
-  }
-  refresh(); setInterval(refresh, 60000);
-})();
-</script>
+
+<div class="box" id="box">
+  <span id="boxclose">×</span>
+  <div class="inner">
+    <img class="main" id="boximg" alt="">
+    <div class="side">
+      <div id="boxcap"></div>
+      <div class="nav"><span id="boxprev">← older</span><span id="boxnext">newer →</span></div>
+      <div class="nav" id="boxcount"></div>
+    </div>
+  </div>
+</div>
+
+<script src="register.js"></script>
 </body>
 </html>
