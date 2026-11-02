@@ -241,7 +241,7 @@ class Collector:
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, W)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
         self.cap.set(cv2.CAP_PROP_FPS, 10)
-        self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=False)
+        self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=True)
         self.tracker = Tracker()
         self.longexp = None
         self.longexp_n = 0
@@ -430,7 +430,8 @@ class Collector:
         small = cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA)
         gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (5, 5), 0)
-        fg = self.bg.apply(gray, learningRate=0.004)
+        fg = self.bg.apply(small, learningRate=0.004)
+        fg = cv2.threshold(fg, 200, 255, cv2.THRESH_BINARY)[1]   # shadows come back as 127: drop them
         valid = cv2.resize(MASK_VALID, (640, 360), interpolation=cv2.INTER_NEAREST)
         fg = cv2.bitwise_and(fg, valid)
         changed = float(np.count_nonzero(fg)) / float(np.count_nonzero(valid))
@@ -438,7 +439,7 @@ class Collector:
         self.motion_level = round(changed, 4) if settled else 0.0
         if changed > GLOBAL_CHANGE_SKIP and settled:
             # the camera moved or the light jumped: start the background again and wait it out
-            self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=False)
+            self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=True)
             self.suppress_until = t + 60
             print(f"[view] {iso()} global change {changed:.2f}, relearning", flush=True)
         if changed > GLOBAL_CHANGE_SKIP or not settled or t < self.suppress_until:
