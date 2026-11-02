@@ -258,6 +258,7 @@ class Collector:
         self.palettes = jload(os.path.join(DATA, "palettes.json"), {"history": []})
         self.recent_events = deque(maxlen=MAX_EVENTS_PER_HOUR)
         self.motion_level = 0.0
+        self.suppress_until = 0.0   # after the whole view shifts, relearn before trusting any blob
         self.today = now().date()
         self.shadow = self.load_shadow_day()
         self.stats = {}
@@ -413,7 +414,12 @@ class Collector:
         changed = float(np.count_nonzero(fg)) / float(np.count_nonzero(valid))
         settled = self.frames >= WARMUP_FRAMES + 60   # background model has had ~20 s to learn
         self.motion_level = round(changed, 4) if settled else 0.0
-        if changed > GLOBAL_CHANGE_SKIP or not settled:
+        if changed > GLOBAL_CHANGE_SKIP and settled:
+            # the camera moved or the light jumped: start the background again and wait it out
+            self.bg = cv2.createBackgroundSubtractorMOG2(history=400, varThreshold=24, detectShadows=False)
+            self.suppress_until = t + 60
+            print(f"[view] {iso()} global change {changed:.2f}, relearning", flush=True)
+        if changed > GLOBAL_CHANGE_SKIP or not settled or t < self.suppress_until:
             self.tracker.update([], t, small, frame)
             return
         fg = cv2.morphologyEx(fg, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
@@ -427,7 +433,7 @@ class Collector:
             if w > MAX_BLOB or h > MAX_BLOB:
                 continue
             ar = w / float(h)
-            if ar > 5 or ar < 0.2:
+            if ar > 3 or ar < 0.33:      # birds are compact; vents, poles and reflections are not
                 continue
             blobs.append((x, y, w, h, int(cv2.contourArea(c))))
         ev = self.tracker.update(blobs, t, small, frame)
