@@ -3,9 +3,9 @@
 {
 "id": "b0001",
 "name": "Brodsky",
-"visits": 3,
+"visits": 4,
 "first_seen": "2026-11-02T11:27:19+11:00",
-"last_seen": "2026-11-02T12:12:13+11:00",
+"last_seen": "2026-11-03T13:16:06+11:00",
 "species": "sparrow or wren (guess)",
 "size": "small",
 "tone": "mid",
@@ -13,7 +13,8 @@
 "cell": "4:1",
 "images": [
 "birds/20261102-115600.jpg",
-"birds/20261102-121213.jpg"
+"birds/20261102-121213.jpg",
+"birds/20261103-131606.jpg"
 ]
 },
 {
@@ -83,9 +84,9 @@
 {
 "id": "b0006",
 "name": "Tyrone",
-"visits": 7,
+"visits": 9,
 "first_seen": "2026-11-02T11:58:47+11:00",
-"last_seen": "2026-11-03T13:08:21+11:00",
+"last_seen": "2026-11-03T13:18:33+11:00",
 "species": "swallow or swift",
 "size": "tiny",
 "tone": "mid",
@@ -94,7 +95,9 @@
 "images": [
 "birds/20261103-121819.jpg",
 "birds/20261103-122031.jpg",
-"birds/20261103-130821.jpg"
+"birds/20261103-130821.jpg",
+"birds/20261103-131525.jpg",
+"birds/20261103-131833.jpg"
 ]
 },
 {
@@ -205,6 +208,36 @@
 "cell": "5:1",
 "images": [
 "birds/20261102-122142.jpg"
+]
+},
+{
+"id": "b0017",
+"name": "Ravelstein",
+"visits": 1,
+"first_seen": "2026-11-03T13:18:02+11:00",
+"last_seen": "2026-11-03T13:18:02+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"kind": "percher",
+"cell": "6:1",
+"images": [
+"birds/20261103-131802.jpg"
+]
+},
+{
+"id": "b0018",
+"name": "Lowell",
+"visits": 1,
+"first_seen": "2026-11-03T13:18:11+11:00",
+"last_seen": "2026-11-03T13:18:11+11:00",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"kind": "percher",
+"cell": "6:1",
+"images": [
+"birds/20261103-131811.jpg"
 ]
 }
 ],
@@ -330,8 +363,6 @@
 "Knausgaard",
 "Wolfe",
 "Coupland",
-"Rabbit",
-"Lowell",
-"Ravelstein"
+"Rabbit"
 ]
 }

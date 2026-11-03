@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T13:14:34+11:00",
+"time": "2026-11-03T13:19:33+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 1733,
+"frames": 2579,
 "sky": {
-"hex": "#c3c9cf",
-"lum": 0.785,
+"hex": "#cacfd8",
+"lum": 0.813,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#504842",
-"lum": 0.292
+"hex": "#514943",
+"lum": 0.296
 },
 "dome": {
-"hex": "#3d3c3a",
-"lum": 0.238
+"hex": "#403e3b",
+"lum": 0.246
 },
 "brick": {
-"hex": "#62564a",
-"lum": 0.348
+"hex": "#66594d",
+"lum": 0.361
 },
-"overall_lum": 0.34,
-"motion": 0.0001,
+"overall_lum": 0.35,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 8,
-"birds_total": 84,
-"named_birds": 13,
+"birds_today": 13,
+"birds_total": 89,
+"named_birds": 15,
 "last_bird": {
-"id": "20261103-130956",
-"time": "2026-11-03T13:09:56+11:00",
-"bird": "Bernhard",
-"bird_id": "b0012",
-"visit": 2,
+"id": "20261103-131833",
+"time": "2026-11-03T13:18:33+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 9,
 "confidence": "likely",
 "kind": "flyer",
-"species": "pigeon or dove",
-"size": "medium",
-"tone": "pale",
-"duration": 0.7,
-"direction": "west",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.8,
+"direction": "east",
 "box": [
-606,
-333,
-29,
-34
+754,
+281,
+13,
+11
 ],
-"cell": "3:2",
-"image": "birds/20261103-130956.jpg",
-"sky": "pale"
+"cell": "4:1",
+"image": "birds/20261103-131833.jpg",
+"sky": "overcast bright"
 },
-"shadow_strips_today": 35
+"shadow_strips_today": 36
 }
