@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261103-171359",
+"time": "2026-11-03T17:13:59+11:00",
+"bird": "Updike",
+"bird_id": "b0016",
+"visit": 3,
+"confidence": "likely",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 4.1,
+"direction": "",
+"box": [
+759,
+283,
+11,
+8
+],
+"cell": "4:1",
+"image": "birds/20261103-171359.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261103-163941",
 "time": "2026-11-03T16:39:41+11:00",
 "bird": "Totoro",

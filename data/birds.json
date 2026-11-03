@@ -121,9 +121,9 @@
 {
 "id": "b0016",
 "name": "Updike",
-"visits": 2,
+"visits": 3,
 "first_seen": "2026-11-02T12:21:06+11:00",
-"last_seen": "2026-11-03T12:55:03+11:00",
+"last_seen": "2026-11-03T17:13:59+11:00",
 "species": "sparrow or finch",
 "size": "tiny",
 "tone": "mid",
@@ -131,7 +131,8 @@
 "cell": "4:1",
 "images": [
 "birds/20261102-122106.jpg",
-"birds/20261103-125503.jpg"
+"birds/20261103-125503.jpg",
+"birds/20261103-171359.jpg"
 ]
 },
 {

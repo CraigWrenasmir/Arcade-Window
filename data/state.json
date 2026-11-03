@@ -1,25 +1,25 @@
 {
-"time": "2026-11-03T17:12:20+11:00",
+"time": "2026-11-03T17:17:24+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 38803,
+"frames": 39607,
 "sky": {
-"hex": "#d3d7e0",
-"lum": 0.845,
+"hex": "#ced4dd",
+"lum": 0.83,
 "word": "overcast bright"
 },
 "wall": {
-"hex": "#4d453f",
-"lum": 0.278
+"hex": "#4e463f",
+"lum": 0.282
 },
 "dome": {
-"hex": "#3a3836",
-"lum": 0.224
+"hex": "#3c3a38",
+"lum": 0.232
 },
 "brick": {
-"hex": "#605348",
-"lum": 0.336
+"hex": "#62554a",
+"lum": 0.347
 },
-"overall_lum": 0.336,
+"overall_lum": 0.343,
 "motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
@@ -27,31 +27,31 @@
 "hot": false,
 "busy": true
 },
-"birds_today": 17,
-"birds_total": 93,
+"birds_today": 18,
+"birds_total": 94,
 "named_birds": 15,
 "last_bird": {
-"id": "20261103-163941",
-"time": "2026-11-03T16:39:41+11:00",
-"bird": "Totoro",
-"bird_id": "b0018",
-"visit": 1,
-"confidence": "new",
+"id": "20261103-171359",
+"time": "2026-11-03T17:13:59+11:00",
+"bird": "Updike",
+"bird_id": "b0016",
+"visit": 3,
+"confidence": "likely",
 "kind": "percher",
 "species": "sparrow or finch",
 "size": "tiny",
-"tone": "pale",
-"duration": 5.7,
+"tone": "mid",
+"duration": 4.1,
 "direction": "",
 "box": [
-623,
-366,
-13,
-11
+759,
+283,
+11,
+8
 ],
-"cell": "3:2",
-"image": "birds/20261103-163941.jpg",
+"cell": "4:1",
+"image": "birds/20261103-171359.jpg",
 "sky": "overcast bright"
 },
-"shadow_strips_today": 82
+"shadow_strips_today": 83
 }
