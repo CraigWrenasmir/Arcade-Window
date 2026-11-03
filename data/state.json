@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T13:04:03+11:00",
+"time": "2026-11-03T13:04:35+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 2981,
+"frames": 46,
 "sky": {
-"hex": "#abbcd3",
-"lum": 0.73,
+"hex": "#afbcd0",
+"lum": 0.733,
 "word": "clear"
 },
 "wall": {
-"hex": "#8f7e6f",
-"lum": 0.51
+"hex": "#91806f",
+"lum": 0.515
 },
 "dome": {
-"hex": "#69645e",
-"lum": 0.397
+"hex": "#6d6761",
+"lum": 0.41
 },
 "brick": {
-"hex": "#96836e",
-"lum": 0.527
+"hex": "#99846f",
+"lum": 0.536
 },
-"overall_lum": 0.51,
-"motion": 0.0006,
+"overall_lum": 0.508,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 29,
-"birds_total": 105,
-"named_birds": 21,
+"birds_today": 5,
+"birds_total": 81,
+"named_birds": 13,
 "last_bird": {
-"id": "20261103-125949",
-"time": "2026-11-03T12:59:49+11:00",
-"bird": "Vuong",
-"bird_id": "b0024",
+"id": "20261103-125503",
+"time": "2026-11-03T12:55:03+11:00",
+"bird": "Updike",
+"bird_id": "b0016",
 "visit": 2,
 "confidence": "likely",
-"kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
 "tone": "mid",
-"duration": 1.4,
-"direction": "west",
+"duration": 3.5,
+"direction": "",
 "box": [
-698,
-301,
-21,
-20
+762,
+282,
+9,
+9
 ],
-"cell": "4:2",
-"image": "birds/20261103-125949.jpg",
-"sky": "clear"
+"cell": "4:1",
+"image": "birds/20261103-125503.jpg",
+"sky": "pale"
 },
 "shadow_strips_today": 33
 }
