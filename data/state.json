@@ -1,56 +1,56 @@
 {
-"time": "2026-11-03T12:28:41+11:00",
+"time": "2026-11-03T12:29:13+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 1872,
+"frames": 46,
 "sky": {
-"hex": "#79bffe",
+"hex": "#7cbefd",
 "lum": 0.698,
 "word": "clear"
 },
 "wall": {
-"hex": "#a59587",
-"lum": 0.597
+"hex": "#a09182",
+"lum": 0.581
 },
 "dome": {
-"hex": "#716d68",
-"lum": 0.431
+"hex": "#6f6c67",
+"lum": 0.426
 },
 "brick": {
-"hex": "#a4917e",
-"lum": 0.584
+"hex": "#a18f7b",
+"lum": 0.575
 },
-"overall_lum": 0.606,
-"motion": 0.0054,
+"overall_lum": 0.598,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 27,
-"birds_total": 103,
-"named_birds": 20,
+"birds_today": 25,
+"birds_total": 101,
+"named_birds": 19,
 "last_bird": {
-"id": "20261103-122510",
-"time": "2026-11-03T12:25:10+11:00",
-"bird": "Hunter",
-"bird_id": "b0023",
-"visit": 2,
+"id": "20261103-122432",
+"time": "2026-11-03T12:24:32+11:00",
+"bird": "Sontag",
+"bird_id": "b0010",
+"visit": 21,
 "confidence": "likely",
 "kind": "flyer",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
-"duration": 5.7,
-"direction": "down",
+"duration": 9.4,
+"direction": "east",
 "box": [
-491,
-247,
-16,
-14
+470,
+226,
+18,
+16
 ],
-"cell": "3:1",
-"image": "birds/20261103-122510.jpg",
+"cell": "2:1",
+"image": "birds/20261103-122432.jpg",
 "sky": "clear"
 },
 "shadow_strips_today": 27
