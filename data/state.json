@@ -1,25 +1,25 @@
 {
-"time": "2026-11-03T13:09:33+11:00",
+"time": "2026-11-03T13:14:34+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 887,
+"frames": 1733,
 "sky": {
-"hex": "#c3cbd6",
-"lum": 0.794,
-"word": "pale"
+"hex": "#c3c9cf",
+"lum": 0.785,
+"word": "overcast bright"
 },
 "wall": {
-"hex": "#62584f",
-"lum": 0.356
+"hex": "#504842",
+"lum": 0.292
 },
 "dome": {
-"hex": "#43413f",
-"lum": 0.259
+"hex": "#3d3c3a",
+"lum": 0.238
 },
 "brick": {
-"hex": "#6c5e51",
-"lum": 0.382
+"hex": "#62564a",
+"lum": 0.348
 },
-"overall_lum": 0.382,
+"overall_lum": 0.34,
 "motion": 0.0001,
 "camera": {
 "model": "HERO13 Black",
@@ -27,31 +27,31 @@
 "hot": false,
 "busy": true
 },
-"birds_today": 7,
-"birds_total": 83,
+"birds_today": 8,
+"birds_total": 84,
 "named_birds": 13,
 "last_bird": {
-"id": "20261103-130842",
-"time": "2026-11-03T13:08:42+11:00",
-"bird": "Combray",
-"bird_id": "b0002",
-"visit": 12,
+"id": "20261103-130956",
+"time": "2026-11-03T13:09:56+11:00",
+"bird": "Bernhard",
+"bird_id": "b0012",
+"visit": 2,
 "confidence": "likely",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
+"species": "pigeon or dove",
+"size": "medium",
 "tone": "pale",
-"duration": 0.3,
+"duration": 0.7,
 "direction": "west",
 "box": [
-669,
-715,
-15,
-5
+606,
+333,
+29,
+34
 ],
-"cell": "4:4",
-"image": "birds/20261103-130842.jpg",
+"cell": "3:2",
+"image": "birds/20261103-130956.jpg",
 "sky": "pale"
 },
-"shadow_strips_today": 34
+"shadow_strips_today": 35
 }

@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261103-130956",
+"time": "2026-11-03T13:09:56+11:00",
+"bird": "Bernhard",
+"bird_id": "b0012",
+"visit": 2,
+"confidence": "likely",
+"kind": "flyer",
+"species": "pigeon or dove",
+"size": "medium",
+"tone": "pale",
+"duration": 0.7,
+"direction": "west",
+"box": [
+606,
+333,
+29,
+34
+],
+"cell": "3:2",
+"image": "birds/20261103-130956.jpg",
+"sky": "pale"
+},
+{
 "id": "20261103-130842",
 "time": "2026-11-03T13:08:42+11:00",
 "bird": "Combray",

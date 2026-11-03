@@ -164,16 +164,17 @@
 {
 "id": "b0012",
 "name": "Bernhard",
-"visits": 1,
+"visits": 2,
 "first_seen": "2026-11-02T15:49:29+11:00",
-"last_seen": "2026-11-02T15:49:29+11:00",
+"last_seen": "2026-11-03T13:09:56+11:00",
 "species": "pigeon or dove",
 "size": "medium",
 "tone": "pale",
 "kind": "flyer",
 "cell": "6:0",
 "images": [
-"birds/20261102-154929.jpg"
+"birds/20261102-154929.jpg",
+"birds/20261103-130956.jpg"
 ]
 },
 {
