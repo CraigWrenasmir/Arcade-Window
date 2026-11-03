@@ -550,6 +550,33 @@ class Collector:
         jdump(os.path.join(DATA, "birds.json"), self.birds)
         print(f"[bird] {event['time']} {bird['name']} ({confidence}, visit {bird['visits']}) {kind} {sig['species']}", flush=True)
 
+    def stands_out(self, gray, x, y, w, h, pad=10, need=18.0):
+        """A bird is darker or lighter than its surroundings by a clear margin. The edge of a cloud is not."""
+        H, W = gray.shape[:2]
+        inner = gray[max(0, y):min(H, y + h), max(0, x):min(W, x + w)]
+        ring = gray[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
+        if not inner.size or not ring.size:
+            return False
+        return abs(float(inner.mean()) - float(ring.mean())) >= need
+
+    def debug_dump(self, small, fg, blobs, t):
+        """What the detector saw, for tuning by eye. Kept locally, never pushed."""
+        try:
+            d = os.path.join(ROOT, "debug")
+            os.makedirs(d, exist_ok=True)
+            img = small.copy()
+            for (x, y, w, h, a) in blobs:
+                cv2.rectangle(img, (x, y), (x + w, y + h), (0, 200, 255), 2)
+            mask = cv2.cvtColor(fg, cv2.COLOR_GRAY2BGR)
+            out = np.vstack([img, mask])
+            out = cv2.resize(out, (960, 1080), interpolation=cv2.INTER_AREA)
+            cv2.imwrite(os.path.join(d, now().strftime("%H%M%S") + ".jpg"), out, [cv2.IMWRITE_JPEG_QUALITY, 70])
+            files = sorted(f for f in os.listdir(d) if f.endswith(".jpg"))
+            for f in files[:-40]:
+                os.remove(os.path.join(d, f))
+        except Exception as e:
+            print("[debug]", e, flush=True)
+
     def looks_like_shadow(self, small, x, y, w, h, pad=8):
         """Same hue and saturation as the ring around it, only darker: a shadow, not a bird."""
         hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV).astype(np.float32)
@@ -608,7 +635,12 @@ class Collector:
                 continue
             if self.looks_like_shadow(small, x, y, w, h, pad=16):
                 continue
+            if not self.stands_out(gray, x, y, w, h):
+                continue
             blobs.append((x, y, w, h, int(cv2.contourArea(c))))
+        if blobs and t - self.last.get("debug", 0) > 20:
+            self.last["debug"] = t
+            self.debug_dump(small, fg, blobs, t)
         ev = self.tracker.update(blobs, t, small, frame)
         if ev and ev["best"] is not None:
             self.finish_event(ev)
