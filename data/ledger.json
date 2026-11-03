@@ -1,6 +1,75 @@
 {
 "events": [
 {
+"id": "20261103-163941",
+"time": "2026-11-03T16:39:41+11:00",
+"bird": "Totoro",
+"bird_id": "b0018",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "pale",
+"duration": 5.7,
+"direction": "",
+"box": [
+623,
+366,
+13,
+11
+],
+"cell": "3:2",
+"image": "birds/20261103-163941.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261103-163933",
+"time": "2026-11-03T16:39:33+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 13,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.4,
+"direction": "west",
+"box": [
+605,
+357,
+9,
+10
+],
+"cell": "3:2",
+"image": "birds/20261103-163933.jpg",
+"sky": "overcast bright"
+},
+{
+"id": "20261103-163929",
+"time": "2026-11-03T16:39:29+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 12,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 1.8,
+"direction": "west",
+"box": [
+631,
+364,
+10,
+9
+],
+"cell": "3:2",
+"image": "birds/20261103-163929.jpg",
+"sky": "overcast bright"
+},
+{
 "id": "20261103-150000",
 "time": "2026-11-03T15:00:00+11:00",
 "bird": "Carver",
