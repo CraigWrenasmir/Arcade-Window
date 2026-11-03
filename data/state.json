@@ -1,25 +1,25 @@
 {
-"time": "2026-11-03T16:17:20+11:00",
+"time": "2026-11-03T16:22:21+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 29584,
+"frames": 30430,
 "sky": {
-"hex": "#b7c4d5",
-"lum": 0.763,
+"hex": "#bac6d5",
+"lum": 0.771,
 "word": "clear"
 },
 "wall": {
-"hex": "#5c544f",
-"lum": 0.34
+"hex": "#5f5751",
+"lum": 0.348
 },
 "dome": {
-"hex": "#4e4b47",
-"lum": 0.298
+"hex": "#464441",
+"lum": 0.269
 },
 "brick": {
-"hex": "#82715f",
-"lum": 0.457
+"hex": "#756657",
+"lum": 0.413
 },
-"overall_lum": 0.407,
+"overall_lum": 0.39,
 "motion": 0.0001,
 "camera": {
 "model": "HERO13 Black",
@@ -53,5 +53,5 @@
 "image": "birds/20261103-150000.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 71
+"shadow_strips_today": 72
 }
