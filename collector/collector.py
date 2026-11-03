@@ -460,7 +460,9 @@ class Collector:
             self.birds["unused"] = list(POOL)
             random.shuffle(self.birds["unused"])
         name = self.birds["unused"].pop()
-        b = {"id": f"b{len(self.birds['birds']) + 1:04d}", "name": name, "visits": 0,
+        used = [int(x["id"][1:]) for x in self.birds["birds"] if x.get("id", "").startswith("b")]
+        used += [int(e["bird_id"][1:]) for e in self.ledger["events"] if e.get("bird_id", "").startswith("b")]
+        b = {"id": f"b{(max(used) if used else 0) + 1:04d}", "name": name, "visits": 0,
              "first_seen": iso(), "last_seen": iso(), "species": sig["species"], **{k: sig[k] for k in ("size", "tone", "kind", "cell")}}
         self.birds["birds"].append(b)
         return b
