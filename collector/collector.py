@@ -29,6 +29,8 @@ from collections import deque
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
+# RTSP over TCP from the GoPro: the UDP stream loses packets and every torn frame looks like motion
+os.environ.setdefault("OPENCV_FFMPEG_CAPTURE_OPTIONS", "rtsp_transport;tcp")
 import cv2
 import numpy as np
 
@@ -48,6 +50,7 @@ DEVICE = int(os.environ.get("ARCADE_CAM", "0"))
 SOURCE = os.environ.get("ARCADE_SOURCE", "gopro")      # "gopro" over USB, or "cam" for the built-in FaceTime camera
 GOPRO_FOV = os.environ.get("ARCADE_FOV", "4")           # 0 wide, 2 narrow, 3 superview, 4 linear
 GOPRO_RES = os.environ.get("ARCADE_RES", "12")          # 4 480p, 7 720p, 12 1080p
+GOPRO_PROTO = os.environ.get("ARCADE_PROTO", "RTSP")    # RTSP (TCP, lossless) or TS (UDP, drops packets)
 FLIP = os.environ.get("ARCADE_FLIP", "1") == "1"        # the GoPro hangs upside down on the glass; its stream ignores orientation
 PROCESS_FPS = 3.0
 PUSH_EVERY = int(os.environ.get("ARCADE_PUSH", "300"))
@@ -253,12 +256,16 @@ class GoProSource:
         self.api("/gopro/webcam/exit")
         time.sleep(2)
         for attempt in range(2):
-            r = self.api(f"/gopro/webcam/start?res={GOPRO_RES}&fov={GOPRO_FOV}&port=8554&protocol=TS")
-            print(f"[gopro] {self.ip} start -> {r.strip().replace(chr(10), ' ').replace(chr(9), '')[:60]}", flush=True)
+            r = self.api(f"/gopro/webcam/start?res={GOPRO_RES}&fov={GOPRO_FOV}&port=8554&protocol={GOPRO_PROTO}")
+            print(f"[gopro] {self.ip} start {GOPRO_PROTO} -> {r.strip().replace(chr(10), ' ').replace(chr(9), '')[:60]}", flush=True)
             if not r.startswith("ERR"):
                 break
             time.sleep(5)
-        self.cap = cv2.VideoCapture("udp://0.0.0.0:8554?overrun_nonfatal=1&fifo_size=50000000&timeout=5000000", cv2.CAP_FFMPEG)
+        time.sleep(2)
+        if GOPRO_PROTO == "RTSP":
+            self.cap = cv2.VideoCapture(f"rtsp://{self.ip}:554/live", cv2.CAP_FFMPEG)
+        else:
+            self.cap = cv2.VideoCapture("udp://0.0.0.0:8554?overrun_nonfatal=1&fifo_size=50000000&timeout=5000000", cv2.CAP_FFMPEG)
         self.last_frame = time.time()
         return self.cap.isOpened()
 
