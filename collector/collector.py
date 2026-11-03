@@ -81,6 +81,8 @@ HIGH_SKY = [(234, 0), (1280, 0), (1280, 165), (900, 240), (765, 207), (640, 282)
 # thin cloud behind a hard line flickers: the parapet spikes and the gable slopes, leaving the apex itself open
 PARAPET_EDGE = [(893, 304), (1280, 235), (1280, 257), (893, 326)]
 GABLE_EDGE = [[(636, 354), (745, 292), (745, 310), (640, 370)], [(787, 292), (900, 312), (900, 328), (787, 310)]]
+# the valley where the two gable slopes meet: cloud brightness changes there read as a blob (4 false entries 3 Nov pm)
+VALLEY = [(594, 344), (652, 344), (652, 388), (594, 388)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
@@ -121,7 +123,7 @@ def poly_mask(poly, shape=(H, W)):
 MASK_HEAD = poly_mask(WINDOW_HEAD)
 MASK_VALID = cv2.bitwise_and(cv2.bitwise_not(MASK_HEAD), cv2.bitwise_not(poly_mask(PINK_EDGE)))
 MASK_VALID = cv2.bitwise_and(MASK_VALID, cv2.bitwise_not(poly_mask(HIGH_SKY)))
-for _band in [PARAPET_EDGE] + GABLE_EDGE:
+for _band in [PARAPET_EDGE, VALLEY] + GABLE_EDGE:
     MASK_VALID = cv2.bitwise_and(MASK_VALID, cv2.bitwise_not(poly_mask(_band)))
 MASKS = {"sky": poly_mask(SKY), "wall": poly_mask(WALL), "dome": poly_mask(DOME), "leftwall": poly_mask(LEFTWALL)}
 
