@@ -20,18 +20,15 @@
 {
 "id": "b0002",
 "name": "Combray",
-"visits": 13,
+"visits": 11,
 "first_seen": "2026-11-02T11:38:58+11:00",
-"last_seen": "2026-11-03T16:39:33+11:00",
+"last_seen": "2026-11-02T16:01:12+11:00",
 "species": "swallow or swift (guess)",
 "size": "tiny",
 "tone": "pale",
 "kind": "flyer",
 "cell": "4:1",
-"images": [
-"birds/20261103-163929.jpg",
-"birds/20261103-163933.jpg"
-]
+"images": []
 },
 {
 "id": "b0003",
@@ -211,36 +208,6 @@
 "images": [
 "birds/20261102-122142.jpg"
 ]
-},
-{
-"id": "b0017",
-"name": "Carver",
-"visits": 1,
-"first_seen": "2026-11-03T15:00:00+11:00",
-"last_seen": "2026-11-03T15:00:00+11:00",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "mid",
-"kind": "percher",
-"cell": "3:2",
-"images": [
-"birds/20261103-150000.jpg"
-]
-},
-{
-"id": "b0018",
-"name": "Totoro",
-"visits": 1,
-"first_seen": "2026-11-03T16:39:41+11:00",
-"last_seen": "2026-11-03T16:39:41+11:00",
-"species": "sparrow or finch",
-"size": "tiny",
-"tone": "pale",
-"kind": "percher",
-"cell": "3:2",
-"images": [
-"birds/20261103-163941.jpg"
-]
 }
 ],
 "unused": [
@@ -365,6 +332,8 @@
 "Proust",
 "Murakami",
 "Bolaño",
-"Goku"
+"Goku",
+"Carver",
+"Totoro"
 ]
 }
