@@ -1,6 +1,52 @@
 {
 "events": [
 {
+"id": "20261103-130842",
+"time": "2026-11-03T13:08:42+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 12,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 0.3,
+"direction": "west",
+"box": [
+669,
+715,
+15,
+5
+],
+"cell": "4:4",
+"image": "birds/20261103-130842.jpg",
+"sky": "pale"
+},
+{
+"id": "20261103-130821",
+"time": "2026-11-03T13:08:21+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 7,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.0,
+"direction": "east",
+"box": [
+749,
+283,
+11,
+11
+],
+"cell": "4:2",
+"image": "birds/20261103-130821.jpg",
+"sky": "pale"
+},
+{
 "id": "20261103-125503",
 "time": "2026-11-03T12:55:03+11:00",
 "bird": "Updike",

@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T13:04:35+11:00",
+"time": "2026-11-03T13:09:33+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 46,
+"frames": 887,
 "sky": {
-"hex": "#afbcd0",
-"lum": 0.733,
-"word": "clear"
+"hex": "#c3cbd6",
+"lum": 0.794,
+"word": "pale"
 },
 "wall": {
-"hex": "#91806f",
-"lum": 0.515
+"hex": "#62584f",
+"lum": 0.356
 },
 "dome": {
-"hex": "#6d6761",
-"lum": 0.41
+"hex": "#43413f",
+"lum": 0.259
 },
 "brick": {
-"hex": "#99846f",
-"lum": 0.536
+"hex": "#6c5e51",
+"lum": 0.382
 },
-"overall_lum": 0.508,
-"motion": 0.0,
+"overall_lum": 0.382,
+"motion": 0.0001,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 5,
-"birds_total": 81,
+"birds_today": 7,
+"birds_total": 83,
 "named_birds": 13,
 "last_bird": {
-"id": "20261103-125503",
-"time": "2026-11-03T12:55:03+11:00",
-"bird": "Updike",
-"bird_id": "b0016",
-"visit": 2,
+"id": "20261103-130842",
+"time": "2026-11-03T13:08:42+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 12,
 "confidence": "likely",
-"kind": "percher",
-"species": "sparrow or finch",
+"kind": "flyer",
+"species": "swallow or swift",
 "size": "tiny",
-"tone": "mid",
-"duration": 3.5,
-"direction": "",
+"tone": "pale",
+"duration": 0.3,
+"direction": "west",
 "box": [
-762,
-282,
-9,
-9
+669,
+715,
+15,
+5
 ],
-"cell": "4:1",
-"image": "birds/20261103-125503.jpg",
+"cell": "4:4",
+"image": "birds/20261103-130842.jpg",
 "sky": "pale"
 },
-"shadow_strips_today": 33
+"shadow_strips_today": 34
 }
