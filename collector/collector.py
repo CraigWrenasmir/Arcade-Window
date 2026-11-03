@@ -74,6 +74,8 @@ SKY = [(310, 0), (1280, 0), (1280, 230), (893, 318), (772, 285), (662, 368), (64
 WALL = [(500, 410), (1280, 290), (1280, 640), (500, 660)]
 DOME = [(0, 665), (720, 720), (0, 720)]
 LEFTWALL = [(0, 300), (487, 413), (487, 567), (0, 533)]
+# the top edge of the pink wall against the sky flickers as thin cloud passes behind it: nothing counts there
+PINK_EDGE = [(296, 0), (326, 0), (656, 358), (666, 372), (632, 378), (626, 366)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
@@ -112,7 +114,7 @@ def poly_mask(poly, shape=(H, W)):
 
 
 MASK_HEAD = poly_mask(WINDOW_HEAD)
-MASK_VALID = cv2.bitwise_not(MASK_HEAD)
+MASK_VALID = cv2.bitwise_and(cv2.bitwise_not(MASK_HEAD), cv2.bitwise_not(poly_mask(PINK_EDGE)))
 MASKS = {"sky": poly_mask(SKY), "wall": poly_mask(WALL), "dome": poly_mask(DOME), "leftwall": poly_mask(LEFTWALL)}
 
 
