@@ -62,7 +62,7 @@ EDGES_EVERY = 300
 MAX_EVENTS_PER_HOUR = 40
 LEDGER_KEEP = 400
 DET_W, DET_H = 1280, 720   # detection runs on the full working frame: the GoPro's wide view makes birds small
-MIN_BLOB = 6        # px at DET_W wide
+MIN_BLOB = 9        # px at DET_W wide, measured after a 5 px dilation, so a 5 px bird passes and a 3 px speck does not
 MAX_BLOB = 180
 GLOBAL_CHANGE_SKIP = 0.12  # fraction of frame changed -> lighting shift, not a bird (the sky is near half this view)
 WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything is written
@@ -480,6 +480,9 @@ class Collector:
         kind = "flyer" if moved else "percher"
         if kind == "flyer" and ev["frames"] < 2:
             return
+        if ev["frames"] < 2:
+            print(f"[skip] {iso(t)} seen in one frame only", flush=True)
+            return
         if kind == "flyer" and dur > 15:
             print(f"[skip] {iso(t)} drifted for {dur:.0f} s, not a bird", flush=True)
             return
@@ -556,6 +559,16 @@ class Collector:
         jdump(os.path.join(DATA, "ledger.json"), self.ledger)
         jdump(os.path.join(DATA, "birds.json"), self.birds)
         print(f"[bird] {event['time']} {bird['name']} ({confidence}, visit {bird['visits']}) {kind} {sig['species']}", flush=True)
+
+    def in_sky(self, cx, cy):
+        m = MASKS["sky"]
+        return 0 <= cy < m.shape[0] and 0 <= cx < m.shape[1] and m[cy, cx] > 0
+
+    def darker_than_ring(self, gray, x, y, w, h, pad=10, by=10.0):
+        H, W = gray.shape[:2]
+        inner = gray[max(0, y):min(H, y + h), max(0, x):min(W, x + w)]
+        ring = gray[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
+        return bool(inner.size and ring.size and float(inner.mean()) < float(ring.mean()) - by)
 
     def stands_out(self, gray, x, y, w, h, pad=10, need=18.0):
         """A bird is darker or lighter than its surroundings by a clear margin. The edge of a cloud is not."""
@@ -644,6 +657,8 @@ class Collector:
                 continue
             if not self.stands_out(gray, x, y, w, h):
                 continue
+            if self.in_sky(x + w // 2, y + h // 2) and not self.darker_than_ring(gray, x, y, w, h):
+                continue      # against the sky a bird is a silhouette; a bright blob up there is cloud
             blobs.append((x, y, w, h, int(cv2.contourArea(c))))
         if blobs and t - self.last.get("debug", 0) > 20:
             self.last["debug"] = t
