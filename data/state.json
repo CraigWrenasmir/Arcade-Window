@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T12:51:35+11:00",
+"time": "2026-11-03T12:56:36+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 884,
+"frames": 1727,
 "sky": {
-"hex": "#bec5d0",
-"lum": 0.773,
-"word": "pale"
+"hex": "#c4cbd5",
+"lum": 0.794,
+"word": "overcast bright"
 },
 "wall": {
-"hex": "#7d6f60",
-"lum": 0.447
+"hex": "#8a7a6a",
+"lum": 0.493
 },
 "dome": {
-"hex": "#534f4b",
-"lum": 0.315
+"hex": "#615e59",
+"lum": 0.371
 },
 "brick": {
-"hex": "#7a6a5a",
-"lum": 0.43
+"hex": "#806e5e",
+"lum": 0.448
 },
-"overall_lum": 0.459,
-"motion": 0.0037,
+"overall_lum": 0.476,
+"motion": 0.002,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 7,
-"birds_total": 83,
-"named_birds": 14,
+"birds_today": 20,
+"birds_total": 96,
+"named_birds": 17,
 "last_bird": {
-"id": "20261103-124816",
-"time": "2026-11-03T12:48:16+11:00",
-"bird": "Tyrone",
-"bird_id": "b0006",
-"visit": 8,
+"id": "20261103-125631",
+"time": "2026-11-03T12:56:31+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 14,
 "confidence": "likely",
 "kind": "flyer",
 "species": "swallow or swift",
 "size": "tiny",
-"tone": "mid",
-"duration": 0.7,
+"tone": "pale",
+"duration": 0.3,
 "direction": "west",
 "box": [
-958,
-222,
-11,
-8
+352,
+111,
+10,
+10
 ],
-"cell": "6:1",
-"image": "birds/20261103-124816.jpg",
-"sky": "pale"
+"cell": "2:0",
+"image": "birds/20261103-125631.jpg",
+"sky": "overcast bright"
 },
-"shadow_strips_today": 31
+"shadow_strips_today": 32
 }
