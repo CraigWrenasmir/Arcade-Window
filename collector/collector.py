@@ -582,16 +582,19 @@ class Collector:
         ring = gray[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
         return bool(inner.size and ring.size and float(inner.mean()) < float(ring.mean()) - by)
 
-    def sharp_enough(self, gray, x, y, w, h, pad=3, need=40.0):
+    def sharp_enough(self, gray, x, y, w, h, pad=3, need=90.0, texture=25.0):
+        """Measured 3 Nov on real apex birds (max gradient 103-131, texture 39-55) against cloud gaps
+        (gradient 53-95, texture 4-22): a bird has a hard edge and a varied interior."""
         H, W = gray.shape[:2]
         patch = gray[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
-        if patch.size < 16:
+        inner = gray[max(0, y):min(H, y + h), max(0, x):min(W, x + w)]
+        if patch.size < 16 or inner.size < 4:
             return False
         gx = cv2.Sobel(patch, cv2.CV_32F, 1, 0, ksize=3)
         gy = cv2.Sobel(patch, cv2.CV_32F, 0, 1, ksize=3)
-        return float(np.max(np.hypot(gx, gy))) / 4.0 >= need   # /4 brings a 3x3 Sobel back to per-pixel steps
+        return float(np.max(np.hypot(gx, gy))) / 4.0 >= need and float(inner.std()) >= texture
 
-    def stands_out(self, gray, x, y, w, h, pad=10, need=18.0):
+    def stands_out(self, gray, x, y, w, h, pad=10, need=40.0):
         """A bird is darker or lighter than its surroundings by a clear margin. The edge of a cloud is not."""
         H, W = gray.shape[:2]
         inner = gray[max(0, y):min(H, y + h), max(0, x):min(W, x + w)]
