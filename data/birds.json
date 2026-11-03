@@ -207,6 +207,21 @@
 "images": [
 "birds/20261102-122142.jpg"
 ]
+},
+{
+"id": "b0017",
+"name": "Carver",
+"visits": 1,
+"first_seen": "2026-11-03T15:00:00+11:00",
+"last_seen": "2026-11-03T15:00:00+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"kind": "percher",
+"cell": "3:2",
+"images": [
+"birds/20261103-150000.jpg"
+]
 }
 ],
 "unused": [
@@ -332,7 +347,6 @@
 "Murakami",
 "Bolaño",
 "Goku",
-"Totoro",
-"Carver"
+"Totoro"
 ]
 }

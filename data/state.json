@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T14:57:17+11:00",
+"time": "2026-11-03T15:02:18+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 16084,
+"frames": 16930,
 "sky": {
-"hex": "#92b7e2",
-"lum": 0.694,
+"hex": "#8aa7cc",
+"lum": 0.639,
 "word": "clear"
 },
 "wall": {
-"hex": "#645d56",
+"hex": "#6a5b4f",
 "lum": 0.371
 },
 "dome": {
-"hex": "#726d66",
-"lum": 0.432
+"hex": "#908478",
+"lum": 0.529
 },
 "brick": {
-"hex": "#af9b86",
-"lum": 0.625
+"hex": "#caae94",
+"lum": 0.705
 },
-"overall_lum": 0.487,
-"motion": 0.0033,
+"overall_lum": 0.51,
+"motion": 0.0005,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 13,
-"birds_total": 89,
-"named_birds": 13,
+"birds_today": 14,
+"birds_total": 90,
+"named_birds": 14,
 "last_bird": {
-"id": "20261103-144438",
-"time": "2026-11-03T14:44:38+11:00",
-"bird": "Tyrone",
-"bird_id": "b0006",
-"visit": 13,
-"confidence": "likely",
-"kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
+"id": "20261103-150000",
+"time": "2026-11-03T15:00:00+11:00",
+"bird": "Carver",
+"bird_id": "b0017",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or wren",
+"size": "small",
 "tone": "mid",
-"duration": 1.1,
-"direction": "west",
+"duration": 8.1,
+"direction": "",
 "box": [
-760,
-282,
-10,
-11
+626,
+358,
+13,
+19
 ],
-"cell": "4:1",
-"image": "birds/20261103-144438.jpg",
+"cell": "3:2",
+"image": "birds/20261103-150000.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 55
+"shadow_strips_today": 56
 }

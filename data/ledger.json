@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261103-150000",
+"time": "2026-11-03T15:00:00+11:00",
+"bird": "Carver",
+"bird_id": "b0017",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 8.1,
+"direction": "",
+"box": [
+626,
+358,
+13,
+19
+],
+"cell": "3:2",
+"image": "birds/20261103-150000.jpg",
+"sky": "clear"
+},
+{
 "id": "20261103-144438",
 "time": "2026-11-03T14:44:38+11:00",
 "bird": "Tyrone",
