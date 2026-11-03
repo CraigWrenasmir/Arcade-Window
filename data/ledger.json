@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261103-144438",
+"time": "2026-11-03T14:44:38+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 13,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.1,
+"direction": "west",
+"box": [
+760,
+282,
+10,
+11
+],
+"cell": "4:1",
+"image": "birds/20261103-144438.jpg",
+"sky": "clear"
+},
+{
 "id": "20261103-142939",
 "time": "2026-11-03T14:29:39+11:00",
 "bird": "Tyrone",
