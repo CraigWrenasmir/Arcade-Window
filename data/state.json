@@ -1,10 +1,10 @@
 {
-"time": "2026-11-03T12:16:34+11:00",
+"time": "2026-11-03T12:17:05+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 467,
+"frames": 46,
 "sky": {
-"hex": "#6cacf9",
-"lum": 0.637,
+"hex": "#6cacf8",
+"lum": 0.636,
 "word": "clear"
 },
 "wall": {
@@ -12,46 +12,47 @@
 "lum": 0.692
 },
 "dome": {
-"hex": "#7e7c7a",
-"lum": 0.489
+"hex": "#7d7c79",
+"lum": 0.487
 },
 "brick": {
-"hex": "#6d6157",
-"lum": 0.392
+"hex": "#6e6258",
+"lum": 0.396
 },
 "overall_lum": 0.57,
-"motion": 0.0001,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 8,
-"birds_total": 84,
-"named_birds": 14,
+"birds_today": 1,
+"birds_total": 77,
+"named_birds": 12,
 "last_bird": {
-"id": "20261103-121533",
-"time": "2026-11-03T12:15:33+11:00",
-"bird": "Tyrone",
-"bird_id": "b0006",
-"visit": 5,
-"confidence": "likely",
-"kind": "flyer",
-"species": "swallow or swift",
+"id": "20261103-105256",
+"time": "2026-11-03T10:52:56+11:00",
+"bird": "McPhee",
+"bird_id": "b0013",
+"visit": 1,
+"confidence": "new",
+"kind": "percher",
+"species": "sparrow or finch",
 "size": "tiny",
 "tone": "mid",
-"duration": 0.7,
-"direction": "west",
+"duration": 1567.0,
+"direction": "",
 "box": [
-229,
-30,
-8,
+755,
+282,
+13,
 13
 ],
-"cell": "1:0",
-"image": "birds/20261103-121533.jpg",
-"sky": "clear"
+"cell": "4:2",
+"image": "birds/20261103-105256.jpg",
+"sky": "clear",
+"by": "Craig"
 },
 "shadow_strips_today": 25
 }
