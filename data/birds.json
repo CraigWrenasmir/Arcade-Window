@@ -39,21 +39,21 @@
 {
 "id": "b0003",
 "name": "Drnaso",
-"visits": 27,
+"visits": 28,
 "first_seen": "2026-11-02T11:43:22+11:00",
-"last_seen": "2026-11-03T12:32:41+11:00",
+"last_seen": "2026-11-03T12:44:04+11:00",
 "species": "sparrow or wren (guess)",
 "size": "small",
 "tone": "mid",
 "kind": "flyer",
 "cell": "2:2",
 "images": [
-"birds/20261102-160628.jpg",
 "birds/20261102-160750.jpg",
 "birds/20261103-122336.jpg",
 "birds/20261103-122340.jpg",
 "birds/20261103-122947.jpg",
-"birds/20261103-123241.jpg"
+"birds/20261103-123241.jpg",
+"birds/20261103-124404.jpg"
 ]
 },
 {
