@@ -76,6 +76,8 @@ DOME = [(0, 665), (720, 720), (0, 720)]
 LEFTWALL = [(0, 300), (487, 413), (487, 567), (0, 533)]
 # the top edge of the pink wall against the sky flickers as thin cloud passes behind it: nothing counts there
 PINK_EDGE = [(296, 0), (326, 0), (656, 358), (666, 372), (632, 378), (626, 366)]
+# the open sky well above the roofline is cloud country: birds are only counted near the buildings
+HIGH_SKY = [(300, 0), (1280, 0), (1280, 150), (893, 240), (772, 205), (662, 290), (560, 300), (560, 200)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
@@ -115,6 +117,7 @@ def poly_mask(poly, shape=(H, W)):
 
 MASK_HEAD = poly_mask(WINDOW_HEAD)
 MASK_VALID = cv2.bitwise_and(cv2.bitwise_not(MASK_HEAD), cv2.bitwise_not(poly_mask(PINK_EDGE)))
+MASK_VALID = cv2.bitwise_and(MASK_VALID, cv2.bitwise_not(poly_mask(HIGH_SKY)))
 MASKS = {"sky": poly_mask(SKY), "wall": poly_mask(WALL), "dome": poly_mask(DOME), "leftwall": poly_mask(LEFTWALL)}
 
 
@@ -574,6 +577,15 @@ class Collector:
         ring = gray[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
         return bool(inner.size and ring.size and float(inner.mean()) < float(ring.mean()) - by)
 
+    def sharp_enough(self, gray, x, y, w, h, pad=3, need=40.0):
+        H, W = gray.shape[:2]
+        patch = gray[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
+        if patch.size < 16:
+            return False
+        gx = cv2.Sobel(patch, cv2.CV_32F, 1, 0, ksize=3)
+        gy = cv2.Sobel(patch, cv2.CV_32F, 0, 1, ksize=3)
+        return float(np.max(np.hypot(gx, gy))) / 4.0 >= need   # /4 brings a 3x3 Sobel back to per-pixel steps
+
     def stands_out(self, gray, x, y, w, h, pad=10, need=18.0):
         """A bird is darker or lighter than its surroundings by a clear margin. The edge of a cloud is not."""
         H, W = gray.shape[:2]
@@ -663,6 +675,8 @@ class Collector:
                 continue
             if self.in_sky(x + w // 2, y + h // 2) and not self.darker_than_ring(gray, x, y, w, h):
                 continue      # against the sky a bird is a silhouette; a bright blob up there is cloud
+            if not self.sharp_enough(gray, x, y, w, h):
+                continue      # a bird has a hard edge; a gap between clouds does not
             blobs.append((x, y, w, h, int(cv2.contourArea(c))))
         if blobs and t - self.last.get("debug", 0) > 20:
             self.last["debug"] = t
