@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T12:22:47+11:00",
+"time": "2026-11-03T12:27:47+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 888,
+"frames": 1733,
 "sky": {
-"hex": "#75acef",
-"lum": 0.643,
+"hex": "#73bafd",
+"lum": 0.679,
 "word": "clear"
 },
 "wall": {
-"hex": "#bda794",
-"lum": 0.674
+"hex": "#b5a393",
+"lum": 0.655
 },
 "dome": {
-"hex": "#7e7a76",
-"lum": 0.484
+"hex": "#797672",
+"lum": 0.466
 },
 "brick": {
-"hex": "#806f60",
-"lum": 0.45
+"hex": "#a5927f",
+"lum": 0.589
 },
-"overall_lum": 0.577,
-"motion": 0.0089,
+"overall_lum": 0.62,
+"motion": 0.0,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 18,
-"birds_total": 94,
-"named_birds": 16,
+"birds_today": 27,
+"birds_total": 103,
+"named_birds": 20,
 "last_bird": {
-"id": "20261103-122158",
-"time": "2026-11-03T12:21:58+11:00",
-"bird": "Combray",
-"bird_id": "b0002",
-"visit": 20,
+"id": "20261103-122510",
+"time": "2026-11-03T12:25:10+11:00",
+"bird": "Hunter",
+"bird_id": "b0023",
+"visit": 2,
 "confidence": "likely",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
+"species": "sparrow or wren",
+"size": "small",
 "tone": "pale",
-"duration": 0.7,
-"direction": "west",
+"duration": 5.7,
+"direction": "down",
 "box": [
-611,
-341,
-9,
-8
+491,
+247,
+16,
+14
 ],
-"cell": "3:2",
-"image": "birds/20261103-122158.jpg",
+"cell": "3:1",
+"image": "birds/20261103-122510.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 26
+"shadow_strips_today": 27
 }

@@ -39,21 +39,21 @@
 {
 "id": "b0003",
 "name": "Drnaso",
-"visits": 23,
+"visits": 25,
 "first_seen": "2026-11-02T11:43:22+11:00",
-"last_seen": "2026-11-02T16:07:50+11:00",
+"last_seen": "2026-11-03T12:23:40+11:00",
 "species": "sparrow or wren (guess)",
 "size": "small",
 "tone": "mid",
 "kind": "flyer",
 "cell": "2:2",
 "images": [
-"birds/20261102-131000.jpg",
-"birds/20261102-131358.jpg",
 "birds/20261102-132646.jpg",
 "birds/20261102-141204.jpg",
 "birds/20261102-160628.jpg",
-"birds/20261102-160750.jpg"
+"birds/20261102-160750.jpg",
+"birds/20261103-122336.jpg",
+"birds/20261103-122340.jpg"
 ]
 },
 {
@@ -144,21 +144,21 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 20,
+"visits": 21,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-03T12:21:47+11:00",
+"last_seen": "2026-11-03T12:24:32+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
 "kind": "flyer",
 "cell": "7:0",
 "images": [
-"birds/20261102-154628.jpg",
 "birds/20261102-154649.jpg",
 "birds/20261102-155012.jpg",
 "birds/20261102-160626.jpg",
 "birds/20261102-160808.jpg",
-"birds/20261103-122147.jpg"
+"birds/20261103-122147.jpg",
+"birds/20261103-122432.jpg"
 ]
 },
 {
@@ -265,6 +265,68 @@
 "cell": "7:0",
 "images": [
 "birds/20261103-121956.jpg"
+]
+},
+{
+"id": "b0020",
+"name": "Doyle",
+"visits": 2,
+"first_seen": "2026-11-03T12:22:59+11:00",
+"last_seen": "2026-11-03T12:23:26+11:00",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"kind": "percher",
+"cell": "3:0",
+"images": [
+"birds/20261103-122259.jpg",
+"birds/20261103-122326.jpg"
+]
+},
+{
+"id": "b0021",
+"name": "Sebald",
+"visits": 1,
+"first_seen": "2026-11-03T12:23:20+11:00",
+"last_seen": "2026-11-03T12:23:20+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"kind": "percher",
+"cell": "3:0",
+"images": [
+"birds/20261103-122320.jpg"
+]
+},
+{
+"id": "b0022",
+"name": "Dorian",
+"visits": 1,
+"first_seen": "2026-11-03T12:24:19+11:00",
+"last_seen": "2026-11-03T12:24:19+11:00",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "pale",
+"kind": "percher",
+"cell": "2:0",
+"images": [
+"birds/20261103-122419.jpg"
+]
+},
+{
+"id": "b0023",
+"name": "Hunter",
+"visits": 2,
+"first_seen": "2026-11-03T12:25:01+11:00",
+"last_seen": "2026-11-03T12:25:10+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "pale",
+"kind": "percher",
+"cell": "3:1",
+"images": [
+"birds/20261103-122501.jpg",
+"birds/20261103-122510.jpg"
 ]
 }
 ],
@@ -385,10 +447,6 @@
 "Molloy",
 "Lispector",
 "Berryman",
-"Eugenides",
-"Hunter",
-"Dorian",
-"Sebald",
-"Doyle"
+"Eugenides"
 ]
 }
