@@ -24,52 +24,6 @@
 "sky": "overcast bright"
 },
 {
-"id": "20261103-131811",
-"time": "2026-11-03T13:18:11+11:00",
-"bird": "Lowell",
-"bird_id": "b0018",
-"visit": 1,
-"confidence": "new",
-"kind": "percher",
-"species": "sparrow or finch",
-"size": "tiny",
-"tone": "mid",
-"duration": 6.3,
-"direction": "",
-"box": [
-1052,
-253,
-13,
-9
-],
-"cell": "6:1",
-"image": "birds/20261103-131811.jpg",
-"sky": "overcast bright"
-},
-{
-"id": "20261103-131802",
-"time": "2026-11-03T13:18:02+11:00",
-"bird": "Ravelstein",
-"bird_id": "b0017",
-"visit": 1,
-"confidence": "new",
-"kind": "percher",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "mid",
-"duration": 20.3,
-"direction": "",
-"box": [
-1094,
-230,
-20,
-22
-],
-"cell": "6:1",
-"image": "birds/20261103-131802.jpg",
-"sky": "overcast bright"
-},
-{
 "id": "20261103-131606",
 "time": "2026-11-03T13:16:06+11:00",
 "bird": "Brodsky",
@@ -114,52 +68,6 @@
 "cell": "5:2",
 "image": "birds/20261103-131525.jpg",
 "sky": "overcast bright"
-},
-{
-"id": "20261103-130956",
-"time": "2026-11-03T13:09:56+11:00",
-"bird": "Bernhard",
-"bird_id": "b0012",
-"visit": 2,
-"confidence": "likely",
-"kind": "flyer",
-"species": "pigeon or dove",
-"size": "medium",
-"tone": "pale",
-"duration": 0.7,
-"direction": "west",
-"box": [
-606,
-333,
-29,
-34
-],
-"cell": "3:2",
-"image": "birds/20261103-130956.jpg",
-"sky": "pale"
-},
-{
-"id": "20261103-130842",
-"time": "2026-11-03T13:08:42+11:00",
-"bird": "Combray",
-"bird_id": "b0002",
-"visit": 12,
-"confidence": "likely",
-"kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "pale",
-"duration": 0.3,
-"direction": "west",
-"box": [
-669,
-715,
-15,
-5
-],
-"cell": "4:4",
-"image": "birds/20261103-130842.jpg",
-"sky": "pale"
 },
 {
 "id": "20261103-130821",
