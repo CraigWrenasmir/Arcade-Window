@@ -105,7 +105,7 @@
 ]
 },
 {
-"id": "b0008",
+"id": "b0015",
 "name": "Esmé",
 "visits": 2,
 "first_seen": "2026-11-02T12:11:36+11:00",
@@ -121,7 +121,7 @@
 ]
 },
 {
-"id": "b0008",
+"id": "b0016",
 "name": "Updike",
 "visits": 1,
 "first_seen": "2026-11-02T12:21:06+11:00",
@@ -197,6 +197,21 @@
 "cell": "4:2",
 "images": [
 "birds/20261103-105256.jpg"
+]
+},
+{
+"id": "b0014",
+"name": "Porter",
+"visits": 1,
+"first_seen": "2026-11-02T12:21:42+11:00",
+"last_seen": "2026-11-02T12:21:42+11:00",
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"kind": "percher",
+"cell": "5:1",
+"images": [
+"birds/20261102-122142.jpg"
 ]
 }
 ],
@@ -324,7 +339,6 @@
 "Miyazaki",
 "Goku",
 "Hemingway",
-"Porter",
 "Molloy"
 ]
 }
