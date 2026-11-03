@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T12:29:13+11:00",
+"time": "2026-11-03T12:34:12+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 46,
+"frames": 888,
 "sky": {
-"hex": "#7cbefd",
-"lum": 0.698,
-"word": "clear"
+"hex": "#bcc5d2",
+"lum": 0.769,
+"word": "pale"
 },
 "wall": {
-"hex": "#a09182",
-"lum": 0.581
+"hex": "#716459",
+"lum": 0.406
 },
 "dome": {
-"hex": "#6f6c67",
-"lum": 0.426
+"hex": "#4b4844",
+"lum": 0.287
 },
 "brick": {
-"hex": "#a18f7b",
-"lum": 0.575
+"hex": "#7b6b5b",
+"lum": 0.432
 },
-"overall_lum": 0.598,
-"motion": 0.0,
+"overall_lum": 0.509,
+"motion": 0.003,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 25,
-"birds_total": 101,
-"named_birds": 19,
+"birds_today": 31,
+"birds_total": 107,
+"named_birds": 20,
 "last_bird": {
-"id": "20261103-122432",
-"time": "2026-11-03T12:24:32+11:00",
-"bird": "Sontag",
-"bird_id": "b0010",
-"visit": 21,
+"id": "20261103-123248",
+"time": "2026-11-03T12:32:48+11:00",
+"bird": "Katita",
+"bird_id": "b0023",
+"visit": 2,
 "confidence": "likely",
 "kind": "flyer",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
-"duration": 9.4,
+"duration": 4.2,
 "direction": "east",
 "box": [
-470,
-226,
-18,
-16
+411,
+165,
+24,
+18
 ],
 "cell": "2:1",
-"image": "birds/20261103-122432.jpg",
+"image": "birds/20261103-123248.jpg",
 "sky": "clear"
 },
-"shadow_strips_today": 27
+"shadow_strips_today": 28
 }
