@@ -1,52 +1,6 @@
 {
 "events": [
 {
-"id": "20261103-122510",
-"time": "2026-11-03T12:25:10+11:00",
-"bird": "Hunter",
-"bird_id": "b0023",
-"visit": 2,
-"confidence": "likely",
-"kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "pale",
-"duration": 5.7,
-"direction": "down",
-"box": [
-491,
-247,
-16,
-14
-],
-"cell": "3:1",
-"image": "birds/20261103-122510.jpg",
-"sky": "clear"
-},
-{
-"id": "20261103-122501",
-"time": "2026-11-03T12:25:01+11:00",
-"bird": "Hunter",
-"bird_id": "b0023",
-"visit": 1,
-"confidence": "new",
-"kind": "percher",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "pale",
-"duration": 26.5,
-"direction": "",
-"box": [
-506,
-262,
-25,
-14
-],
-"cell": "3:1",
-"image": "birds/20261103-122501.jpg",
-"sky": "clear"
-},
-{
 "id": "20261103-122432",
 "time": "2026-11-03T12:24:32+11:00",
 "bird": "Sontag",

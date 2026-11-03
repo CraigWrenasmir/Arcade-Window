@@ -312,22 +312,6 @@
 "images": [
 "birds/20261103-122419.jpg"
 ]
-},
-{
-"id": "b0023",
-"name": "Hunter",
-"visits": 2,
-"first_seen": "2026-11-03T12:25:01+11:00",
-"last_seen": "2026-11-03T12:25:10+11:00",
-"species": "sparrow or wren",
-"size": "small",
-"tone": "pale",
-"kind": "percher",
-"cell": "3:1",
-"images": [
-"birds/20261103-122501.jpg",
-"birds/20261103-122510.jpg"
-]
 }
 ],
 "unused": [
@@ -447,6 +431,7 @@
 "Molloy",
 "Lispector",
 "Berryman",
-"Eugenides"
+"Eugenides",
+"Hunter"
 ]
 }
