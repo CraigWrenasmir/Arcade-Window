@@ -590,59 +590,59 @@
 }
 ],
 "current": {
-"time": "2026-11-03T11:29:02+11:00",
+"time": "2026-11-03T11:31:33+11:00",
 "regions": {
 "sky": {
-"hex": "#c5cad1",
-"lum": 0.792
+"hex": "#c9cfda",
+"lum": 0.813
 },
 "wall": {
-"hex": "#47403b",
-"lum": 0.258
+"hex": "#514943",
+"lum": 0.295
 },
 "dome": {
-"hex": "#3b3a38",
-"lum": 0.229
+"hex": "#3d3b39",
+"lum": 0.236
 },
 "leftwall": {
-"hex": "#5e5347",
-"lum": 0.334
+"hex": "#665a4e",
+"lum": 0.364
 }
 },
 "swatches": [
 {
-"hex": "#695e55",
-"share": 0.302
+"hex": "#74695f",
+"share": 0.3
 },
 {
-"hex": "#48403a",
-"share": 0.282
+"hex": "#504740",
+"share": 0.289
 },
 {
-"hex": "#b5bbc4",
-"share": 0.168
+"hex": "#bdc4cf",
+"share": 0.163
 },
 {
-"hex": "#e0e2e5",
-"share": 0.132
+"hex": "#d9dee8",
+"share": 0.129
 },
 {
-"hex": "#1f1917",
-"share": 0.117
+"hex": "#231d19",
+"share": 0.119
 }
 ],
 "sky_swatches": [
 {
-"hex": "#c8cdd4",
-"share": 0.388
+"hex": "#cbd1dd",
+"share": 0.448
 },
 {
-"hex": "#aab1bb",
-"share": 0.363
+"hex": "#b7bfca",
+"share": 0.345
 },
 {
-"hex": "#e8eaec",
-"share": 0.249
+"hex": "#e1e7f0",
+"share": 0.207
 }
 ]
 }
