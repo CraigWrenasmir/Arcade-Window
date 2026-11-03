@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T12:46:36+11:00",
+"time": "2026-11-03T12:51:35+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 46,
+"frames": 884,
 "sky": {
-"hex": "#b4c1d2",
-"lum": 0.751,
-"word": "clear"
+"hex": "#bec5d0",
+"lum": 0.773,
+"word": "pale"
 },
 "wall": {
-"hex": "#73665a",
-"lum": 0.411
+"hex": "#7d6f60",
+"lum": 0.447
 },
 "dome": {
-"hex": "#4a4743",
-"lum": 0.282
+"hex": "#534f4b",
+"lum": 0.315
 },
 "brick": {
-"hex": "#796a5a",
-"lum": 0.428
+"hex": "#7a6a5a",
+"lum": 0.43
 },
-"overall_lum": 0.441,
-"motion": 0.0,
+"overall_lum": 0.459,
+"motion": 0.0037,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 4,
-"birds_total": 80,
-"named_birds": 13,
+"birds_today": 7,
+"birds_total": 83,
+"named_birds": 14,
 "last_bird": {
-"id": "20261103-122336",
-"time": "2026-11-03T12:23:36+11:00",
-"bird": "Drnaso",
-"bird_id": "b0003",
-"visit": 24,
+"id": "20261103-124816",
+"time": "2026-11-03T12:48:16+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 8,
 "confidence": "likely",
 "kind": "flyer",
-"species": "sparrow or wren",
-"size": "small",
+"species": "swallow or swift",
+"size": "tiny",
 "tone": "mid",
-"duration": 5.9,
-"direction": "east",
+"duration": 0.7,
+"direction": "west",
 "box": [
-857,
-299,
-17,
-14
+958,
+222,
+11,
+8
 ],
-"cell": "5:2",
-"image": "birds/20261103-122336.jpg",
-"sky": "clear"
+"cell": "6:1",
+"image": "birds/20261103-124816.jpg",
+"sky": "pale"
 },
-"shadow_strips_today": 30
+"shadow_strips_today": 31
 }
