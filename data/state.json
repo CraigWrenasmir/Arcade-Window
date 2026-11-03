@@ -1,57 +1,57 @@
 {
-"time": "2026-11-03T12:56:36+11:00",
+"time": "2026-11-03T13:01:35+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 1727,
+"frames": 2570,
 "sky": {
-"hex": "#c4cbd5",
-"lum": 0.794,
-"word": "overcast bright"
+"hex": "#739fd5",
+"lum": 0.598,
+"word": "clear"
 },
 "wall": {
-"hex": "#8a7a6a",
-"lum": 0.493
+"hex": "#aa9582",
+"lum": 0.604
 },
 "dome": {
-"hex": "#615e59",
-"lum": 0.371
+"hex": "#817a73",
+"lum": 0.487
 },
 "brick": {
-"hex": "#806e5e",
-"lum": 0.448
+"hex": "#ad967e",
+"lum": 0.606
 },
-"overall_lum": 0.476,
-"motion": 0.002,
+"overall_lum": 0.577,
+"motion": 0.0039,
 "camera": {
 "model": "HERO13 Black",
 "battery": 97,
 "hot": false,
 "busy": true
 },
-"birds_today": 20,
-"birds_total": 96,
-"named_birds": 17,
+"birds_today": 29,
+"birds_total": 105,
+"named_birds": 21,
 "last_bird": {
-"id": "20261103-125631",
-"time": "2026-11-03T12:56:31+11:00",
-"bird": "Combray",
-"bird_id": "b0002",
-"visit": 14,
+"id": "20261103-125949",
+"time": "2026-11-03T12:59:49+11:00",
+"bird": "Vuong",
+"bird_id": "b0024",
+"visit": 2,
 "confidence": "likely",
 "kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "pale",
-"duration": 0.3,
+"species": "sparrow or wren",
+"size": "small",
+"tone": "mid",
+"duration": 1.4,
 "direction": "west",
 "box": [
-352,
-111,
-10,
-10
+698,
+301,
+21,
+20
 ],
-"cell": "2:0",
-"image": "birds/20261103-125631.jpg",
-"sky": "overcast bright"
+"cell": "4:2",
+"image": "birds/20261103-125949.jpg",
+"sky": "clear"
 },
-"shadow_strips_today": 32
+"shadow_strips_today": 33
 }
