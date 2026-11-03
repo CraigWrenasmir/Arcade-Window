@@ -70,14 +70,17 @@ WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything 
 # Regions in 1280x720 coordinates, for the GoPro hanging upside down on the glass, fixed 3 Nov 2026
 # (the stream is turned 180 degrees before these apply)
 WINDOW_HEAD = [(0, 0), (165, 0), (0, 290)]
-SKY = [(310, 0), (1280, 0), (1280, 230), (893, 318), (772, 285), (662, 368), (640, 365)]
+SKY = [(240, 0), (1280, 0), (1280, 245), (900, 318), (765, 287), (640, 362), (600, 335), (521, 288)]
 WALL = [(500, 410), (1280, 290), (1280, 640), (500, 660)]
 DOME = [(0, 665), (720, 720), (0, 720)]
 LEFTWALL = [(0, 300), (487, 413), (487, 567), (0, 533)]
 # the top edge of the pink wall against the sky flickers as thin cloud passes behind it: nothing counts there
-PINK_EDGE = [(296, 0), (326, 0), (656, 358), (666, 372), (632, 378), (626, 366)]
+PINK_EDGE = [(220, 0), (250, 0), (536, 288), (612, 352), (596, 372), (508, 290)]
 # the open sky well above the roofline is cloud country: birds are only counted near the buildings
-HIGH_SKY = [(300, 0), (1280, 0), (1280, 150), (893, 240), (772, 205), (662, 290), (560, 300), (560, 200)]
+HIGH_SKY = [(234, 0), (1280, 0), (1280, 165), (900, 240), (765, 207), (640, 282), (600, 300), (521, 288)]
+# thin cloud behind a hard line flickers: the parapet spikes and the gable slopes, leaving the apex itself open
+PARAPET_EDGE = [(893, 304), (1280, 235), (1280, 257), (893, 326)]
+GABLE_EDGE = [[(636, 354), (745, 292), (745, 310), (640, 370)], [(787, 292), (900, 312), (900, 328), (787, 310)]]
 
 ASCII_RAMP = " .:-=+*#%@"
 
@@ -118,6 +121,8 @@ def poly_mask(poly, shape=(H, W)):
 MASK_HEAD = poly_mask(WINDOW_HEAD)
 MASK_VALID = cv2.bitwise_and(cv2.bitwise_not(MASK_HEAD), cv2.bitwise_not(poly_mask(PINK_EDGE)))
 MASK_VALID = cv2.bitwise_and(MASK_VALID, cv2.bitwise_not(poly_mask(HIGH_SKY)))
+for _band in [PARAPET_EDGE] + GABLE_EDGE:
+    MASK_VALID = cv2.bitwise_and(MASK_VALID, cv2.bitwise_not(poly_mask(_band)))
 MASKS = {"sky": poly_mask(SKY), "wall": poly_mask(WALL), "dome": poly_mask(DOME), "leftwall": poly_mask(LEFTWALL)}
 
 
