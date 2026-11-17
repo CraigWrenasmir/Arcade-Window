@@ -18,7 +18,10 @@
   <div class="closed" id="closed" hidden></div>
   <section>
     <div class="latest empty" id="latestwrap">
-      <img id="birdimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      <div class="shot">
+        <img id="birdimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+        <img id="birdzoom" class="zoom" alt="a closer look" hidden>
+      </div>
       <div>
         <div class="muted">The latest</div>
         <div class="name" id="birdname">No birds yet</div>
@@ -46,6 +49,7 @@
   <div class="inner">
     <img class="main" id="boximg" alt="">
     <div class="side">
+      <figure class="closer" id="boxcloser" hidden><img id="boxzoom" alt="a closer look"><figcaption id="boxzoomcap"></figcaption></figure>
       <div id="boxcap"></div>
       <div class="nav"><span id="boxprev">← older</span><span id="boxnext">newer →</span></div>
       <div class="nav" id="boxcount"></div>

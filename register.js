@@ -31,6 +31,11 @@
     const e = box.list[box.i];
     $("#boximg").src = "data/" + e.image + bust();
     $("#boximg").classList.toggle("photo", !!e.photo);
+    $("#boxcloser").hidden = !e.zoom;
+    if(e.zoom){
+      $("#boxzoom").src = "data/" + e.zoom + bust();
+      $("#boxzoomcap").textContent = "a closer look" + (e.stacked ? `, ${e.stacked} frames merged` : "");
+    }
     $("#boxcap").innerHTML = `<b>${esc(e.bird)}</b>${e.visit>1?" · visit "+e.visit:""}<br>${describe(e,true)}`;
     $("#boxcount").textContent = `${box.title ? box.title + " · " : ""}${box.i+1} of ${box.list.length}`;
     $("#boxprev").style.visibility = box.i < box.list.length-1 ? "visible" : "hidden";
@@ -66,6 +71,8 @@
       $("#birdname").textContent = e.bird;
       $("#birdmeta").innerHTML = describe(e, true);
       $("#birdimg").onclick = () => openBox(all, 0, "all entries");
+      $("#birdzoom").hidden = !e.zoom;
+      if(e.zoom){ $("#birdzoom").src = "data/"+e.zoom+bust(); $("#birdzoom").onclick = () => openBox(all, 0, "all entries"); }
       $("#latestwrap").classList.remove("empty");
     }
     // catalogue

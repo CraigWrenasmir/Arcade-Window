@@ -341,21 +341,25 @@ class Tracker:
         self.active = None
         self.last_seen = 0.0
 
-    def update(self, blobs, t, frame_small, frame_full):
+    def update(self, blobs, t, frame_small, frame_full, full=None):
         if blobs:
             b = max(blobs, key=lambda x: x[4])
             if self.active is None:
                 self.active = {
                     "start": t, "boxes": [b], "best": None, "best_area": 0,
                     "path": [(b[0] + b[2] // 2, b[1] + b[3] // 2)], "frames": 0,
+                    "patches": [], "best_patch": None, "best_full": None,
                 }
             ev = self.active
             ev["boxes"].append(b)
             ev["path"].append((b[0] + b[2] // 2, b[1] + b[3] // 2))
             ev["frames"] += 1
+            patch = self.patch(ev, b, full)
             if b[4] > ev["best_area"]:
                 ev["best_area"] = b[4]
                 ev["best"] = (frame_full.copy(), b)
+                ev["best_full"] = full.copy() if full is not None else None
+                ev["best_patch"] = patch
             self.last_seen = t
             return None
         if self.active and t - self.last_seen > 1.5:
@@ -364,6 +368,63 @@ class Tracker:
             ev["end"] = self.last_seen
             return ev
         return None
+
+
+    @staticmethod
+    def patch(ev, b, full):
+        """A full-resolution square around the bird in this frame, kept for the closer look."""
+        if full is None:
+            return None
+        fs = full.shape[1] / float(DET_W)
+        x, y, w, h = b[:4]
+        if "P" not in ev:   # one patch size per visit, so the frames can be stacked
+            ev["P"] = int(max(40, max(w, h) * fs * 2.5))
+        P = ev["P"]
+        cx, cy = int((x + w / 2.0) * fs), int((y + h / 2.0) * fs)
+        if cx - P < 0 or cy - P < 0 or cx + P > full.shape[1] or cy + P > full.shape[0]:
+            return None
+        p = (full[cy - P:cy + P, cx - P:cx + P].copy(), cx, cy)
+        ev["patches"].append(p)
+        ev["patches"] = ev["patches"][-24:]
+        return p
+
+
+def stack_patches(best, patches):
+    """A bird sitting still is in many frames. Line the frames up on the best one and take the
+    median: the video compression smear and sensor noise average out, the bird stays.
+    Frames where the bird turned or hopped differ from the best one and are left out."""
+    ref_img = best[0]
+    if len(patches) < 4:
+        return None
+    ref = ref_img.astype(np.float32)
+    gref = cv2.cvtColor(ref_img, cv2.COLOR_BGR2GRAY).astype(np.float32)
+    h, w = gref.shape
+    win = cv2.createHanningWindow((w, h), cv2.CV_32F)
+    c = (slice(h // 4, 3 * h // 4), slice(w // 4, 3 * w // 4))
+    aligned, diffs = [], []
+    for p, _, _ in patches:
+        if p.shape != ref_img.shape:
+            continue
+        g = cv2.cvtColor(p, cv2.COLOR_BGR2GRAY).astype(np.float32)
+        (dx, dy), _ = cv2.phaseCorrelate(gref, g, win)
+        if abs(dx) > w / 4 or abs(dy) > h / 4:
+            continue
+        M = np.float32([[1, 0, -dx], [0, 1, -dy]])
+        a = cv2.warpAffine(p.astype(np.float32), M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+        aligned.append(a)
+        diffs.append(float(np.abs(a[c] - ref[c]).mean()))
+    if len(aligned) < 4:
+        return None
+    thr = float(np.median(diffs)) * 1.5 + 2.0
+    keep = [a for a, d in zip(aligned, diffs) if d <= thr]
+    if len(keep) < 3:
+        return None
+    return np.clip(np.median(np.stack(keep), axis=0), 0, 255).astype(np.uint8), len(keep)
+
+
+def sharpen(img, amount=0.6, sigma=1.4):
+    blur = cv2.GaussianBlur(img, (0, 0), sigma)
+    return cv2.addWeighted(img, 1 + amount, blur, -amount, 0)
 
 
 class Collector:
@@ -544,16 +605,7 @@ class Collector:
         eid = t.strftime("%Y%m%d-%H%M%S")
         bird.setdefault("images", []).append(f"birds/{eid}.jpg")
         bird["images"] = bird["images"][-6:]
-        # crop with margin, draw box, save small
-        m = max(80, int(max(Wd, Hd) * 1.2) + 24)   # tiny birds still get a crop with some roof around them
-        cx, cy = X + Wd // 2, Y + Hd // 2
-        x0, y0 = max(0, cx - m), max(0, cy - m)
-        x1, y1 = min(W, cx + m), min(H, cy + m)
-        crop = frame[y0:y1, x0:x1].copy()
-        cv2.rectangle(crop, (X - x0, Y - y0), (X - x0 + Wd, Y - y0 + Hd), (0, 200, 255), 2)
-        if crop.shape[1] > 320:
-            crop = cv2.resize(crop, (320, int(crop.shape[0] * 320 / crop.shape[1])), interpolation=cv2.INTER_AREA)
-        cv2.imwrite(os.path.join(BIRDS_DIR, f"{eid}.jpg"), crop, [cv2.IMWRITE_JPEG_QUALITY, 78])
+        zoom_name, stacked_n = self.save_crops(ev, frame, kind, eid, X, Y, Wd, Hd)
         direction = ""
         if kind == "flyer":
             direction = ("east" if dx > 0 else "west") if abs(dx) >= abs(dy) else ("down" if dy > 0 else "up")
@@ -565,9 +617,14 @@ class Collector:
             "box": [X, Y, Wd, Hd], "cell": sig["cell"], "image": f"birds/{eid}.jpg",
             "sky": self.stats.get("sky", {}).get("word", ""),
         }
+        if zoom_name:
+            event["zoom"] = f"birds/{zoom_name}"
+        if stacked_n:
+            event["stacked"] = stacked_n
         self.ledger["events"].insert(0, event)
         self.ledger["events"] = self.ledger["events"][:LEDGER_KEEP]
         keep = {e["image"].split("/")[-1] for e in self.ledger["events"]}
+        keep.update(e["zoom"].split("/")[-1] for e in self.ledger["events"] if e.get("zoom"))
         for b in self.birds["birds"]:
             keep.update(i.split("/")[-1] for i in b.get("images", []))
         for f in os.listdir(BIRDS_DIR):
@@ -576,6 +633,64 @@ class Collector:
         jdump(os.path.join(DATA, "ledger.json"), self.ledger)
         jdump(os.path.join(DATA, "birds.json"), self.birds)
         print(f"[bird] {event['time']} {bird['name']} ({confidence}, visit {bird['visits']}) {kind} {sig['species']}", flush=True)
+
+    def save_crops(self, ev, frame, kind, eid, X, Y, Wd, Hd):
+        """The register picture (bird with some roof around it, box clear of the bird) and a closer look.
+        Both come from the GoPro's full 1920x1080 frame, about 1.5x the pixels of the working frame,
+        and for a bird that sat still, from a stack of its frames lined up and merged."""
+        full = ev.get("best_full")
+        stacked_n = 0
+        if full is None:
+            full, fs = frame, 1.0
+        else:
+            fs = full.shape[1] / float(W)
+        FX, FY, FW, FH = int(X * fs), int(Y * fs), max(1, int(Wd * fs)), max(1, int(Hd * fs))
+        cx, cy = FX + FW // 2, FY + FH // 2
+        fh, fw = full.shape[:2]
+        m = int(max(80, int(max(Wd, Hd) * 1.2) + 24) * fs)   # tiny birds still get some roof around them
+        x0, y0, x1, y1 = max(0, cx - m), max(0, cy - m), min(fw, cx + m), min(fh, cy + m)
+        region = full[y0:y1, x0:x1].copy()
+        bp = ev.get("best_patch")
+        if kind == "percher" and bp is not None and ev.get("best_full") is not None:
+            try:
+                st = stack_patches(bp, ev.get("patches", []))
+            except Exception as e:
+                print(f"[stack] {e}", flush=True)
+                st = None
+            if st is not None:
+                img, stacked_n = st
+                P = img.shape[0] // 2
+                px0, py0 = bp[1] - P - x0, bp[2] - P - y0
+                sx0, sy0 = max(0, -px0), max(0, -py0)
+                dx0, dy0 = max(0, px0), max(0, py0)
+                ww = min(img.shape[1] - sx0, region.shape[1] - dx0)
+                hh = min(img.shape[0] - sy0, region.shape[0] - dy0)
+                if ww > 0 and hh > 0:
+                    region[dy0:dy0 + hh, dx0:dx0 + ww] = img[sy0:sy0 + hh, sx0:sx0 + ww]
+        # closer look: a tight square around the bird, enlarged and gently sharpened
+        z = max(16, int(max(FW, FH) * 1.8))
+        zx0, zy0 = max(0, cx - z - x0), max(0, cy - z - y0)
+        near = region[zy0:min(region.shape[0], cy + z - y0), zx0:min(region.shape[1], cx + z - x0)]
+        zoom_name = None
+        if near.size:
+            zw = 240
+            zh = max(1, int(near.shape[0] * zw / near.shape[1]))
+            zimg = sharpen(cv2.resize(near, (zw, zh), interpolation=cv2.INTER_LANCZOS4))
+            zoom_name = f"{eid}-z.jpg"
+            cv2.imwrite(os.path.join(BIRDS_DIR, zoom_name), zimg, [cv2.IMWRITE_JPEG_QUALITY, 88])
+        # register picture at 320 wide; the box is drawn after scaling, with a gap so it frames the bird
+        out_w = 320
+        k = out_w / float(region.shape[1])
+        crop = cv2.resize(region, (out_w, max(1, int(region.shape[0] * k))),
+                          interpolation=cv2.INTER_AREA if k < 1 else cv2.INTER_LANCZOS4)
+        if k > 1:
+            crop = sharpen(crop, 0.4, 1.2)
+        bx0, by0 = (FX - x0) * k, (FY - y0) * k
+        bw, bh = FW * k, FH * k
+        gap = max(5.0, 0.35 * max(bw, bh))
+        cv2.rectangle(crop, (int(bx0 - gap), int(by0 - gap)), (int(bx0 + bw + gap), int(by0 + bh + gap)), (0, 200, 255), 2)
+        cv2.imwrite(os.path.join(BIRDS_DIR, f"{eid}.jpg"), crop, [cv2.IMWRITE_JPEG_QUALITY, 82])
+        return zoom_name, stacked_n
 
     def in_sky(self, cx, cy):
         m = MASKS["sky"]
@@ -694,7 +809,7 @@ class Collector:
         if blobs and t - self.last.get("debug", 0) > 20:
             self.last["debug"] = t
             self.debug_dump(small, fg, blobs, t)
-        ev = self.tracker.update(blobs, t, small, frame)
+        ev = self.tracker.update(blobs, t, small, frame, getattr(self, "full", None))
         if ev and ev["best"] is not None:
             self.finish_event(ev)
 
@@ -804,9 +919,11 @@ class Collector:
             next_t = t + interval
             if FLIP and SOURCE == "gopro":
                 frame = cv2.rotate(frame, cv2.ROTATE_180)
+            full = frame        # the GoPro's 1920x1080, kept for the bird crops
             if frame.shape[1] != W:
-                frame = cv2.resize(frame, (W, H))
+                frame = cv2.resize(frame, (W, H))   # bilinear: the detection thresholds were measured on this
             frame = correct_colour(frame)
+            self.full = full if SOURCE == "gopro" else frame
             self.frames += 1
             self.roll_day_if_needed()
             f32 = frame.astype(np.float32)

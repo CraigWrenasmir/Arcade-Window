@@ -81,3 +81,11 @@ footer b{color:var(--ink);font-weight:500}
 .closed b{color:var(--ink);font-weight:500}
 .closed .word{color:var(--red);letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin-right:10px}
 .closed[hidden]{display:none}
+/* closer look: an enlarged crop of the bird from the full-size frame */
+.latest .shot{position:relative;width:300px;height:300px}
+.latest img.zoom{position:absolute;right:8px;bottom:8px;width:112px;height:112px;border:2px solid #f2c200;box-shadow:0 1px 6px #0006;cursor:zoom-in;image-rendering:auto}
+.latest img.zoom[hidden]{display:none}
+.box .closer{margin:0 0 14px}
+.box .closer img{width:240px;height:auto;border:2px solid #f2c200;display:block;image-rendering:auto}
+.box .closer figcaption{font-size:11px;color:#c9bcc6;margin-top:4px}
+.box .closer[hidden]{display:none}
