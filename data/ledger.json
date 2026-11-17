@@ -1,6 +1,29 @@
 {
 "events": [
 {
+"id": "20261118-094354",
+"time": "2026-11-18T09:43:54+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 14,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.0,
+"direction": "east",
+"box": [
+897,
+137,
+10,
+8
+],
+"cell": "5:0",
+"image": "birds/20261118-094354.jpg",
+"sky": "clear"
+},
+{
 "id": "20261103-171359",
 "time": "2026-11-03T17:13:59+11:00",
 "bird": "Updike",

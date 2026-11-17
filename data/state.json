@@ -1,57 +1,57 @@
 {
-"time": "2026-11-18T09:39:10+11:00",
+"time": "2026-11-18T09:44:10+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 884,
+"frames": 1730,
 "sky": {
-"hex": "#7ac2fc",
-"lum": 0.704,
+"hex": "#7ec1fb",
+"lum": 0.707,
 "word": "clear"
 },
 "wall": {
-"hex": "#c0b099",
-"lum": 0.7
+"hex": "#c0af99",
+"lum": 0.699
 },
 "dome": {
-"hex": "#626365",
-"lum": 0.389
+"hex": "#646467",
+"lum": 0.395
 },
 "brick": {
-"hex": "#786e66",
-"lum": 0.439
+"hex": "#776d65",
+"lum": 0.438
 },
-"overall_lum": 0.538,
-"motion": 0.0,
+"overall_lum": 0.539,
+"motion": 0.0002,
 "camera": {
 "model": "HERO13 Black",
 "battery": 93,
 "hot": false,
 "busy": true
 },
-"birds_today": 0,
-"birds_total": 90,
+"birds_today": 1,
+"birds_total": 91,
 "named_birds": 13,
 "last_bird": {
-"id": "20261103-171359",
-"time": "2026-11-03T17:13:59+11:00",
-"bird": "Updike",
-"bird_id": "b0016",
-"visit": 3,
+"id": "20261118-094354",
+"time": "2026-11-18T09:43:54+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 14,
 "confidence": "likely",
-"kind": "percher",
-"species": "sparrow or finch",
+"kind": "flyer",
+"species": "swallow or swift",
 "size": "tiny",
 "tone": "mid",
-"duration": 4.1,
-"direction": "",
+"duration": 1.0,
+"direction": "east",
 "box": [
-759,
-283,
-11,
+897,
+137,
+10,
 8
 ],
-"cell": "4:1",
-"image": "birds/20261103-171359.jpg",
-"sky": "overcast bright"
+"cell": "5:0",
+"image": "birds/20261118-094354.jpg",
+"sky": "clear"
 },
-"shadow_strips_today": 1
+"shadow_strips_today": 2
 }
