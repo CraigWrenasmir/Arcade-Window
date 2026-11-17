@@ -10,7 +10,7 @@
 "size": "small",
 "tone": "mid",
 "kind": "percher",
-"cell": "4:1",
+"cell": "5:1",
 "images": [
 "birds/20261102-115600.jpg",
 "birds/20261102-121213.jpg",
@@ -27,7 +27,7 @@
 "size": "tiny",
 "tone": "pale",
 "kind": "flyer",
-"cell": "4:1",
+"cell": "5:1",
 "images": []
 },
 {
@@ -55,7 +55,7 @@
 "size": "medium",
 "tone": "mid",
 "kind": "flyer",
-"cell": "5:1",
+"cell": "6:0",
 "images": [
 "birds/20261102-132934.jpg",
 "birds/20261102-143942.jpg",
@@ -74,7 +74,7 @@
 "size": "small",
 "tone": "mid",
 "kind": "percher",
-"cell": "4:1",
+"cell": "5:1",
 "images": [
 "birds/20261102-115550.jpg"
 ]
@@ -125,7 +125,7 @@
 "size": "tiny",
 "tone": "mid",
 "kind": "percher",
-"cell": "4:1",
+"cell": "5:1",
 "images": [
 "birds/20261102-122106.jpg",
 "birds/20261103-125503.jpg",
@@ -159,7 +159,7 @@
 "size": "tiny",
 "tone": "pale",
 "kind": "percher",
-"cell": "4:1",
+"cell": "5:1",
 "images": [
 "birds/20261102-141640.jpg"
 ]
@@ -204,7 +204,7 @@
 "size": "small",
 "tone": "mid",
 "kind": "percher",
-"cell": "5:1",
+"cell": "6:0",
 "images": [
 "birds/20261102-122142.jpg"
 ]
