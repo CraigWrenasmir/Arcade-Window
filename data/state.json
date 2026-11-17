@@ -1,1 +1,57 @@
-{"time": "2026-11-03T17:19:29+11:00", "started": "2026-11-02T11:30:00+11:00", "frames": 39908, "sky": {"hex": "#d2d6e0", "lum": 0.842, "word": "overcast bright"}, "wall": {"hex": "#504842", "lum": 0.291}, "dome": {"hex": "#393837", "lum": 0.224}, "brick": {"hex": "#5d5145", "lum": 0.327}, "overall_lum": 0.341, "motion": 0.0, "camera": {"model": "HERO13 Black", "battery": 97, "hot": false, "busy": true}, "birds_today": 14, "birds_total": 94, "named_birds": 13, "last_bird": {"id": "20261103-171359", "time": "2026-11-03T17:13:59+11:00", "bird": "Updike", "bird_id": "b0016", "visit": 3, "confidence": "likely", "kind": "percher", "species": "sparrow or finch", "size": "tiny", "tone": "mid", "duration": 4.1, "direction": "", "box": [759, 283, 11, 8], "cell": "4:1", "image": "birds/20261103-171359.jpg", "sky": "overcast bright"}, "shadow_strips_today": 83}
+{
+"time": "2026-11-18T09:28:50+11:00",
+"started": "2026-11-02T11:30:00+11:00",
+"frames": 46,
+"sky": {
+"hex": "#a1b0c2",
+"lum": 0.682,
+"word": "clear"
+},
+"wall": {
+"hex": "#8b847b",
+"lum": 0.524
+},
+"dome": {
+"hex": "#434346",
+"lum": 0.266
+},
+"brick": {
+"hex": "#6a6562",
+"lum": 0.403
+},
+"overall_lum": 0.46,
+"motion": 0.0,
+"camera": {
+"model": "HERO13 Black",
+"battery": 93,
+"hot": false,
+"busy": true
+},
+"birds_today": 0,
+"birds_total": 90,
+"named_birds": 13,
+"last_bird": {
+"id": "20261103-171359",
+"time": "2026-11-03T17:13:59+11:00",
+"bird": "Updike",
+"bird_id": "b0016",
+"visit": 3,
+"confidence": "likely",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 4.1,
+"direction": "",
+"box": [
+759,
+283,
+11,
+8
+],
+"cell": "4:1",
+"image": "birds/20261103-171359.jpg",
+"sky": "overcast bright"
+},
+"shadow_strips_today": 0
+}
