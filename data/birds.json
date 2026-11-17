@@ -82,21 +82,21 @@
 {
 "id": "b0006",
 "name": "Tyrone",
-"visits": 14,
+"visits": 15,
 "first_seen": "2026-11-02T11:58:47+11:00",
-"last_seen": "2026-11-18T09:43:54+11:00",
+"last_seen": "2026-11-18T10:17:30+11:00",
 "species": "swallow or swift",
 "size": "tiny",
 "tone": "mid",
 "kind": "flyer",
 "cell": "3:1",
 "images": [
-"birds/20261103-131833.jpg",
 "birds/20261103-133247.jpg",
 "birds/20261103-135732.jpg",
 "birds/20261103-142939.jpg",
 "birds/20261103-144438.jpg",
-"birds/20261118-094354.jpg"
+"birds/20261118-094354.jpg",
+"birds/20261118-101730.jpg"
 ]
 },
 {
@@ -212,9 +212,9 @@
 {
 "id": "b0017",
 "name": "Leif",
-"visits": 4,
+"visits": 6,
 "first_seen": "2026-11-18T09:45:33+11:00",
-"last_seen": "2026-11-18T09:46:07+11:00",
+"last_seen": "2026-11-18T10:19:09+11:00",
 "species": "sparrow or finch",
 "size": "tiny",
 "tone": "mid",
@@ -224,7 +224,9 @@
 "birds/20261118-094533.jpg",
 "birds/20261118-094541.jpg",
 "birds/20261118-094548.jpg",
-"birds/20261118-094607.jpg"
+"birds/20261118-094607.jpg",
+"birds/20261118-101858.jpg",
+"birds/20261118-101909.jpg"
 ]
 }
 ],

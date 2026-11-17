@@ -1,6 +1,75 @@
 {
 "events": [
 {
+"id": "20261118-101909",
+"time": "2026-11-18T10:19:09+11:00",
+"bird": "Leif",
+"bird_id": "b0017",
+"visit": 6,
+"confidence": "likely",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 2.1,
+"direction": "",
+"box": [
+900,
+135,
+9,
+8
+],
+"cell": "5:0",
+"image": "birds/20261118-101909.jpg",
+"sky": "clear"
+},
+{
+"id": "20261118-101858",
+"time": "2026-11-18T10:18:58+11:00",
+"bird": "Leif",
+"bird_id": "b0017",
+"visit": 5,
+"confidence": "likely",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 2.5,
+"direction": "",
+"box": [
+900,
+134,
+10,
+10
+],
+"cell": "5:0",
+"image": "birds/20261118-101858.jpg",
+"sky": "clear"
+},
+{
+"id": "20261118-101730",
+"time": "2026-11-18T10:17:30+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 15,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 0.7,
+"direction": "west",
+"box": [
+891,
+136,
+10,
+9
+],
+"cell": "5:0",
+"image": "birds/20261118-101730.jpg",
+"sky": "clear"
+},
+{
 "id": "20261118-094607",
 "time": "2026-11-18T09:46:07+11:00",
 "bird": "Leif",
