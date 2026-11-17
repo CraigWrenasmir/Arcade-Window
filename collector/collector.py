@@ -67,22 +67,25 @@ MAX_BLOB = 180
 GLOBAL_CHANGE_SKIP = 0.12  # fraction of frame changed -> lighting shift, not a bird (the sky is near half this view)
 WARMUP_FRAMES = 45          # ~15 s for auto-exposure to settle before anything is written
 
-# Regions in 1280x720 coordinates, for the GoPro hanging upside down on the glass, fixed 3 Nov 2026
+# Regions in 1280x720 coordinates, for the GoPro hanging upside down on the glass, redrawn 18 Nov 2026
+# after the camera was re-hung tilted further down: the dome fills the bottom third, the far gable apex
+# (the main perch) is now near the top at ~(895,148), the right-hand wall climbs steeply to the top right.
 # (the stream is turned 180 degrees before these apply)
-WINDOW_HEAD = [(0, 0), (165, 0), (0, 290)]
-SKY = [(240, 0), (1280, 0), (1280, 245), (900, 318), (765, 287), (640, 362), (600, 335), (521, 288)]
-WALL = [(500, 410), (1280, 290), (1280, 640), (500, 660)]
-DOME = [(0, 665), (720, 720), (0, 720)]
-LEFTWALL = [(0, 300), (487, 413), (487, 567), (0, 533)]
+# our own window frame and brick column down the left side
+WINDOW_HEAD = [(0, 0), (378, 0), (336, 170), (286, 400), (250, 520), (205, 720), (0, 720)]
+SKY = [(378, 0), (1280, 0), (1280, 18), (1010, 138), (900, 145), (805, 245), (795, 250), (560, 142), (372, 44)]
+WALL = [(655, 358), (1280, 72), (1280, 470), (640, 545)]   # sunlit right wall, corners in order for the shadow warp
+DOME = [(205, 720), (220, 652), (500, 592), (800, 542), (1280, 486), (1280, 720)]
+LEFTWALL = [(342, 196), (432, 194), (625, 354), (625, 515), (262, 515), (300, 300)]
 # the top edge of the pink wall against the sky flickers as thin cloud passes behind it: nothing counts there
-PINK_EDGE = [(220, 0), (250, 0), (536, 288), (612, 352), (596, 372), (508, 290)]
+PINK_EDGE = [(360, 28), (560, 126), (808, 236), (796, 264), (556, 156), (356, 58)]
 # the open sky well above the roofline is cloud country: birds are only counted near the buildings
-HIGH_SKY = [(234, 0), (1280, 0), (1280, 165), (900, 240), (765, 207), (640, 282), (600, 300), (521, 288)]
+HIGH_SKY = [(378, 0), (1280, 0), (1010, 58), (900, 65), (805, 165), (560, 62), (430, 0)]
 # thin cloud behind a hard line flickers: the parapet spikes and the gable slopes, leaving the apex itself open
-PARAPET_EDGE = [(893, 304), (1280, 235), (1280, 257), (893, 326)]
-GABLE_EDGE = [[(636, 354), (745, 292), (745, 310), (640, 370)], [(787, 292), (900, 312), (900, 328), (787, 310)]]
-# the valley where the two gable slopes meet: cloud brightness changes there read as a blob (4 false entries 3 Nov pm)
-VALLEY = [(594, 344), (652, 344), (652, 388), (594, 388)]
+PARAPET_EDGE = [(1012, 122), (1280, 4), (1280, 34), (1012, 152)]
+GABLE_EDGE = [[(800, 232), (884, 148), (888, 166), (808, 258)], [(914, 134), (1012, 128), (1012, 152), (914, 156)]]
+# where the pink wall, the far gable and the right wall meet: cloud brightness changes there read as a blob
+VALLEY = [(768, 222), (832, 222), (832, 272), (768, 272)]
 
 ASCII_RAMP = " .:-=+*#%@"
 
