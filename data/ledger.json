@@ -1,6 +1,31 @@
 {
 "events": [
 {
+"id": "20261118-134047",
+"time": "2026-11-18T13:40:47+11:00",
+"bird": "Leif",
+"bird_id": "b0017",
+"visit": 8,
+"confidence": "likely",
+"kind": "percher",
+"species": "sparrow or finch",
+"size": "tiny",
+"tone": "mid",
+"duration": 2.1,
+"direction": "",
+"box": [
+893,
+133,
+8,
+11
+],
+"cell": "5:0",
+"image": "birds/20261118-134047.jpg",
+"sky": "overcast bright",
+"zoom": "birds/20261118-134047-z.jpg",
+"stacked": 6
+},
+{
 "id": "20261118-123706",
 "time": "2026-11-18T12:37:06+11:00",
 "bird": "Tyrone",

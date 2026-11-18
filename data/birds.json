@@ -215,21 +215,21 @@
 {
 "id": "b0017",
 "name": "Leif",
-"visits": 7,
+"visits": 8,
 "first_seen": "2026-11-18T09:45:33+11:00",
-"last_seen": "2026-11-18T12:05:44+11:00",
+"last_seen": "2026-11-18T13:40:47+11:00",
 "species": "sparrow or finch",
 "size": "tiny",
 "tone": "mid",
 "kind": "percher",
 "cell": "5:0",
 "images": [
-"birds/20261118-094541.jpg",
 "birds/20261118-094548.jpg",
 "birds/20261118-094607.jpg",
 "birds/20261118-101858.jpg",
 "birds/20261118-101909.jpg",
-"birds/20261118-120544.jpg"
+"birds/20261118-120544.jpg",
+"birds/20261118-134047.jpg"
 ]
 }
 ],
