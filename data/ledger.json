@@ -1,6 +1,54 @@
 {
 "events": [
 {
+"id": "20261118-122840",
+"time": "2026-11-18T12:28:40+11:00",
+"bird": "Tyrone",
+"bird_id": "b0006",
+"visit": 18,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 1.4,
+"direction": "up",
+"box": [
+893,
+135,
+8,
+9
+],
+"cell": "5:0",
+"image": "birds/20261118-122840.jpg",
+"sky": "clear",
+"zoom": "birds/20261118-122840-z.jpg"
+},
+{
+"id": "20261118-122640",
+"time": "2026-11-18T12:26:40+11:00",
+"bird": "Combray",
+"bird_id": "b0002",
+"visit": 12,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "pale",
+"duration": 1.1,
+"direction": "west",
+"box": [
+370,
+25,
+7,
+11
+],
+"cell": "2:0",
+"image": "birds/20261118-122640.jpg",
+"sky": "clear",
+"zoom": "birds/20261118-122640-z.jpg"
+},
+{
 "id": "20261118-120544",
 "time": "2026-11-18T12:05:44+11:00",
 "bird": "Leif",
