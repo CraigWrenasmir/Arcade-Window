@@ -1,58 +1,58 @@
 {
-"time": "2026-11-18T12:35:46+11:00",
+"time": "2026-11-18T12:40:44+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 21967,
+"frames": 22807,
 "sky": {
-"hex": "#b2d0f4",
-"lum": 0.798,
+"hex": "#90bdf2",
+"lum": 0.715,
 "word": "clear"
 },
 "wall": {
-"hex": "#ad9a88",
-"lum": 0.62
+"hex": "#b6a28e",
+"lum": 0.652
 },
 "dome": {
-"hex": "#7e7e7f",
-"lum": 0.497
+"hex": "#818181",
+"lum": 0.506
 },
 "brick": {
-"hex": "#988677",
-"lum": 0.541
+"hex": "#9e8b7a",
+"lum": 0.562
 },
-"overall_lum": 0.579,
-"motion": 0.0003,
+"overall_lum": 0.59,
+"motion": 0.0002,
 "camera": {
 "model": "HERO13 Black",
 "battery": 93,
 "hot": false,
 "busy": true
 },
-"birds_today": 14,
-"birds_total": 104,
+"birds_today": 15,
+"birds_total": 105,
 "named_birds": 14,
 "last_bird": {
-"id": "20261118-122840",
-"time": "2026-11-18T12:28:40+11:00",
+"id": "20261118-123706",
+"time": "2026-11-18T12:37:06+11:00",
 "bird": "Tyrone",
 "bird_id": "b0006",
-"visit": 18,
+"visit": 19,
 "confidence": "likely",
 "kind": "flyer",
 "species": "swallow or swift",
 "size": "tiny",
 "tone": "mid",
-"duration": 1.4,
-"direction": "up",
+"duration": 0.4,
+"direction": "down",
 "box": [
-893,
+892,
 135,
 8,
-9
+11
 ],
 "cell": "5:0",
-"image": "birds/20261118-122840.jpg",
+"image": "birds/20261118-123706.jpg",
 "sky": "clear",
-"zoom": "birds/20261118-122840-z.jpg"
+"zoom": "birds/20261118-123706-z.jpg"
 },
-"shadow_strips_today": 35
+"shadow_strips_today": 36
 }
