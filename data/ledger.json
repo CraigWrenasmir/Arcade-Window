@@ -1,6 +1,30 @@
 {
 "events": [
 {
+"id": "20261118-134309",
+"time": "2026-11-18T13:43:09+11:00",
+"bird": "Leif",
+"bird_id": "b0017",
+"visit": 9,
+"confidence": "likely",
+"kind": "flyer",
+"species": "swallow or swift",
+"size": "tiny",
+"tone": "mid",
+"duration": 0.3,
+"direction": "up",
+"box": [
+891,
+137,
+8,
+9
+],
+"cell": "5:0",
+"image": "birds/20261118-134309.jpg",
+"sky": "overcast bright",
+"zoom": "birds/20261118-134309-z.jpg"
+},
+{
 "id": "20261118-134047",
 "time": "2026-11-18T13:40:47+11:00",
 "bird": "Leif",
