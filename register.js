@@ -105,7 +105,7 @@
     try{
       state = await j("state.json");
       const age = (Date.now() - new Date(state.time).getTime())/1000;
-      closed = age > 900;   // the iMac pushes every five minutes; a quarter of an hour of silence means it is off
+      closed = !!state.closed || age > 900;   // "closed" is written at shutdown so the notice shows straight away   // the iMac pushes every five minutes; a quarter of an hour of silence means it is off
       const dot = $("#dot"); if(dot) dot.classList.toggle("stale", closed);
       document.documentElement.style.setProperty("--sky", state.sky.hex);
       $("#livetxt").innerHTML = closed ? `switched off <b>${fmtT(state.time)}</b>` : `sky <b>${state.sky.word}</b> · birds today <b>${state.birds_today}</b> · named so far <b>${state.named_birds}</b>`;
