@@ -135,9 +135,9 @@
 {
 "id": "b0010",
 "name": "Sontag",
-"visits": 19,
+"visits": 20,
 "first_seen": "2026-11-02T14:07:34+11:00",
-"last_seen": "2026-11-02T16:08:08+11:00",
+"last_seen": "2026-11-18T11:04:23+11:00",
 "species": "sparrow or wren",
 "size": "small",
 "tone": "pale",
@@ -146,7 +146,8 @@
 "images": [
 "birds/20261102-155012.jpg",
 "birds/20261102-160626.jpg",
-"birds/20261102-160808.jpg"
+"birds/20261102-160808.jpg",
+"birds/20261118-110423.jpg"
 ]
 },
 {
