@@ -1,58 +1,59 @@
 {
-"time": "2026-11-18T16:20:53+11:00",
-"started": "2026-11-02T11:30:00+11:00",
-"frames": 59940,
-"sky": {
-"hex": "#c9d2e1",
-"lum": 0.821,
-"word": "pale"
-},
-"wall": {
-"hex": "#706255",
-"lum": 0.397
-},
-"dome": {
-"hex": "#5e5a57",
-"lum": 0.359
-},
-"brick": {
-"hex": "#b19982",
-"lum": 0.62
-},
-"overall_lum": 0.483,
-"motion": 0.0,
-"camera": {
-"model": "HERO13 Black",
-"battery": 93,
-"hot": false,
-"busy": true
-},
-"birds_today": 17,
-"birds_total": 107,
-"named_birds": 14,
-"last_bird": {
-"id": "20261118-134309",
-"time": "2026-11-18T13:43:09+11:00",
-"bird": "Leif",
-"bird_id": "b0017",
-"visit": 9,
-"confidence": "likely",
-"kind": "flyer",
-"species": "swallow or swift",
-"size": "tiny",
-"tone": "mid",
-"duration": 0.3,
-"direction": "up",
-"box": [
-891,
-137,
-8,
-9
-],
-"cell": "5:0",
-"image": "birds/20261118-134309.jpg",
-"sky": "overcast bright",
-"zoom": "birds/20261118-134309-z.jpg"
-},
-"shadow_strips_today": 80
+ "time": "2026-11-18T16:25:14+11:00",
+ "started": "2026-11-02T11:30:00+11:00",
+ "frames": 60664,
+ "sky": {
+  "hex": "#d4dae5",
+  "lum": 0.853,
+  "word": "overcast bright"
+ },
+ "wall": {
+  "hex": "#74665b",
+  "lum": 0.413
+ },
+ "dome": {
+  "hex": "#605d5a",
+  "lum": 0.368
+ },
+ "brick": {
+  "hex": "#ae9780",
+  "lum": 0.611
+ },
+ "overall_lum": 0.49,
+ "motion": 0.0,
+ "camera": {
+  "model": "HERO13 Black",
+  "battery": 93,
+  "hot": false,
+  "busy": true
+ },
+ "birds_today": 17,
+ "birds_total": 107,
+ "named_birds": 14,
+ "last_bird": {
+  "id": "20261118-134309",
+  "time": "2026-11-18T13:43:09+11:00",
+  "bird": "Leif",
+  "bird_id": "b0017",
+  "visit": 9,
+  "confidence": "likely",
+  "kind": "flyer",
+  "species": "swallow or swift",
+  "size": "tiny",
+  "tone": "mid",
+  "duration": 0.3,
+  "direction": "up",
+  "box": [
+   891,
+   137,
+   8,
+   9
+  ],
+  "cell": "5:0",
+  "image": "birds/20261118-134309.jpg",
+  "sky": "overcast bright",
+  "zoom": "birds/20261118-134309-z.jpg"
+ },
+ "shadow_strips_today": 80,
+ "closed": true
 }
