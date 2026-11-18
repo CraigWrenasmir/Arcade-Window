@@ -82,21 +82,21 @@
 {
 "id": "b0006",
 "name": "Tyrone",
-"visits": 16,
+"visits": 17,
 "first_seen": "2026-11-02T11:58:47+11:00",
-"last_seen": "2026-11-18T10:44:03+11:00",
+"last_seen": "2026-11-18T11:53:59+11:00",
 "species": "swallow or swift",
 "size": "tiny",
 "tone": "mid",
 "kind": "flyer",
 "cell": "3:1",
 "images": [
-"birds/20261103-135732.jpg",
 "birds/20261103-142939.jpg",
 "birds/20261103-144438.jpg",
 "birds/20261118-094354.jpg",
 "birds/20261118-101730.jpg",
-"birds/20261118-104403.jpg"
+"birds/20261118-104403.jpg",
+"birds/20261118-115359.jpg"
 ]
 },
 {
