@@ -1,58 +1,59 @@
 {
-"time": "2026-11-18T12:05:42+11:00",
+"time": "2026-11-18T12:10:44+11:00",
 "started": "2026-11-02T11:30:00+11:00",
-"frames": 16905,
+"frames": 17753,
 "sky": {
-"hex": "#d7dfe9",
-"lum": 0.872,
-"word": "pale"
+"hex": "#dee4ec",
+"lum": 0.893,
+"word": "overcast bright"
 },
 "wall": {
-"hex": "#ad9782",
-"lum": 0.611
+"hex": "#aa9581",
+"lum": 0.602
 },
 "dome": {
-"hex": "#797876",
-"lum": 0.473
+"hex": "#757473",
+"lum": 0.457
 },
 "brick": {
-"hex": "#756559",
-"lum": 0.412
+"hex": "#6c6055",
+"lum": 0.388
 },
-"overall_lum": 0.542,
-"motion": 0.0001,
+"overall_lum": 0.53,
+"motion": 0.0003,
 "camera": {
 "model": "HERO13 Black",
 "battery": 93,
 "hot": false,
 "busy": true
 },
-"birds_today": 11,
-"birds_total": 101,
+"birds_today": 12,
+"birds_total": 102,
 "named_birds": 14,
 "last_bird": {
-"id": "20261118-115359",
-"time": "2026-11-18T11:53:59+11:00",
-"bird": "Tyrone",
-"bird_id": "b0006",
-"visit": 17,
+"id": "20261118-120544",
+"time": "2026-11-18T12:05:44+11:00",
+"bird": "Leif",
+"bird_id": "b0017",
+"visit": 7,
 "confidence": "likely",
-"kind": "flyer",
-"species": "swallow or swift",
+"kind": "percher",
+"species": "sparrow or finch",
 "size": "tiny",
 "tone": "mid",
-"duration": 1.8,
-"direction": "west",
+"duration": 3.1,
+"direction": "",
 "box": [
-893,
-135,
-10,
+891,
+137,
+9,
 9
 ],
 "cell": "5:0",
-"image": "birds/20261118-115359.jpg",
-"sky": "clear",
-"zoom": "birds/20261118-115359-z.jpg"
+"image": "birds/20261118-120544.jpg",
+"sky": "pale",
+"zoom": "birds/20261118-120544-z.jpg",
+"stacked": 8
 },
-"shadow_strips_today": 29
+"shadow_strips_today": 30
 }
